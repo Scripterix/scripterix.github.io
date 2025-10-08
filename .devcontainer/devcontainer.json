@@ -1,0 +1,10 @@
+{
+  "name": "Scripterix Jekyll",
+  "features": {
+    "ghcr.io/devcontainers/features/ruby:1": { "version": "3.1" },
+    "ghcr.io/devcontainers/features/node:1": { "version": "lts" }
+  },
+  "forwardPorts": [4000],
+  "portsAttributes": { "4000": { "label": "Jekyll", "onAutoForward": "openBrowser" } },
+  "postCreateCommand": "gem install bundler && bundle config set path 'vendor/bundle' && bundle install"
+}
