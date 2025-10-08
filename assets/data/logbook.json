@@ -1,0 +1,22 @@
+---
+layout: data-json
+collection: logbook
+permalink: /assets/data/logbook.json
+sort_by: date
+sort_reverse: true
+summary_truncate: 160
+fields:
+  - title
+  - summary
+  - date
+  - url
+  - lang
+  - tags
+extras:
+  - key: hours_spent
+    value: hours_spent
+  - key: focus_area
+    value: focus_area
+  - key: cumulative_hours
+    value: cumulative_hours
+---

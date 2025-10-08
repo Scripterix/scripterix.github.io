@@ -1,0 +1,192 @@
+pl:
+  nav:
+    home: "Start"
+    about: "O nas"
+    archive: "Archiwum"
+  portfolio: "Portfolio"
+  challenge: "Wyzwanie 10k"
+  language: "Język"
+  switcher:
+    current: "%{language} (aktywny)"
+  home:
+    meta:
+      title: "Strona główna"
+      description: "Nowoczesna witryna Jekyll ze stylami Bootstrap."
+    hero:
+      badge: "Statyczne strony, dopracowane UX"
+      title: "Witamy w Jekyll + Bootstrap"
+      lead: "Nowoczesna witryna Jekyll ze stylami Bootstrap 5.3 z CDN"
+      button: "Poznaj szczegóły"
+      secondary: "Przeglądaj wpisy"
+    features:
+      fast:
+        title: "Szybko i nowocześnie"
+        body: "Generator statycznych stron Jekyll z Bootstrap 5.3 dla nowoczesnego, responsywnego wyglądu."
+      cdn:
+        title: "Dostarczane z CDN"
+        body: "Bootstrap ładowany z CDN dla szybszego działania i bez lokalnych zależności."
+      clean:
+        title: "Czysty kod"
+        body: "Podświetlanie składni w stylu Matrix z własnymi stylami CSS."
+    posts:
+      heading: "Najnowsze wpisy"
+      caption: "Świeże aktualizacje bloga, wybrane specjalnie dla Ciebie."
+      read_more: "Czytaj dalej"
+      date_format: "%d %B %Y"
+      empty: "Brak opublikowanych wpisów."
+    metrics:
+      projects:
+        value: "120+"
+        label: "Wdrożone serwisy"
+      uptime:
+        value: "99,9%"
+        label: "Udane wdrożenia"
+      community:
+        value: "8k+"
+        label: "Osób w społeczności"
+    cta:
+      title: "Gotowy, by uruchomić coś pięknego?"
+      body: "Połącz szybkość statycznych generatorów z dopracowanym designem i publikuj wielojęzyczne strony w rekordowym tempie."
+      button: "Zaplanuj projekt"
+      note: "Potrzebujesz migracji treści? Zróbmy to razem."
+    challenge:
+      hero:
+        badge: "Siła konsekwencji"
+        title: "Wyzwanie 10 000 godzin programowania"
+        subtitle: "Droga do mistrzostwa dzięki regularnej praktyce"
+        cta_primary: "Przeglądaj logbook"
+        cta_secondary: "Zobacz plan wyzwania"
+      metrics:
+        total_logged: "Zalogowane godziny"
+        baseline: "Godziny doświadczenia"
+        remaining: "Pozostałe godziny"
+        sessions: "Zapisane sesje"
+        average_daily: "Średnio dziennie"
+        projection: "Prognoza zakończenia"
+        content_hours: "Godziny treści (batch)"
+        content_posts: "Uwzględnione posty"
+        content_pending: "Posty oczekujące"
+      sections:
+        plan: "Plan wyzwania"
+        timeline: "Kamienie milowe"
+        logbook: "Najnowsze wpisy logbooka"
+        monthly: "Godziny w podziale na miesiące"
+        monthly_description: "Szybkie zestawienie przepracowanych godzin miesiąc po miesiącu."
+        principles: "Kluczowe zasady"
+        media: "Aktualizacje w wielu formatach"
+        portfolio: "Z portfolio"
+        archive: "Przeglądaj archiwum"
+      table:
+        date: "Data"
+        hours: "Godziny"
+        focus: "Obszar"
+        link: "Otwórz wpis"
+  archive:
+    meta_title: "Archiwum"
+    description: "Jedno miejsce z artykułami i wpisami Challenge10k — pełny przegląd postępów."
+    hero:
+      eyebrow: "Centrum archiwum"
+      title: "Zobacz cały przebieg pracy"
+      subtitle: "Połączony changelog artykułów, logbooka i przepracowanych godzin."
+      cta_challenge: "Przejdź do Challenge10k"
+      cta_logbook: "Otwórz logbook"
+    sections:
+      timeline: "Wspólna oś czasu"
+      timeline_caption: "Posty i wpisy logbooka posortowane według daty, aby zobaczyć ciągłą naukę."
+      timeline_empty: "Oś czasu wypełni się, gdy pojawią się artykuły i nowe sesje logbooka."
+      posts: "Wszystkie artykuły"
+      posts_caption: "Teksty dokumentujące kolejne etapy i wnioski."
+      logbook: "Sesje logbooka"
+      logbook_caption: "Aktualizacje z liczbą godzin, obszarem skupienia i źródłami."
+      works_caption: "Case studies pojawią się tutaj w kolejnych iteracjach."
+    timeline:
+      post_label: "Artykuł"
+      log_label: "Logbook"
+      hours: "%{hours} h"
+    table:
+      date: "Data"
+      post_title: "Artykuł"
+      log_title: "Sesja"
+      hours: "Godziny"
+      details: "Szczegóły"
+    stats:
+      posts: "Artykuły"
+      logs: "Wpisy logbooka"
+      hours: "Zarejestrowane godziny"
+      tags: "Tagi"
+    search:
+      placeholder: "Szukaj w postach i logbooku"
+      hint: "Zacznij pisać, aby filtrować archiwum."
+    card:
+      open: "Otwórz"
+  portfolio:
+    hero:
+      badge: "Portfolio"
+      title: "Portfolio"
+      lead: "Żywe archiwum wdrożonych produktów, eksperymentów i automatyzacji z ostatnich lat."
+      stats:
+        projects: "Projekty"
+        hours: "Godziny pracy"
+        posts: "Wpisy"
+        updated: "Aktualizacja"
+    alert: "Uwaga: nietypowo wysoka liczba godzin — sprawdź źródła danych."
+    filters:
+      heading: "Studia przypadków i wdrożenia"
+      subheading: "Przeglądaj według technologii, statusu lub przejdź prosto do pełnego opisu."
+      show_all: "Pokaż wszystkie"
+      latest_works: "Ostatnie projekty"
+      latest_posts: "Najnowsze artykuły"
+      latest_logs: "Ostatnie wpisy logbooka"
+      timeline: "Połączona oś czasu"
+    labels:
+      details: "Szczegóły"
+      logbook: "Dziennik"
+      github: "GitHub"
+      fallback: "Wkrótce pojawią się wpisy portfolio w tym języku."
+      default_status: "W toku"
+  about:
+    meta_title: "O nas"
+    description: "Dlaczego ta strona istnieje"
+    hero:
+      badge: "O autorze"
+      title: "Piotr Adamkowski, czyli Scripterix"
+      lead: "Dokumentuje drogę do mistrzostwa – 10 000 godzin nauki, projektów i praktyki."
+    body: |-
+      ## Piotr Adamkowski, znany jako Scripterix
+
+      **Web Developer i specjalista e-commerce od 2008 roku**
+
+      Moja przygoda z programowaniem ruszyła, gdy potrzebowałem sklepu internetowego, a nie mogłem znaleźć programisty w rozsądnym budżecie. Pomyślałem: skoro inni tworzą sklepy, ja też się tego nauczę. Tak narodziła się pasja do budowania rozwiązań online.
+
+      ### Od 2008 — ponad 17 lat doświadczenia
+
+      Po 1,5 miesiąca researchu, konfiguracji serwera i domeny postawiłem pierwszy sklep **Sweetshop.pl** na Zend Commerce. Sklep z materiałami do decoupage'u działał z sukcesem, finansując kolejne iteracje.
+
+      ### Epoka Magento
+
+      Gdy w 2008 pojawiło się Magento, przeniosłem się z Zend Commerce na **Magento 1.0.9**. Nowy silnik dawał lepszą wydajność, bogatsze funkcje i precyzyjne SEO. Po drodze opanowałem HTML, CSS, JavaScript, jQuery, PHP, framework Zend oraz Photoshop do przygotowywania layoutów.
+
+      ### Kluczowe technologie, które opanowałem
+
+      - HTML5 i CSS3
+      - JavaScript i jQuery
+      - PHP i MySQL
+      - Magento E-commerce
+      - WordPress CMS
+      - Framework Bootstrap
+      - SEO i analityka
+      - Responsive Web Design
+
+      ### Dziś: era CLI, AI i ML
+
+      Kolejny etap to narzędzia CLI, wsparcie AI i insighty z ML dla e-commerce. Logbook Challenge10k dokumentuje godziny praktyki, a nowe narzędzia usprawniają publikowanie i eksperymenty na wielu platformach.
+
+      Jestem otwarty na współpracę — szczególnie w modelu B2B i na jasno określone zakresy. Obecnie rozwijam **OpenGateWeb.com** i prowadzę projekty klienckie pod marką Scripterix.
+  footer:
+    quick_links: "Szybkie linki"
+    built_with: "Napędzane przez Jekyll i Bootstrap."
+    love: "Zbudowano z <i class=\"bi bi-heart-fill text-danger\"></i> przy użyciu Jekylla"
+  post:
+    date_format: "%d %B %Y"
+    previous: "Poprzedni wpis"
+    next: "Następny wpis"

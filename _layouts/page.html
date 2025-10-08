@@ -1,0 +1,103 @@
+---
+layout: default
+---
+
+{% assign hero_title = page.title %}
+{% if page.title_key %}
+{% assign hero_title = page.title_key | t %}
+{% endif %}
+{% if page.hero_title %}
+{% assign hero_title = page.hero_title %}
+{% endif %}
+{% if page.hero_title_key %}
+{% assign hero_title = page.hero_title_key | t %}
+{% endif %}
+
+{% assign hero_lead = page.description %}
+{% if page.description_key %}
+{% assign hero_lead = page.description_key | t %}
+{% endif %}
+{% if page.hero_lead %}
+{% assign hero_lead = page.hero_lead %}
+{% endif %}
+{% if page.hero_lead_key %}
+{% assign hero_lead = page.hero_lead_key | t %}
+{% endif %}
+
+{% assign hero_badge = nil %}
+{% if page.hero_badge %}
+{% assign hero_badge = page.hero_badge %}
+{% endif %}
+{% if page.hero_badge_key %}
+{% assign hero_badge = page.hero_badge_key | t %}
+{% endif %}
+
+{% assign hero_theme = page.hero_theme | default: nil %}
+
+{% assign primary_label = nil %}
+{% assign primary_url = nil %}
+{% assign primary_icon = nil %}
+{% if page.hero_primary_cta %}
+  {% if page.hero_primary_cta.label_key %}
+  {% assign primary_label = page.hero_primary_cta.label_key | t %}
+  {% else %}
+  {% assign primary_label = page.hero_primary_cta.label %}
+  {% endif %}
+  {% assign primary_url = page.hero_primary_cta.url | default: '#' | relative_url %}
+  {% assign primary_icon = page.hero_primary_cta.icon %}
+{% endif %}
+
+{% assign secondary_label = nil %}
+{% assign secondary_url = nil %}
+{% assign secondary_icon = nil %}
+{% if page.hero_secondary_cta %}
+  {% if page.hero_secondary_cta.label_key %}
+  {% assign secondary_label = page.hero_secondary_cta.label_key | t %}
+  {% else %}
+  {% assign secondary_label = page.hero_secondary_cta.label %}
+  {% endif %}
+  {% assign secondary_url = page.hero_secondary_cta.url | default: '#' | relative_url %}
+  {% assign secondary_icon = page.hero_secondary_cta.icon %}
+{% endif %}
+
+{% assign hero_extra = page.hero_extra_include | default: page.hero_extra_partial %}
+
+{% assign hero_enabled = false %}
+{% if hero_theme %}{% assign hero_enabled = true %}{% endif %}
+{% if hero_badge %}{% assign hero_enabled = true %}{% endif %}
+{% if hero_lead %}{% assign hero_enabled = true %}{% endif %}
+{% if primary_label %}{% assign hero_enabled = true %}{% endif %}
+{% if secondary_label %}{% assign hero_enabled = true %}{% endif %}
+{% if hero_enabled %}
+  {% include hero-banner.html
+    theme=hero_theme
+    badge=hero_badge
+    title=hero_title
+    lead=hero_lead
+    primary_label=primary_label
+    primary_url=primary_url
+    primary_icon=primary_icon
+    secondary_label=secondary_label
+    secondary_url=secondary_url
+    secondary_icon=secondary_icon
+    extra=hero_extra %}
+{% else %}
+<section class="page-header-fallback py-5">
+  <div class="container">
+    <h1 class="display-5 fw-semibold">{{ hero_title }}</h1>
+    {% if hero_lead %}
+    <p class="lead text-muted">{{ hero_lead }}</p>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+<section class="page-content-section py-5{% if hero_enabled %} page-content-section--overlap{% endif %}">
+  <div class="container">
+    <article class="card shadow-sm">
+      <div class="card-body">
+        {{ content }}
+      </div>
+    </article>
+  </div>
+</section>

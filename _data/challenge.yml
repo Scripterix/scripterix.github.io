@@ -1,0 +1,65 @@
+goal:
+  title: "10,000 Hours Programming Challenge"
+  subtitle: "The path to mastery through dedicated practice"
+  target_hours: 10000
+  baseline_hours: 1000
+  start_date: 2024-04-02
+  quote: "We don't know something until we learn it!"
+  quote_source: "Challenge10k Log"
+
+content:
+  batch_size: 10
+  default_hours: 2
+  note: "Blog posts are converted into practice hours in 10-post batches to keep stats grounded."
+
+phases:
+  - id: foundation
+    name: "Phase 1 · Foundation"
+    duration: "3 months"
+    daily_commitment: "2 hours/day"
+    total_hours: 180
+    summary: "Building solid foundations and establishing consistent habits. Focus on practical projects and core concepts."
+  - id: acceleration
+    name: "Phase 2 · Acceleration"
+    duration: "6 months"
+    daily_commitment: "4 hours/day"
+    total_hours: 720
+    summary: "Intensive learning phase with increased daily commitment. Advanced topics and real-world applications."
+  - id: mastery
+    name: "Phase 3 · Mastery"
+    duration: "20+ months"
+    daily_commitment: "10 hours/day"
+    total_hours: 9100
+    summary: "Professional-level dedication. Deep expertise development and complex project implementation."
+
+principles:
+  - title: "Quality over quantity"
+    description: "Deliberate practice beats rushed repetition."
+  - title: "Consistency"
+    description: "Daily commitment to learning keeps momentum."
+  - title: "Balance"
+    description: "Mental and physical health first."
+  - title: "Flexibility"
+    description: "Adjust the plan as life shifts."
+  - title: "Practice-focused"
+    description: "Ship real projects, not just theory."
+  - title: "Community"
+    description: "Learn with and from others."
+
+media_channels:
+  - label: "Video log"
+    description: "Short build-in-public updates and retros."
+    icon: "bi-camera-video"
+    url: "/media/video/"
+  - label: "Audio notes"
+    description: "2-minute reflections after deep work blocks."
+    icon: "bi-mic"
+    url: "/media/audio/"
+  - label: "Newsletter"
+    description: "Weekly digest with prompts and resources."
+    icon: "bi-envelope"
+    url: "/newsletter/"
+  - label: "Social threads"
+    description: "Quick wins and frustrations shared live."
+    icon: "bi-chat-dots"
+    url: "https://x.com/"

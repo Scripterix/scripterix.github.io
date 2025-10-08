@@ -1,0 +1,43 @@
+{% assign stats = site.data.stats %}
+{% assign total_projects = stats.total_projects | default: 0 %}
+{% assign total_hours = stats.total_hours | default: 0 %}
+{% assign total_posts = stats.total_posts | default: 0 %}
+{% assign updated_at = stats.last_updated %}
+
+{% assign projects_label = "portfolio.hero.stats.projects" | t %}
+{% assign hours_label = "portfolio.hero.stats.hours" | t %}
+{% assign posts_label = "portfolio.hero.stats.posts" | t %}
+{% assign updated_label = "portfolio.hero.stats.updated" | t %}
+
+<div class="card-body p-4">
+  <div class="row g-3 text-center text-lg-start">
+    <div class="col-4">
+      <div class="hero-metric-tile">
+        <div class="hero-metric-value">{{ total_projects }}</div>
+        <div class="hero-metric-label text-uppercase small">{{ projects_label }}</div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="hero-metric-tile">
+        <div class="hero-metric-value">{{ total_hours }}<span class="ms-1">h</span></div>
+        <div class="hero-metric-label text-uppercase small">{{ hours_label }}</div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="hero-metric-tile">
+        <div class="hero-metric-value">{{ total_posts }}</div>
+        <div class="hero-metric-label text-uppercase small">{{ posts_label }}</div>
+      </div>
+    </div>
+  </div>
+  {% if updated_at %}
+  <p class="small text-muted text-center text-lg-start mt-3">
+    {{ updated_label }} {{ updated_at | date: "%Y-%m-%d" }}
+  </p>
+  {% endif %}
+  {% if stats and stats.alert %}
+  <div class="hero-alert mt-3 text-start">
+    <i class="bi bi-exclamation-triangle-fill me-2"></i>{{ "portfolio.alert" | t }}
+  </div>
+  {% endif %}
+</div>

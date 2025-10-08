@@ -1,0 +1,37 @@
+{% assign langs = site.languages | default: nil %}
+{% assign current_lang = page.lang | default: site.default_lang | default: 'en' %}
+{% if langs and langs.size > 1 %}
+<div class="dropdown ms-lg-3 mt-3 mt-lg-0">
+  <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="languageDropdown"
+    data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="bi bi-translate"></i>
+    {{ include.language_label | default: 'Language' }}
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+    {% for lang in langs %}
+    {% assign code = lang.code %}
+    {% assign label = lang.label %}
+    {% if code == current_lang %}
+    <li><span class="dropdown-item active">{{ "switcher.current" | t: language: label }}</span></li>
+    {% else %}
+    {% assign target = nil %}
+    {% if page.translation_key %}
+    {% assign candidate_pages = site.pages | where: 'translation_key', page.translation_key %}
+    {% assign filtered_pages = candidate_pages | where: 'lang', code %}
+    {% assign target = filtered_pages | first %}
+    {% if target == nil %}
+    {% assign candidate_posts = site.posts | where: 'translation_key', page.translation_key %}
+    {% assign filtered_posts = candidate_posts | where: 'lang', code %}
+    {% assign target = filtered_posts | first %}
+    {% endif %}
+    {% endif %}
+    {% if target %}
+    <li><a class="dropdown-item" href="{{ target.url | relative_url }}">{{ label }}</a></li>
+    {% else %}
+    <li><span class="dropdown-item disabled">{{ label }}</span></li>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}

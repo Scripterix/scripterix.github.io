@@ -1,0 +1,155 @@
+{% assign current_lang = page.lang | default: site.default_lang %}
+{% assign filter_heading = "portfolio.filters.heading" | t %}
+{% assign filter_subheading = "portfolio.filters.subheading" | t %}
+{% assign preview_show_all_label = "portfolio.filters.show_all" | t %}
+{% assign preview_works_label = "portfolio.filters.latest_works" | t %}
+{% assign preview_posts_label = "portfolio.filters.latest_posts" | t %}
+{% assign preview_logs_label = "portfolio.filters.latest_logs" | t %}
+{% assign timeline_heading = "portfolio.filters.timeline" | t %}
+{% assign details_label = "portfolio.labels.details" | t %}
+{% assign logbook_label = "portfolio.labels.logbook" | t %}
+{% assign github_label = "portfolio.labels.github" | t %}
+{% assign fallback_message = "portfolio.labels.fallback" | t %}
+{% assign default_status = "portfolio.labels.default_status" | t %}
+
+{% assign works_for_lang = site.works | where: 'lang', current_lang %}
+{% assign works_sorted = works_for_lang | sort: 'date' | reverse %}
+
+<script src="{{ '/assets/js/portfolio-filter.js' | relative_url }}" defer></script>
+
+<section class="portfolio-grid py-4">
+  <div class="container">
+    {% if works_sorted.size > 0 %}
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+      {% for work in works_sorted %}
+      <div class="col">
+        <article class="card h-100 border-0 shadow-sm position-relative">
+          {% if work.featured_image %}
+          <img src="{{ work.featured_image | relative_url }}" class="card-img-top" alt="{{ work.title }} cover"
+            loading="lazy">
+          {% else %}
+          <div class="ratio ratio-16x9 bg-light d-flex align-items-center justify-content-center text-muted">
+            <i class="bi bi-image"></i>
+          </div>
+          {% endif %}
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-primary-subtle text-primary text-uppercase small">{{ work.status | default:
+                default_status }}</span>
+              <span class="text-muted small"><i class="bi bi-calendar-event me-1"></i>{{ work.year | default: work.date
+                | date: '%Y' }}</span>
+            </div>
+            <h3 class="h5 fw-semibold mb-2">
+              <a href="{{ work.url | relative_url }}" class="text-decoration-none stretched-link">{{ work.title }}</a>
+            </h3>
+            {% if work.summary %}
+            <p class="text-muted flex-grow-1">{{ work.summary }}</p>
+            {% endif %}
+            {% if work.tech %}
+            <div class="mt-3 d-flex flex-wrap gap-2">
+              {% for tag in work.tech %}
+              <span class="badge bg-light text-secondary border">{{ tag }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          <div class="card-footer bg-white border-0 d-flex flex-wrap justify-content-between align-items-center gap-2">
+            <a class="btn btn-outline-primary btn-sm" href="{{ work.url | relative_url }}">
+              <i class="bi bi-journal-text me-1"></i> {{ details_label }}
+            </a>
+            <div class="d-flex gap-2">
+              {% assign log_ref = work.logbook_ref | first %}
+              {% if log_ref %}
+              <a class="btn btn-link btn-sm px-0"
+                href="{{ '/challenge10k/log/' | append: log_ref | append: '/' | relative_url }}">
+                <i class="bi bi-journal-check me-1"></i>{{ logbook_label }}
+              </a>
+              {% endif %}
+              {% if work.github_repo and work.github_repo != '' %}
+              <a class="btn btn-link btn-sm px-0" href="{{ work.github_repo }}" target="_blank" rel="noopener">
+                <i class="bi bi-github me-1"></i>{{ github_label }}
+              </a>
+              {% endif %}
+            </div>
+          </div>
+        </article>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="card border-0 shadow-sm">
+      <div class="card-body py-5 text-center">
+        <p class="lead mb-0">{{ fallback_message }}</p>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="portfolio-insights py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-lg-6">
+        <div class="accordion h-100" id="portfolioCaseStudiesAccordion">
+          <div class="accordion-item border-0 shadow-sm">
+            <h2 class="accordion-header" id="headingCaseStudies">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#portfolioCaseStudies" aria-expanded="false" aria-controls="portfolioCaseStudies">
+                {{ filter_heading }}
+              </button>
+            </h2>
+            <div id="portfolioCaseStudies" class="accordion-collapse collapse" aria-labelledby="headingCaseStudies">
+              <div class="accordion-body">
+                <p class="text-muted mb-4">{{ filter_subheading }}</p>
+                <div class="row g-4">
+                  <div class="col-12">
+                    <h3 class="h6 fw-semibold mb-2">{{ preview_works_label }}</h3>
+                    <div id="last-works" class="preview-list"></div>
+                    <button type="button" class="btn btn-sm btn-outline-primary mt-3" id="show-all-works">{{
+                      preview_show_all_label }}</button>
+                  </div>
+                  <div class="col-12">
+                    <h3 class="h6 fw-semibold mb-2">{{ preview_posts_label }}</h3>
+                    <div id="last-posts" class="preview-list"></div>
+                    <button type="button" class="btn btn-sm btn-outline-primary mt-3" id="show-all-posts">{{
+                      preview_show_all_label }}</button>
+                  </div>
+                  <div class="col-12">
+                    <h3 class="h6 fw-semibold mb-2">{{ preview_logs_label }}</h3>
+                    <div id="last-logbook" class="preview-list"></div>
+                    <button type="button" class="btn btn-sm btn-outline-primary mt-3" id="show-all-logbook">{{
+                      preview_show_all_label }}</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="accordion h-100" id="portfolioTimelineAccordion">
+          <div class="accordion-item border-0 shadow-sm">
+            <h2 class="accordion-header" id="headingTimeline">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#portfolioTimeline" aria-expanded="false" aria-controls="portfolioTimeline">
+                {{ timeline_heading }}
+              </button>
+            </h2>
+            <div id="portfolioTimeline" class="accordion-collapse collapse" aria-labelledby="headingTimeline">
+              <div class="accordion-body">
+                <div class="timeline-wrapper">
+                  <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-2 mb-3">
+                    <h3 class="h6 fw-semibold mb-0">{{ timeline_heading }}</h3>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" id="show-all-timeline">{{
+                      preview_show_all_label }}</button>
+                  </div>
+                  <div id="unified-timeline" class="timeline-list"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="{{ '/' | relative_url }}">
+      <i class="bi bi-code-slash"></i>
+      {{ site.title | default: "My Jekyll Site" }}
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      {% assign current_lang = page.lang | default: site.default_lang %}
+      {% if current_lang == 'pl' %}
+      {% assign nav_home_label = 'Start' %}
+      {% assign nav_about_label = 'O nas' %}
+      {% assign nav_archive_label = 'Archiwum' %}
+      {% assign nav_portfolio_label = 'Portfolio' %}
+      {% assign nav_challenge_label = 'Wyzwanie 10k' %}
+      {% assign nav_language_label = 'Język' %}
+      {% else %}
+      {% assign nav_home_label = 'Home' %}
+      {% assign nav_about_label = 'About' %}
+      {% assign nav_archive_label = 'Archive' %}
+      {% assign nav_portfolio_label = 'Portfolio' %}
+      {% assign nav_challenge_label = 'Challenge10k' %}
+      {% assign nav_language_label = 'Language' %}
+      {% endif %}
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link {% if page.translation_key == 'home' or page.url == '/' %}active{% endif %}"
+            href="{{ '/' | relative_url }}">
+            <i class="bi bi-house"></i> {{ nav_home_label }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if page.translation_key == 'about' or page.url contains '/about' %}active{% endif %}"
+            href="{{ '/about' | relative_url }}">
+            <i class="bi bi-person"></i> {{ nav_about_label }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if page.translation_key == 'archive' %}active{% endif %}"
+            href="{% if current_lang == 'pl' %}{{ '/pl/archive/' | relative_url }}{% else %}{{ '/archive/' | relative_url }}{% endif %}">
+            <i class="bi bi-archive"></i> {{ nav_archive_label }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if page.translation_key == 'portfolio' or page.url contains '/works/' %}active{% endif %}"
+            href="{% if current_lang == 'pl' %}{{ '/pl/works/' | relative_url }}{% else %}{{ '/works/' | relative_url }}{% endif %}">
+            <i class="bi bi-kanban"></i> {{ nav_portfolio_label }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if page.translation_key == 'challenge10k' or page.collection == 'logbook' or page.url contains '/challenge10k' %}active{% endif %}"
+            href="{% if current_lang == 'pl' %}{{ '/pl/challenge10k/' | relative_url }}{% else %}{{ '/challenge10k/' | relative_url }}{% endif %}">
+            <i class="bi bi-lightning-charge"></i> {{ nav_challenge_label }}
+          </a>
+        </li>
+      </ul>
+      {% include language-switcher.html language_label=nav_language_label %}
+    </div>
+  </div>
+</nav>

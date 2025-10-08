@@ -1,0 +1,50 @@
+{% assign posts_grouped = site.posts | group_by_exp: "post", "post.translation_key | default: post.id" %}
+{% assign total_posts = posts_grouped.size %}
+{% assign total_logs = site.logbook | size %}
+{% assign total_hours = 0 %}
+{% for entry in site.logbook %}
+  {% if entry.hours_spent %}
+    {% assign entry_hours = entry.hours_spent | plus: 0 %}
+    {% assign total_hours = total_hours | plus: entry_hours %}
+  {% endif %}
+{% endfor %}
+{% assign timeline_sources = site.posts | concat: site.logbook %}
+{% assign tag_pool = "" | split: "" %}
+{% for entry in timeline_sources %}
+  {% if entry.tags %}
+    {% assign tag_pool = tag_pool | concat: entry.tags %}
+  {% endif %}
+  {% if entry.categories %}
+    {% assign tag_pool = tag_pool | concat: entry.categories %}
+  {% endif %}
+{% endfor %}
+{% assign unique_tags = tag_pool | uniq | size %}
+
+<div class="card-body p-4">
+  <div class="row g-3 text-center text-lg-start">
+    <div class="col-6 col-lg-3">
+      <div class="hero-metric-tile">
+        <div class="hero-metric-value">{{ total_posts }}</div>
+        <div class="hero-metric-label text-uppercase small">{{ "archive.stats.posts" | t }}</div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="hero-metric-tile">
+        <div class="hero-metric-value">{{ total_logs }}</div>
+        <div class="hero-metric-label text-uppercase small">{{ "archive.stats.logs" | t }}</div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="hero-metric-tile">
+        <div class="hero-metric-value">{{ total_hours }}<span class="ms-1">h</span></div>
+        <div class="hero-metric-label text-uppercase small">{{ "archive.stats.hours" | t }}</div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="hero-metric-tile">
+        <div class="hero-metric-value">{{ unique_tags }}</div>
+        <div class="hero-metric-label text-uppercase small">{{ "archive.stats.tags" | t }}</div>
+      </div>
+    </div>
+  </div>
+</div>

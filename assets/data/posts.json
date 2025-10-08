@@ -1,0 +1,20 @@
+---
+layout: data-json
+collection: posts
+permalink: /assets/data/posts.json
+sort_by: date
+sort_reverse: true
+summary_truncate: 160
+fields:
+  - title
+  - summary
+  - date
+  - url
+  - lang
+  - tags
+extras:
+  - key: translation_key
+    value: translation_key
+  - key: writing_hours
+    value: writing_hours
+---

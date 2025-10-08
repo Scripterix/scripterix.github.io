@@ -1,0 +1,45 @@
+- id: ogw-brand-refresh
+  year: 2024
+  title:
+    en: "OGW Brand Refresh"
+    pl: "Odświeżenie marki OGW"
+  summary:
+    en: "Landing page redesign exploring modular sections, gradients, and multilingual flows."
+    pl: "Redesign strony głównej z modułowymi sekcjami, gradientami i obsługą wielu języków."
+  status:
+    en: "Drafting narrative"
+    pl: "Powstaje narracja"
+  tags:
+    - Jekyll
+    - Design systems
+  link: "#"
+- id: analytics-sprint
+  year: 2025
+  title:
+    en: "Analytics Sprint Toolkit"
+    pl: "Zestaw narzędzi Analytics Sprint"
+  summary:
+    en: "Prototype dashboard for recurring marketing experiments with lightweight reporting."
+    pl: "Prototyp pulpitu do cyklicznych eksperymentów marketingowych z lekkim raportowaniem."
+  status:
+    en: "Concept phase"
+    pl: "Faza koncepcji"
+  tags:
+    - Product ops
+    - Data viz
+  link: "#"
+- id: launchpad-hub
+  year: 2023
+  title:
+    en: "Launchpad Hub"
+    pl: "Launchpad Hub"
+  summary:
+    en: "Knowledge base skeleton to onboard SaaS founders with checklists and playbooks."
+    pl: "Szkielet bazy wiedzy do onboardingu founderów SaaS z checklistami i playbookami."
+  status:
+    en: "Internal review"
+    pl: "Przegląd wewnętrzny"
+  tags:
+    - Knowledge base
+    - UX writing
+  link: "#"

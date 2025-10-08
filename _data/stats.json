@@ -1,0 +1,14 @@
+{
+  "total_hours": 16,
+  "total_projects": 5,
+  "total_posts": 4,
+  "last_updated": "2025-10-06T00:00:00.000Z",
+  "alert": false,
+  "stat_color": "#212529",
+  "statColor": "#212529",
+  "formatted": {
+    "total_hours": "16",
+    "total_projects": "5",
+    "total_posts": "4"
+  }
+}

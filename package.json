@@ -1,0 +1,8 @@
+{
+  "name": "scripterix-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "stats": "node scripts/generate-stats.js"
+  }
+}

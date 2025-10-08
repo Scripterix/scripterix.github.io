@@ -1,0 +1,93 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Scripterix
+email: piotr.adamkowski@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Scripterix – osobisty projekt edukacyjno-programistyczny Piotra Adamkowskiego.
+  Nauka programowania od podstaw do poziomu full-stack developera w ramach
+  wyzwania 10 000 godzin. Na stronie znajdziesz praktyczne przykłady kodu,
+  logbook codziennej nauki, projekty front- i backendowe oraz notatki z podróży
+  po świecie Jekylla, GitHub Pages, JavaScriptu i sztucznej inteligencji.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://scripterix.github.io"
+twitter_username: opengateweb
+github_username:  scripterix
+
+# Build settings
+plugins:
+  - jekyll-feed
+  - jekyll-reading-time
+  - jekyll-paginate-v2
+
+collections:
+  works:
+    output: true
+  logbook:
+    output: true
+    permalink: /challenge10k/log/:slug/
+    sort_by: date
+    order: descending
+
+pagination:
+  enabled: false
+  per_page: 24
+  permalink: "/page/:num/"
+  title: ":title — page :num"
+  sort_field: "date"
+  sort_reverse: true
+
+default_lang: en
+languages:
+  - code: en
+    label: English
+  - code: pl
+    label: Polski
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: en
+  - scope:
+      path: "_logbook"
+    values:
+      layout: logbook
+      lang: en
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
