@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="pl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <title>Jekyll Scripterix website – rozbudowa - Scripterix</title>
+  
+  <meta name="description" content="Najdłuższa sesja tego miesiąca – kontynuacja budowy architektury Jekyll Scripterix">
+
+  <!-- Bootstrap CSS + Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="/">
+      <i class="bi bi-code-slash"></i>
+      Scripterix
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/" title="Powrót na stronę główną" aria-label="Powrót na stronę główną">
+            <i class="bi bi-house"></i> Start
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/about/" title="Poznaj autora i misję projektu" aria-label="Poznaj autora i misję projektu">
+            <i class="bi bi-person"></i> O nas
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/archive/" title="Przegląd wszystkich wpisów i logów" aria-label="Przegląd wszystkich wpisów i logów">
+            <i class="bi bi-archive"></i> Archiwum
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/portfolio/" title="Case studies i projekty Scripterix" aria-label="Case studies i projekty Scripterix">
+            <i class="bi bi-kanban"></i> Portfolio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active"
+            href="/challenge10k/" title="Logbook i statystyki wyzwania 10 000 godzin" aria-label="Logbook i statystyki wyzwania 10 000 godzin">
+            <i class="bi bi-lightning-charge"></i> Wyzwanie 10k
+          </a>
+        </li>
+      </ul>
+      
+
+
+
+
+<div class="dropdown ms-lg-3 mt-3 mt-lg-0">
+  <button
+    class="btn btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2"
+    type="button"
+    id="languageDropdown"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    aria-label="Język">
+    <i class="bi bi-translate" aria-hidden="true"></i>
+    <span class="fw-semibold">POLSKI</span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+    
+    
+    
+    
+    <li>
+      <span class="dropdown-item active d-flex align-items-center gap-2" aria-current="true">
+        <i class="bi bi-check2" aria-hidden="true"></i>
+        <span>POLSKI</span>
+      </span>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+      
+      
+      
+        
+          
+            
+            
+            
+              
+              
+      
+    
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center gap-2" href="/challenge10k/log/jekyll-scripterix-website-en/" hreflang="en">
+        <span class="text-uppercase small text-muted">en</span>
+        <span>ENGLISH</span>
+      </a>
+    </li>
+    
+    
+    
+  </ul>
+</div>
+
+
+    </div>
+  </div>
+</nav>
+
+
+  <main class="flex-shrink-0">
+    
+
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+      <article class="card shadow-sm border-0">
+        <div class="card-body p-4 p-lg-5">
+          <header class="mb-4">
+            <p class="text-uppercase small text-primary fw-semibold mb-2">Challenge10k · Before deployment
+            </p>
+            <h1 class="display-5 fw-bold text-dark">Jekyll Scripterix website – rozbudowa</h1>
+            <div class="d-flex flex-wrap align-items-center gap-3 text-muted small">
+              <span><i class="bi bi-calendar3 me-1"></i>03 October 2025</span>
+              <span><i class="bi bi-stopwatch me-1"></i>15 h</span>
+              
+              <span><i class="bi bi-graph-up me-1"></i>20 h total</span>
+              
+              
+              
+              
+            </div>
+          </header>
+
+          
+          <div class="alert alert-info bg-light border-0 text-dark mb-4">
+            <strong>Czysty kod</strong>
+            <p class="mb-0">15h iteracji: redesign portfolio, eksperymenty z archiwum, tłumaczenia treści, logbook i dokumentacja deploymentu.</p>
+          </div>
+          
+
+          <dl class="row g-3 challenge-log-meta mb-5">
+            
+            <div class="col-md-6">
+              <dt class="small text-uppercase text-muted">Focus area</dt>
+              <dd class="fs-6 fw-semibold">Jekyll + i18n + design + checklist</dd>
+            </div>
+            
+            
+            <div class="col-md-6">
+              <dt class="small text-uppercase text-muted">Mood</dt>
+              <dd class="fs-6 fw-semibold">Deep focus</dd>
+            </div>
+            
+            
+            <div class="col-md-6">
+              <dt class="small text-uppercase text-muted">Tags</dt>
+              <dd>
+                
+                <span class="badge rounded-pill bg-primary-subtle text-primary me-2">jekyll</span>
+                
+                <span class="badge rounded-pill bg-primary-subtle text-primary me-2">i18n</span>
+                
+                <span class="badge rounded-pill bg-primary-subtle text-primary me-2">liquid</span>
+                
+                <span class="badge rounded-pill bg-primary-subtle text-primary me-2">automation</span>
+                
+                <span class="badge rounded-pill bg-primary-subtle text-primary me-2">archive</span>
+                
+                <span class="badge rounded-pill bg-primary-subtle text-primary me-2">portfolio</span>
+                
+              </dd>
+            </div>
+            
+            
+            <div class="col-md-6">
+              <dt class="small text-uppercase text-muted">Resources</dt>
+              <dd>
+                <ul class="list-unstyled mb-0">
+                  
+                  <li><a class="text-decoration-none" href="https://jekyllrb.com/docs/" target="_blank" rel="noopener">Jekyll Documentation</a></li>
+                  
+                  <li><a class="text-decoration-none" href="https://getbootstrap.com/" target="_blank" rel="noopener">Bootstrap 5.3</a></li>
+                  
+                  <li><a class="text-decoration-none" href="https://shopify.github.io/liquid/" target="_blank" rel="noopener">Liquid Template Language</a></li>
+                  
+                  <li><a class="text-decoration-none" href="https://fusejs.io/" target="_blank" rel="noopener">Fuse.js Fuzzy Search</a></li>
+                  
+                  <li><a class="text-decoration-none" href="https://github.com/peaceiris/actions-gh-pages" target="_blank" rel="noopener">GitHub Pages Deploy Action</a></li>
+                  
+                </ul>
+              </dd>
+            </div>
+            
+          </dl>
+
+          <div class="challenge-log-content">
+            <h2 id="najdłuższa-sesja-tego-miesiąca--kontynuacja-budowy-architektury-jekyll-scripterix">Najdłuższa sesja tego miesiąca – kontynuacja budowy architektury Jekyll Scripterix</h2>
+
+<h3 id="-refinement-portalu-portfolio-2h">🧭 Refinement portalu portfolio (2h)</h3>
+
+<ul>
+  <li>zmiana nagłówków hero: “Portfolio” (EN) oraz “Niektóre projekty z portfolio” (PL)</li>
+  <li>reorganizacja sekcji – karty projektów ponad case studies, accordion z logbookiem i timeline</li>
+  <li>uproszczenie statystyk (<code class="language-plaintext highlighter-rouge">_data/stats.json</code>) i synchronizacja etykiet między językami</li>
+  <li>usunięcie duplikatów stylów, przygotowanie layoutu pod przyszły filtr</li>
+</ul>
+
+<h3 id="️-eksperymenty-ux-w-archiwum-3h">🕹️ Eksperymenty UX w archiwum (3h)</h3>
+
+<ul>
+  <li>wdrożenie horyzontalnego slidera timeline (przyciski, scroll snapping, keyboard support)</li>
+  <li>test modala informacyjnego z sesyjnym zapisem <code class="language-plaintext highlighter-rouge">sessionStorage</code></li>
+  <li>decyzja o wycofaniu slidera → powrót do prostego grida + refaktoryzacja CSS/JS</li>
+  <li>nauka: zachować minimalizm do czasu pełnego projektu UX</li>
+</ul>
+
+<h3 id="-parzystość-treści-i-tłumaczenia-1h">🌐 Parzystość treści i tłumaczenia (1h)</h3>
+
+<ul>
+  <li>dodanie angielskiej wersji wpisu <code class="language-plaintext highlighter-rouge">post-6-start-wyzwanie</code> (zachowany <code class="language-plaintext highlighter-rouge">translation_id</code>)</li>
+  <li>przegląd wszystkich postów – startowe nagłówki obniżone do <code class="language-plaintext highlighter-rouge">##</code>, brak konfliktu z layoutem</li>
+  <li>aktualizacja stylu headingów w logbookach (<code class="language-plaintext highlighter-rouge">**…**</code> → <code class="language-plaintext highlighter-rouge">### …</code>)</li>
+</ul>
+
+<h3 id="-logbook--dokumentacja-05h">📓 Logbook + dokumentacja (0.5h)</h3>
+
+<ul>
+  <li>niniejszy wpis logbooka + rewizja wcześniejszych sekcji</li>
+  <li>aktualizacja <code class="language-plaintext highlighter-rouge">_drafts/README-einstein.md</code> (formatowanie markdown)</li>
+  <li>uporządkowanie zasobów w <code class="language-plaintext highlighter-rouge">_data</code> i <code class="language-plaintext highlighter-rouge">_works</code></li>
+</ul>
+
+<h3 id="-qa--build-pipeline-05h">🚀 QA &amp; build pipeline (0.5h)</h3>
+
+<ul>
+  <li>wielokrotne <code class="language-plaintext highlighter-rouge">bundle exec jekyll build</code> po każdej iteracji</li>
+  <li>weryfikacja błędów Liquid / Markdown – czyste raporty</li>
+  <li>notatki do przyszłego CI (GitHub Actions + screenshot generator)</li>
+</ul>
+
+<h2 id="rezultaty">Rezultaty</h2>
+
+<ul>
+  <li>portfolio gotowe do rozbudowy filtrów + spójne copy</li>
+  <li>archiwum oczyszczone z tymczasowych eksperymentów, zachowane wnioski</li>
+  <li>komplet par tłumaczeń dla ostatnich postów + poprawna typografia</li>
+  <li>logbook i dokumentacja odświeżone (Einstein guide)</li>
+</ul>
+
+<h2 id="architektura-aktualizacji">Architektura aktualizacji</h2>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Jekyll Site (2025-10-07)
+├── _includes/portfolio-page.html   # układ kart, accordion case studies
+├── _posts/2024-10-12-*.md          # post EN/PL z translation_id
+├── _logbook/2025-10-07-*.md        # bieżąca sesja challenge10k
+├── _data/stats.json                # dane hero portfolio
+├── assets/js/portfolio-filter.js   # logika fetch + rendering kart
+└── archive/index.markdown          # timeline, wyszukiwarka, UX eksperymenty
+</code></pre></div></div>
+
+<h2 id="linki-powiązane">Linki powiązane</h2>
+
+<ul>
+  <li>🔗 <a href="/challenge10k/">Challenge10k Dashboard</a></li>
+  <li>🗂️ <a href="/works/">Portfolio</a></li>
+  <li>📚 <a href="/_drafts/README-einstein.md">README Einstein (draft)</a></li>
+  <li>🧪 <a href="/archive/">Archiwum z wyszukiwarką</a></li>
+</ul>
+
+<h2 id="wnioski">Wnioski</h2>
+
+<ol>
+  <li>UX eksperymenty trzeba etapować – slider/toast najlepiej w osobnej gałęzi.</li>
+  <li>Spójne <code class="language-plaintext highlighter-rouge">translation_id</code> przyspiesza tworzenie par EN/PL i statystyk.</li>
+  <li>Markdown lint pomaga utrzymać dokumenty w ryzach (nagłówki, listy, code fence).</li>
+  <li>Proste <code class="language-plaintext highlighter-rouge">bundle exec jekyll build</code> w roli smoke testu wyłapuje regresje natychmiast.</li>
+  <li>Dokumentacja (README) musi rosnąć wraz z architekturą – inaczej tracimy kontekst.</li>
+</ol>
+
+<h2 id="metryki">Metryki</h2>
+
+<ul>
+  <li>czas builda: <strong>0,8 s</strong> (średnia po refaktorach)</li>
+  <li>wielkość <code class="language-plaintext highlighter-rouge">_site</code>: <strong>~86 KB</strong> assets po czyszczeniu stylów</li>
+  <li>logbook entries: <strong>5</strong> (PL) / <strong>5</strong> (EN) z aktualnymi <code class="language-plaintext highlighter-rouge">translation_id</code></li>
+  <li>portfolio works: <strong>5</strong> aktywnych kart (EN/PL wspólne)</li>
+</ul>
+
+<p><strong>Next:</strong> Automatyzacja GitHub Actions (build + deploy) oraz generator miniatur dla projektów.</p>
+
+
+          </div>
+        </div>
+        <footer class="card-footer bg-light border-0 py-3">
+          <div class="d-flex justify-content-between">
+            <div>
+              
+              <a class="btn btn-outline-primary btn-sm" href="/challenge10k/log/jekyll-scripterix-website-en/">
+                <i class="bi bi-arrow-left me-1"></i>Jekyll Scripterix Website - E...
+              </a>
+              
+            </div>
+            <div class="text-end">
+              
+            </div>
+          </div>
+        </footer>
+      </article>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+  <footer class="bg-light text-light py-4 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h5><i class="bi bi-code-slash"></i> Scripterix</h5>
+        <p class="text-muted">Scripterix – osobisty projekt edukacyjno-programistyczny Piotra Adamkowskiego. Nauka programowania od podstaw do poziomu full-stack developera w ramach wyzwania 10 000 godzin. Na stronie znajdziesz praktyczne przykłady kodu, logbook codziennej nauki, projekty front- i backendowe oraz notatki z podróży po świecie Jekylla, GitHub Pages, JavaScriptu i sztucznej inteligencji.</p>
+      </div>
+      <div class="col-md-6 d-flex justify-content-md-end">
+        
+        
+        <div class="footer-links text-md-end text-dark">
+          <h6>Szybkie linki</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a href="/" class="text-decoration-none">
+                <i class="bi bi-house"></i> Start
+              </a></li>
+            <li><a href="/about/" class="text-decoration-none">
+                <i class="bi bi-person"></i> O nas
+              </a></li>
+            <li><a href="/archive/" class="text-decoration-none">
+                <i class="bi bi-archive"></i> Archiwum
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="my-3">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <small class="text-muted">
+          © 2025 Scripterix.
+          Napędzane przez Jekyll i Bootstrap.
+        </small>
+      </div>
+      <div class="col-md-6 text-end">
+        <small class="text-muted">
+          Zbudowano z <i class="bi bi-heart-fill text-danger"></i> przy użyciu Jekylla
+        </small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/format-number.js" defer></script>
+  <script src="/assets/js/hero-stats.js" defer></script>
+</body>
+
+</html>

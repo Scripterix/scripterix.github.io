@@ -1,0 +1,84 @@
+[
+  {
+    "slug": "magento-2008",
+    "title": {
+      "pl": "Sklep Magento — era 2008",
+      "en": "Magento Store — 2008 era"
+    },
+    "year": 2008,
+    "tech": [
+      "Magento",
+      "PHP"
+    ],
+    "summary": {
+      "pl": "Implementacja sklepu B2C",
+      "en": "Built B2C e-commerce store"
+    },
+    "image": "/assets/images/portfolio/coding01.jpg",
+    "github": "https://github.com/user/magento2008",
+    "post_refs": [],
+    "logbook_refs": [
+      "log-2008-09-05"
+    ]
+  },
+  {
+    "slug": "wp-2012",
+    "title": {
+      "pl": "Serwis WordPress — 2012",
+      "en": "WordPress Site — 2012"
+    },
+    "year": 2012,
+    "tech": [
+      "WordPress",
+      "PHP"
+    ],
+    "summary": {
+      "pl": "Custom theme i optymalizacja",
+      "en": "Custom theme and performance"
+    },
+    "image": "/assets/images/portfolio/coding01.jpg",
+    "github": "",
+    "post_refs": [],
+    "logbook_refs": []
+  },
+  {
+    "slug": "cli-2018",
+    "title": {
+      "pl": "CLI tools — 2018",
+      "en": "CLI development — 2018"
+    },
+    "year": 2018,
+    "tech": [
+      "NodeJS",
+      "CLI"
+    ],
+    "summary": {
+      "pl": "Narzędzia CLI wspierające workflow",
+      "en": "CLI tools to improve workflows"
+    },
+    "image": "/assets/images/portfolio/coding01.jpg",
+    "github": "https://github.com/user/cli-tools",
+    "post_refs": [],
+    "logbook_refs": []
+  },
+  {
+    "slug": "ai-integration-2024",
+    "title": {
+      "pl": "AI integration — 2024",
+      "en": "AI integration — 2024"
+    },
+    "year": 2024,
+    "tech": [
+      "Python",
+      "AI"
+    ],
+    "summary": {
+      "pl": "Proof-of-concept integracji z modelem",
+      "en": "POC integration with AI model"
+    },
+    "image": "/assets/images/portfolio/coding01.jpg",
+    "github": "",
+    "post_refs": [],
+    "logbook_refs": []
+  }
+]

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="pl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <title>Post #7 Bootstrap and WebPack - Scripterix</title>
+  
+  <meta name="description" content="Zaawansowana Konfiguracja Bootstrapa z WebPack">
+
+  <!-- Bootstrap CSS + Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="/">
+      <i class="bi bi-code-slash"></i>
+      Scripterix
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/" title="Powrót na stronę główną" aria-label="Powrót na stronę główną">
+            <i class="bi bi-house"></i> Start
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/about/" title="Poznaj autora i misję projektu" aria-label="Poznaj autora i misję projektu">
+            <i class="bi bi-person"></i> O nas
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/archive/" title="Przegląd wszystkich wpisów i logów" aria-label="Przegląd wszystkich wpisów i logów">
+            <i class="bi bi-archive"></i> Archiwum
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/portfolio/" title="Case studies i projekty Scripterix" aria-label="Case studies i projekty Scripterix">
+            <i class="bi bi-kanban"></i> Portfolio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/challenge10k/" title="Logbook i statystyki wyzwania 10 000 godzin" aria-label="Logbook i statystyki wyzwania 10 000 godzin">
+            <i class="bi bi-lightning-charge"></i> Wyzwanie 10k
+          </a>
+        </li>
+      </ul>
+      
+
+
+
+
+<div class="dropdown ms-lg-3 mt-3 mt-lg-0">
+  <button
+    class="btn btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2"
+    type="button"
+    id="languageDropdown"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    aria-label="Język">
+    <i class="bi bi-translate" aria-hidden="true"></i>
+    <span class="fw-semibold">POLSKI</span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+    
+    
+    
+    
+    <li>
+      <span class="dropdown-item active d-flex align-items-center gap-2" aria-current="true">
+        <i class="bi bi-check2" aria-hidden="true"></i>
+        <span>POLSKI</span>
+      </span>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+      
+      
+      
+        
+          
+            
+            
+            
+          
+        
+          
+        
+          
+            
+            
+            
+          
+        
+      
+    
+    
+    <li>
+      <span class="dropdown-item disabled d-flex align-items-center gap-2">
+        <span class="text-uppercase small text-muted">en</span>
+        <span>ENGLISH</span>
+      </span>
+    </li>
+    
+    
+    
+  </ul>
+</div>
+
+
+    </div>
+  </div>
+</nav>
+
+
+  <main class="flex-shrink-0">
+    
+
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <article class="card shadow-sm">
+        <div class="card-body">
+          <header class="mb-4">
+            <h1 class="display-4 fw-semibold text-secondary py-4">Post #7 Bootstrap and WebPack</h1>
+            <div class="d-flex flex-wrap align-items-center text-muted small mb-3">
+              <span class="me-3">
+                <i class="bi bi-calendar3"></i>
+                <time datetime="2024-10-08T17:24:15+02:00">
+                  08 October 2024
+                </time>
+              </span>
+              
+              <span class="me-3">
+                <i class="bi bi-folder2"></i>
+                
+                <span class="badge bg-secondary">Design Hub</span>
+                
+              </span>
+              
+              
+              <span>
+                <i class="bi bi-tags"></i>
+                
+              </span>
+              
+            </div>
+          </header>
+
+          <div class="content">
+            <h2 id="zaawansowana-konfiguracja-bootstrapa-z-webpack">Zaawansowana Konfiguracja Bootstrapa z WebPack</h2>
+
+<h3 id="jak-zainstalować-bootstrap-z-wp-w-odpowiedniej-konfiguracji">Jak zainstalować Bootstrap z WP w odpowiedniej konfiguracji?</h3>
+
+<p>🐙Wersja bundle - czyli pakietu skompilowanego Web Pack. Od początku prosto jak najłatwiej.</p>
+
+<h3 id="czym-jest-bootstrap-">Czym jest Bootstrap ?</h3>
+
+<p>Bootstrap to popularny framework CSS, który zapewnia zestaw gotowych komponentów i stylów, ułatwiając tworzenie responsywnych stron internetowych. Jest prosty w użyciu i pozwala szybko stworzyć estetyczny interfejs użytkownika bez konieczności pisania dużo kodu CSS od zera.</p>
+
+<p>Jest szybkim i przygotowanym w wersji estetycznego Ui frameworkiem i posiada wiele postawowych funkcji Ux. Sluży do szybkiego prototypowania. Posiada wiele zależności Sass i Css JavaScript i oczywiście HTML. Dodatkowo używa Popper.js i posiada zestaw własnych Icon.</p>
+
+<h3 id="czym-jest-web-pack-">Czym jest Web-Pack ?</h3>
+
+<p>Webpack natomiast jest narzędziem do pakowania modułów JavaScript. Pozwala on na zarządzanie zależnościami między modułami, a następnie kompiluje je w jeden plik lub wiele plików w celu optymalizacji wydajności aplikacji. Webpack jest często wykorzystywany wraz z npm (Node Package Manager) do zarządzania zależnościami i instalowania pakietów.</p>
+
+<h3 id="zalety-rozwiązania-z-użyciem-bootstrapa-i-webpacka-obejmują">Zalety rozwiązania z użyciem Bootstrapa i Webpacka obejmują:</h3>
+
+<p>Łatwość użycia: Oba narzędzia są stosunkowo łatwe w użyciu, dzięki czemu nawet początkujący programiści mogą z nich korzystać.</p>
+
+<p>Wydajność: Webpack umożliwia optymalizację aplikacji poprzez pakowanie modułów JavaScript i zarządzanie zależnościami, co przyczynia się do szybszego ładowania strony.</p>
+
+<p>Elastyczność: Zarówno Bootstrap, jak i Webpack oferują wiele opcji konfiguracyjnych, które pozwalają dostosować aplikację do indywidualnych potrzeb.</p>
+
+<p>Niestety, istnieją również pewne wady:</p>
+
+<p>Konieczność nauki: Korzystanie z tych narzędzi wymaga pewnej nauki, zwłaszcza jeśli ktoś dopiero zaczyna swoją przygodę z tworzeniem aplikacji webowych.</p>
+
+<p>Nadmierna złożoność: W niektórych przypadkach konfiguracja Webpacka może być zbyt skomplikowana, zwłaszcza dla mniejszych projektów, co może prowadzić do nadmiernego obciążenia dla programistów.</p>
+
+<h3 id="jak-zainstalować-bootstrap-i-webpack-oraz-webdev-zależności">Jak zainstalować Bootstrap i WebPack oraz webdev zależności</h3>
+
+<p>🐙Moja konfiguracja jest przykładowa i wyjściowo do powtarzalnych celów. Jest też dostępna na GitHub Scripterix, pod nazwą <a href="https://github.com/Scripterix/officialBootWebpack">officialBootWepack</a></p>
+
+<p><strong>Poniżej kolejne komendy cli</strong></p>
+
+<p>npm init -y</p>
+
+<p>npm i -save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin</p>
+
+<p>npm i –save bootstrap @popperjs/core</p>
+
+<p>npm i –save-dev autoprefixer css-loader postcss-loader sass sass-loader style-loader</p>
+
+<p>mkdir {src,src/js,src/scss}</p>
+
+<p>touch src/index.html src/js/main.js src/scss/styles.scss webpack.config.js</p>
+
+<p><strong>Poniższe polecenia skryptów do uruchomienia webpack i odświeżnia</strong></p>
+
+<p>npm start - wystartowanie servera</p>
+
+<p>npm run watch - odświeżanie</p>
+
+<p>Następnie trzeba uzupełnić pliki index.html webpack.config.js i dodać skrypty startujące i obserwujące do package.json</p>
+
+<p>🐙Najlepiej użyj git clone z repozytorium <a href="https://github.com/Scripterix/officialBootWebpack">BootWebpack</a> ( cała nazwa repo: https://github.com/Scripterix/officialBootWebpack )  aby nie zaszła pomyłka. Nie zapomnij dodać gwiazdek do oceny repo.</p>
+
+<p><strong>Poniżej plik index.html</strong></p>
+
+<p>&lt;!doctype html&gt;</p>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap w/ Webpack</title>
+</head>
+
+<body>
+  <div class="container py-4 px-3 mx-auto">
+    <h1 class="display-5">Hello, Bootstrap and Webpack ! !</h1>
+    <p class="lead">Włącz watch mode <kbd>npm run watch</kbd></p>
+    <button class="btn btn-primary mt-2" id="btn">Primary button !</button>
+    <p class="fs-2 mt-4 hidden" id="textContent">Toggle / DisToggle</p>
+  </div>
+
+  <script>
+    const textContent = document.getElementById('textContent');
+    const btn = document.getElementById('btn');
+
+    btn.addEventListener('click', () => {
+      textContent.classList.toggle('hidden');
+      console.log("Webpack works...");
+    });
+  </script>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>
+
+<p><strong>Poniżej plik configaracji WebPack</strong></p>
+
+<p>const path = require(‘path’);
+const autoprefixer = require(‘autoprefixer’);
+const HtmlWebpackPlugin = require(‘html-webpack-plugin’);
+const WebpackDevServer = require(‘webpack-dev-server’);
+const webpack = require(‘webpack’);</p>
+
+<p>module.exports = {
+  mode: ‘development’,
+  entry: ‘./src/js/main.js’,
+  output: {
+    filename: ‘main.js’,
+    path: path.resolve(__dirname, ‘dist’),
+  },
+  devServer: {
+    static: path.resolve(__dirname, ‘dist’),
+    port: 8080,
+    hot: true,
+  },
+  plugins: [
+    new HtmlWebpackPlugin({ template: ‘./src/index.html’ }),
+  ],
+  module: {
+    rules: [
+      {
+        test: /.(scss)$/,
+        use: [
+          {
+            // Adds CSS to the DOM by injecting a <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> tag
+            loader: ‘style-loader’,
+          },
+          {
+            // Interprets <code class="language-plaintext highlighter-rouge">@import</code> and <code class="language-plaintext highlighter-rouge">url()</code> like <code class="language-plaintext highlighter-rouge">import/require()</code> and will resolve them
+            loader: ‘css-loader’,
+          },
+          {
+            // Loader for webpack to process CSS with PostCSS
+            loader: ‘postcss-loader’,
+            options: {
+              postcssOptions: {
+                plugins: () =&gt; [autoprefixer],
+              },
+            },
+          },
+          {
+            // Loads a SASS/SCSS file and compiles it to CSS
+            loader: ‘sass-loader’,
+          },
+        ],
+      },
+    ],
+  },
+};</p>
+
+<p><strong>Poniżej Plik package.json z poleceniami skryptów</strong></p>
+
+<p>{
+  “name”: “officialbootwebpack”,
+  “version”: “1.0.0”,
+  “description”: “”,
+  “main”: “index.js”,
+  “scripts”: {
+    “test”: “echo "Error: no test specified" &amp;&amp; exit 1”,
+    “start”: “webpack serve”,
+    “build”: “webpack –mode production”,
+    “watch”: “webpack –watch –mode development”
+  },
+  “keywords”: [],
+  “author”: “”,
+  “license”: “ISC”,
+  “devDependencies”: {
+    “autoprefixer”: “^10.4.14”,
+    “css-loader”: “^6.7.3”,
+    “html-webpack-plugin”: “^5.5.0”,
+    “postcss-loader”: “^7.1.0”,
+    “sass”: “^1.60.0”,
+    “sass-loader”: “^13.2.1”,
+    “style-loader”: “^3.3.2”,
+    “webpack”: “^5.76.3”,
+    “webpack-cli”: “^5.0.1”,
+    “webpack-dev-server”: “^4.13.1”
+  },
+  “dependencies”: {
+    “@popperjs/core”: “^2.11.7”,
+    “bootstrap”: “^5.2.3”
+  }
+}</p>
+
+<p>W artykule omówiono zaawansowaną konfigurację Bootstrapa z wykorzystaniem WebPacka, skupiając się na instalacji i integracji Bootstrapa w projekcie za pomocą skompilowanej wersji bundle. Bootstrap to popularny framework CSS, który dostarcza zestaw gotowych komponentów i stylów, ułatwiając tworzenie responsywnych i estetycznych interfejsów użytkownika. Dzięki integracji z WebPackiem, proces ten staje się bardziej efektywny i zorganizowany.</p>
+
+<p><strong>Zapraszamy do dyskusji!</strong></p>
+
+<p>Czy korzystaliście już z Bootstrapa w swoich projektach? Jakie macie doświadczenia z integracją Bootstrapa i WebPacka? Podzielcie się swoimi spostrzeżeniami, pomysłami lub pytaniami w komentarzach poniżej. Wasze opinie są dla nas niezwykle cenne i mogą pomóc innym czytelnikom w lepszym zrozumieniu tematu.</p>
+
+          </div>
+
+          <footer class="mt-4 pt-3 border-top">
+            <div class="row">
+              <div class="col-md-6">
+                
+                <a href="/coding%20corner/2024/10/02/jezyk-markdown-pl.html" class="btn btn-outline-primary">
+                  <i class="bi bi-arrow-left"></i> Poprzedni wpis: Post #2 – Język Markdown
+                </a>
+                
+              </div>
+              <div class="col-md-6 text-end">
+                
+                <a href="/coding%20corner/2024/10/08/angular-podstawy-en.html" class="btn btn-outline-primary">
+                  Następny wpis: Post #4 – Angular Fundament... <i class="bi bi-arrow-right"></i>
+                </a>
+                
+              </div>
+            </div>
+          </footer>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+  <footer class="bg-light text-light py-4 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h5><i class="bi bi-code-slash"></i> Scripterix</h5>
+        <p class="text-muted">Scripterix – osobisty projekt edukacyjno-programistyczny Piotra Adamkowskiego. Nauka programowania od podstaw do poziomu full-stack developera w ramach wyzwania 10 000 godzin. Na stronie znajdziesz praktyczne przykłady kodu, logbook codziennej nauki, projekty front- i backendowe oraz notatki z podróży po świecie Jekylla, GitHub Pages, JavaScriptu i sztucznej inteligencji.</p>
+      </div>
+      <div class="col-md-6 d-flex justify-content-md-end">
+        
+        
+        <div class="footer-links text-md-end text-dark">
+          <h6>Szybkie linki</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a href="/" class="text-decoration-none">
+                <i class="bi bi-house"></i> Start
+              </a></li>
+            <li><a href="/about/" class="text-decoration-none">
+                <i class="bi bi-person"></i> O nas
+              </a></li>
+            <li><a href="/archive/" class="text-decoration-none">
+                <i class="bi bi-archive"></i> Archiwum
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="my-3">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <small class="text-muted">
+          © 2025 Scripterix.
+          Napędzane przez Jekyll i Bootstrap.
+        </small>
+      </div>
+      <div class="col-md-6 text-end">
+        <small class="text-muted">
+          Zbudowano z <i class="bi bi-heart-fill text-danger"></i> przy użyciu Jekylla
+        </small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/format-number.js" defer></script>
+  <script src="/assets/js/hero-stats.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <title>Post #5 Gemini and How to Write Prompts - Scripterix</title>
+  
+  <meta name="description" content="Gemini vs Bard: 5 key differences for developers and power users + 10 practical tips for writing effective prompts">
+
+  <!-- Bootstrap CSS + Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="/">
+      <i class="bi bi-code-slash"></i>
+      Scripterix
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/en/" title="Back to the homepage" aria-label="Back to the homepage">
+            <i class="bi bi-house"></i> Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/en/about/" title="Meet the author and mission" aria-label="Meet the author and mission">
+            <i class="bi bi-person"></i> About
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/en/archive/" title="Browse every post and log entry" aria-label="Browse every post and log entry">
+            <i class="bi bi-archive"></i> Archive
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/en/portfolio/" title="Case studies and shipped work" aria-label="Case studies and shipped work">
+            <i class="bi bi-kanban"></i> Portfolio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/en/challenge10k/" title="Logbook and stats for the 10,000-hour challenge" aria-label="Logbook and stats for the 10,000-hour challenge">
+            <i class="bi bi-lightning-charge"></i> Challenge10k
+          </a>
+        </li>
+      </ul>
+      
+
+
+
+
+<div class="dropdown ms-lg-3 mt-3 mt-lg-0">
+  <button
+    class="btn btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2"
+    type="button"
+    id="languageDropdown"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    aria-label="Language">
+    <i class="bi bi-translate" aria-hidden="true"></i>
+    <span class="fw-semibold">ENGLISH</span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+    
+    
+    
+    
+    
+    
+      
+      
+      
+    
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center gap-2" href="/ai%20gemini/2024/10/12/gemini-jakpisac-prompty-pl.html" hreflang="pl">
+        <span class="text-uppercase small text-muted">pl</span>
+        <span>POLSKI</span>
+      </a>
+    </li>
+    
+    
+    
+    
+    
+    
+    <li>
+      <span class="dropdown-item active d-flex align-items-center gap-2" aria-current="true">
+        <i class="bi bi-check2" aria-hidden="true"></i>
+        <span>ENGLISH</span>
+      </span>
+    </li>
+    
+    
+  </ul>
+</div>
+
+
+    </div>
+  </div>
+</nav>
+
+
+  <main class="flex-shrink-0">
+    
+
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <article class="card shadow-sm">
+        <div class="card-body">
+          <header class="mb-4">
+            <h1 class="display-4 fw-semibold text-secondary py-4">Post #5 Gemini and How to Write Prompts</h1>
+            <div class="d-flex flex-wrap align-items-center text-muted small mb-3">
+              <span class="me-3">
+                <i class="bi bi-calendar3"></i>
+                <time datetime="2024-10-12T03:50:33+02:00">
+                  12 October 2024
+                </time>
+              </span>
+              
+              <span class="me-3">
+                <i class="bi bi-folder2"></i>
+                
+                <span class="badge bg-secondary">ai gemini</span>
+                
+              </span>
+              
+              
+              <span>
+                <i class="bi bi-tags"></i>
+                
+              </span>
+              
+            </div>
+          </header>
+
+          <div class="content">
+            <p><strong>Gemini vs Bard: 5 key differences for developers and power users + 10 practical tips for writing effective prompts</strong></p>
+
+<p>February 8, 2024: Bard was renamed to Gemini – Google also launched a mobile app and Gemini Advanced service based on the Ultra 1.0 model.
+In this article, I compare both language models and show why Gemini is becoming real support for developers and advanced users.</p>
+
+<ol>
+  <li>
+    <p><strong>More powerful model</strong> Gemini was built on the LaMDA architecture, which offers significant performance improvements compared to LaMDA 1, which Bard was based on. This means Gemini can generate more precise and coherent responses, and better handle tasks requiring extensive knowledge and context understanding.</p>
+  </li>
+  <li>
+    <p><strong>Faster performance</strong> Gemini operates significantly faster than Bard, meaning you can get answers to your questions and tasks in less time. This is especially important for developers and power users who need fast and efficient tools for generating text and code.</p>
+  </li>
+  <li>
+    <p><strong>More capabilities</strong> Gemini offers a broader range of capabilities than Bard, including:</p>
+  </li>
+</ol>
+
+<ul>
+  <li>Generating various text formats, such as scripts, musical compositions, emails, lists, etc.</li>
+  <li>Language translation</li>
+  <li>Text summarization</li>
+  <li>Answering questions comprehensively and thoroughly</li>
+  <li>Writing code in various programming languages</li>
+</ul>
+
+<ol>
+  <li>
+    <p><strong>Better code understanding:</strong> Gemini has better code understanding than Bard, making it a more useful tool for developers. It can generate code based on keyword descriptions, detect errors, and suggest fixes.</p>
+  </li>
+  <li>
+    <p><strong>Easier integration</strong> Gemini was designed with easy integration with other tools and platforms in mind. You can use it in your scripts, programs, and websites to automate tasks and generate text and code.</p>
+  </li>
+</ol>
+
+<p><strong>In summary</strong> Gemini is a powerful and versatile language model that opens new possibilities for developers and demanding users.</p>
+
+<p><strong>Note:</strong> Gemini is still in development, but it already offers many features that can be useful and open new possibilities. We encourage you to try it out and share your opinions!</p>
+
+<p><strong>10 tips for writing good prompts</strong></p>
+
+<ol>
+  <li><strong>Put the prompt in context</strong></li>
+</ol>
+
+<ul>
+  <li>
+    <p>Define the role: Specify who the recipient of Gemini’s response is. Define the recipient’s role, knowledge level, and prompt purpose. This could be an engineer, layperson, artist, programmer, etc. It should look roughly like this:
+“You are an experienced software engineer with 10 years of experience in Python and JavaScript. Your task is to help solve coding-related problems.”</p>
+  </li>
+  <li>
+    <p>Establish knowledge level: Specify what level of knowledge the recipient has. This will help Gemini adjust the language and level of detail in the response. It can use well-known step-by-step approaches for beginners, or more advanced language for experts.</p>
+  </li>
+  <li>
+    <p>Define the goal: Explain what the prompt’s purpose is. Do you want to get information, create something new, or just satisfy curiosity? This will allow the model to better understand what you expect and prepare a response that meets your expectations.</p>
+  </li>
+</ul>
+
+<ol>
+  <li><strong>Define the task</strong> precisely</li>
+</ol>
+
+<ul>
+  <li>
+    <p>Formulate it precisely: The more precisely you define the task, the better results you’ll get. Instead of “Write a poem,” try “Write a love poem in romantic style, 12 verses long, with abab rhyme scheme.” Use specific verbs and avoid ambiguous formulations.</p>
+  </li>
+  <li>
+    <p>Use appropriate verbs: Choose verbs that clearly specify what you want Gemini to do. Instead of “Write about cats,” try “Create a cat description,” “Write a story about a cat,” “Generate a list of interesting cat facts.”</p>
+  </li>
+</ul>
+
+<ol>
+  <li><strong>Specify conditions</strong></li>
+</ol>
+
+<ul>
+  <li>
+    <p>Response language: Choose the language in which the response should be generated.</p>
+  </li>
+  <li>
+    <p>Character count: Specify the maximum response length.</p>
+  </li>
+  <li>
+    <p>Format: Establish the response format, e.g., text, code, poem, email, etc.</p>
+  </li>
+  <li>
+    <p>Style: Specify the response style, e.g., formal, informational, creative, humorous, etc.</p>
+  </li>
+</ul>
+
+<ol>
+  <li><strong>Create agents</strong></li>
+</ol>
+
+<ul>
+  <li>
+    <p>Questioning agent: Create an agent that asks questions to provoke Gemini to respond.</p>
+  </li>
+  <li>
+    <p>Responding agent: Create an agent that answers questions asked by the user or questioning agent.</p>
+  </li>
+  <li>
+    <p>Prompting as dialogue: Use dialogue between two agents to get a more engaging and instructive response. For example, you can write a prompt like this: create two agents where the first is a salesperson and advisor in cosmetics who wants to sell. The second is a customer with doubts and concerns. Then ask Gemini to generate dialogue between them, where the salesperson convinces the customer to buy the product, answering their questions and addressing concerns. You’ll see a lot of creativity.</p>
+  </li>
+</ul>
+
+<ol>
+  <li><strong>Use comparison techniques:</strong></li>
+</ol>
+
+<ul>
+  <li>
+    <p>Compare two or more prompts to see how they affect the generated response.</p>
+  </li>
+  <li>
+    <p>Apply different styles, formats, and languages to get different results. Most models were trained on English data, so it’s worth experimenting with different languages.</p>
+  </li>
+</ul>
+
+<ol>
+  <li><strong>Apply Big Data strategies</strong></li>
+</ol>
+
+<ul>
+  <li>
+    <p>Break the prompt into smaller parts and process them in parallel. You can also divide more complex tasks into stages and generate responses step by step for more complex tasks.</p>
+  </li>
+  <li>
+    <p>Use machine learning techniques to optimize prompts.</p>
+  </li>
+</ul>
+
+<ol>
+  <li><strong>Experiment</strong></li>
+</ol>
+
+<ul>
+  <li>Don’t be afraid to try different combinations of parameters and styles.</li>
+  <li>The more you experiment, the more precise AI responses will be.</li>
+  <li>Sometimes when you don’t fully know what to expect from a response or whether the asked question is complete, you can ask at the end “Do you need more information to answer this question?” or “Would you like me to provide more details on this topic?” This will allow the model to better understand your needs and adapt the response to your expectations.</li>
+</ul>
+
+<p>My favorite question is: “Is there anything that would allow you to better answer this question?” This allows the model to better understand your needs and adapt the response to your expectations.</p>
+
+<ol>
+  <li><strong>Set priorities</strong></li>
+</ol>
+
+<ul>
+  <li>
+    <p>Determine what’s most important: Decide which aspects of the prompt are crucial for getting the desired response, and focus on them.</p>
+  </li>
+  <li>
+    <p>Identify limitations: Consider what limitations might affect responses, such as available data or context.</p>
+  </li>
+</ul>
+
+<ol>
+  <li><strong>Use feedback</strong></li>
+</ol>
+
+<ul>
+  <li>
+    <p>Collect opinions: If possible, get feedback from other users about prompt effectiveness.</p>
+  </li>
+  <li>
+    <p>Adapt based on opinions: Use collected information to improve future prompts.</p>
+  </li>
+</ul>
+
+<ol>
+  <li><strong>Be patient and persistent</strong></li>
+</ol>
+
+<ul>
+  <li>
+    <p>Don’t expect perfection right away: The process of writing effective prompts may require time and practice.</p>
+  </li>
+  <li>
+    <p>Learn from mistakes: Every interaction is a learning opportunity, so be open to corrections and changes.</p>
+  </li>
+</ul>
+
+<p>These ten tips should help in writing effective prompts that generate valuable responses. If you have additional questions or need more information, let me know! After longer experimentation and many chats, models quite thoroughly “learn” our preferences and style. So it’s worth spending some time perfecting prompts.</p>
+
+<p>OpenAI, like Gemini, enables creating “personalized” models based on your own data. This is worth considering if you frequently use AI for specific tasks.</p>
+
+<p><strong>Create a Prompt Library</strong> This is one of the best practices. Save prompts that work best, along with context and results. This will help you quickly find effective prompts in the future and make experimenting with new ones easier. You automate many repetitions in prompt writing and can easily see which prompts work best in different situations.</p>
+
+<p>Gemini is a powerful language model that offers a wide range of possibilities for developers and power users. Its speed, efficiency, better code understanding, and ease of integration make it an ideal tool for automating tasks and generating text and code. Remember that the key to success is the ability to write effective prompts. Use the above tips, experiment, and reap the benefits of Gemini’s potential.</p>
+
+<p><strong>Remember:</strong> Gemini is still in development, but it already offers many features that can be useful. We encourage you to try it out and share your opinions!</p>
+
+<h2 id="-related-logbook-entries">📚 Related logbook entries</h2>
+
+<ul>
+  <li>📋 <a href="/logbook/2024/10/12/gemini-prompts-ai-session.html">Gemini + Art of Prompts – AI workflow session</a> - 3h experiments with Gemini Advanced, GPT-4 comparison and prompt library creation</li>
+</ul>
+
+<p><strong>Context:</strong> This article compares Gemini and Bard language models, highlighting Gemini’s benefits for developers and power users. It also contains 10 tips for writing effective prompts.</p>
+
+          </div>
+
+          <footer class="mt-4 pt-3 border-top">
+            <div class="row">
+              <div class="col-md-6">
+                
+                <a href="/coding%20corner/2024/10/12/wyzwanie-start-pl.html" class="btn btn-outline-primary">
+                  <i class="bi bi-arrow-left"></i> Poprzedni wpis: Wyzwanie: Start
+                </a>
+                
+              </div>
+              <div class="col-md-6 text-end">
+                
+                <a href="/ai%20gemini/2024/10/12/gemini-jakpisac-prompty-pl.html" class="btn btn-outline-primary">
+                  Następny wpis: Post #5 Gemini oraz jak pis... <i class="bi bi-arrow-right"></i>
+                </a>
+                
+              </div>
+            </div>
+          </footer>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+  <footer class="bg-light text-light py-4 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h5><i class="bi bi-code-slash"></i> Scripterix</h5>
+        <p class="text-muted">Scripterix – osobisty projekt edukacyjno-programistyczny Piotra Adamkowskiego. Nauka programowania od podstaw do poziomu full-stack developera w ramach wyzwania 10 000 godzin. Na stronie znajdziesz praktyczne przykłady kodu, logbook codziennej nauki, projekty front- i backendowe oraz notatki z podróży po świecie Jekylla, GitHub Pages, JavaScriptu i sztucznej inteligencji.</p>
+      </div>
+      <div class="col-md-6 d-flex justify-content-md-end">
+        
+        
+        <div class="footer-links text-md-end text-dark">
+          <h6>Quick Links</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a href="/en/" class="text-decoration-none">
+                <i class="bi bi-house"></i> Home
+              </a></li>
+            <li><a href="/en/about/" class="text-decoration-none">
+                <i class="bi bi-person"></i> About
+              </a></li>
+            <li><a href="/en/archive/" class="text-decoration-none">
+                <i class="bi bi-archive"></i> Archive
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="my-3">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <small class="text-muted">
+          © 2025 Scripterix.
+          Powered by Jekyll & Bootstrap.
+        </small>
+      </div>
+      <div class="col-md-6 text-end">
+        <small class="text-muted">
+          Built with <i class="bi bi-heart-fill text-danger"></i> using Jekyll
+        </small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/format-number.js" defer></script>
+  <script src="/assets/js/hero-stats.js" defer></script>
+</body>
+
+</html>
