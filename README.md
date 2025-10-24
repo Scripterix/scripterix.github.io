@@ -25,6 +25,15 @@ bundle exec jekyll serve
 
 > Uwaga: środowisko GitHub Pages automatycznie obsługuje tylko whitelistingowane wtyczki, dlatego używamy wyłącznie `jekyll-paginate`.
 
+## Deployment na GitHub Pages
+
+To repozytorium zawiera **pre-built statyczne pliki HTML** (wygenerowane przez Jekyll lokalnie). GitHub Pages serwuje te pliki bezpośrednio dzięki obecności pliku `.nojekyll` w głównym katalogu, który wyłącza automatyczne przetwarzanie przez Jekyll na serwerze GitHub Pages.
+
+**Ważne:** Po każdej aktualizacji contentu należy:
+1. Lokalnie zbudować stronę: `bundle exec jekyll build`
+2. Commitować wygenerowane pliki HTML
+3. Pushować zmiany do repozytorium
+
 ## Planowane ulepszenia
 
 - Dodać angielskie odpowiedniki dla wpisów logbooka i `works`, aby przełącznik języka działał pełniej.
