@@ -12,7 +12,7 @@
   
   <title>Integracja AI — 2024 - Scripterix</title>
   
-  <meta name="description" content="Prototyp pokazujący, jak asystenci AI mogą automatycznie kategoryzować zgłoszenia w istniejącym zestawie produktów i przekierowywać je do właściwych zespołów.">
+  <meta name="description" content="Integracja AI to wewnętrzny eksperyment sprawdzający, jak modele generatywne mogą odciążyć pierwszy poziom wsparcia. W projekcie zaprojektowałem przepływ roz...">
 
   <!-- Bootstrap CSS + Icons CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -174,14 +174,14 @@
         <span class="badge bg-primary-subtle text-primary fw-semibold px-3 py-2 mb-3 text-uppercase">Projekt portfolio</span>
         <h1 class="display-5 fw-bold mb-3">Integracja AI — 2024</h1>
         
-        <p class="lead text-muted mb-4">Proof-of-concept integracji z modelem generatywnym do obsługi zgłoszeń supportu.</p>
+        <p class="lead text-muted mb-4">Prototyp asystenta AI kategoryzującego zgłoszenia wsparcia i przekazującego je do właściwych zespołów.</p>
         
         <dl class="row small text-muted gy-2">
           <div class="col-sm-4">
             <dt class="text-uppercase text-secondary fw-semibold">Status</dt>
           </div>
           <div class="col-sm-8">
-            <dd class="mb-0">in-progress</dd>
+            <dd class="mb-0">W toku</dd>
           </div>
           <div class="col-sm-4">
             <dt class="text-uppercase text-secondary fw-semibold">Rok</dt>
@@ -200,16 +200,22 @@
               
               <span class="badge bg-light text-secondary border me-1 mb-1">AI</span>
               
+              <span class="badge bg-light text-secondary border me-1 mb-1">Automation</span>
+              
               
             </dd>
           </div>
         </dl>
         <div class="d-flex flex-wrap gap-3 mt-4">
           <a class="btn btn-primary"
-            href="/pl/works/">
+            href="/portfolio/">
             <i class="bi bi-arrow-left me-2"></i>Wróć do portfolio
           </a>
           
+          
+          <a class="btn btn-outline-secondary" href="https://github.com/scripterix/" target="_blank" rel="noopener">
+            <i class="bi bi-github me-2"></i>Repozytorium na GitHubie
+          </a>
           
         </div>
       </div>
@@ -224,6 +230,33 @@
   </div>
 </section>
 
+
+
+
+<section class="py-4">
+  <div class="container">
+    <div class="sibling-nav d-flex align-items-center justify-content-between gap-3 flex-nowrap">
+      <div class="sibling-nav-prev">
+        
+        <a class="btn btn-outline-primary sibling-nav-btn" href="/works/2024-ai-integration-en.html">
+          <span class="d-none d-lg-inline">
+            <i class="bi bi-arrow-left me-2"></i>Previous: AI Integration — 2024
+          </span>
+          <span class="d-lg-none d-inline-flex align-items-center gap-2 fw-semibold text-uppercase small">
+            <i class="bi bi-arrow-left"></i>
+            <span>Previous</span>
+          </span>
+        </a>
+        
+      </div>
+      <div class="sibling-nav-next ms-auto text-end">
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <section class="py-5 bg-light-subtle">
   <div class="container">
     <div class="row g-4">
@@ -232,7 +265,9 @@
           <div class="card-body p-4 p-lg-5">
             <h2 class="h4 fw-semibold mb-4">Opis projektu</h2>
             <div class="content">
-              <p>Prototyp pokazujący, jak asystenci AI mogą automatycznie kategoryzować zgłoszenia w istniejącym zestawie produktów i przekierowywać je do właściwych zespołów.</p>
+              <p>Integracja AI to wewnętrzny eksperyment sprawdzający, jak modele generatywne mogą odciążyć pierwszy poziom wsparcia. W projekcie zaprojektowałem przepływ rozmowy, krótkie prompt-playbooki oraz panel do podglądu decyzji bota. Dzięki temu zespół widzi, dlaczego zgłoszenie trafiło do konkretnego strumienia i może szybko poprawić reguły, jeśli coś pójdzie nie tak.</p>
+
+<p>Drugi etap skupia się na automatycznym podsumowaniu kontekstu zgłoszenia i dopinaniu Załączników. Pozwala to eskalować tylko kompletne sprawy, a resztę zostawiać w kolejce samoobsługowej.</p>
 
             </div>
           </div>
@@ -251,25 +286,27 @@
     </div>
   </div>
 </section>
+
   </main>
 
   <footer class="bg-light text-light py-4 mt-5">
   <div class="container">
-    <div class="row">
+    
+    
+    <div class="row gy-4">
       <div class="col-md-6">
-        <h5><i class="bi bi-code-slash"></i> Scripterix</h5>
-        <p class="text-muted">Scripterix – osobisty projekt edukacyjno-programistyczny Piotra Adamkowskiego. Nauka programowania od podstaw do poziomu full-stack developera w ramach wyzwania 10 000 godzin. Na stronie znajdziesz praktyczne przykłady kodu, logbook codziennej nauki, projekty front- i backendowe oraz notatki z podróży po świecie Jekylla, GitHub Pages, JavaScriptu i sztucznej inteligencji.</p>
+        <h5 class="fw-semibold"><i class="bi bi-code-slash"></i> Scripterix</h5>
+        
+        <p class="text-muted mb-0">Scripterix – osobisty projekt edukacyjny dokumentujący wyzwanie 10 000 godzin.</p>
       </div>
-      <div class="col-md-6 d-flex justify-content-md-end">
-        
-        
-        <div class="footer-links text-md-end text-dark">
-          <h6>Szybkie linki</h6>
+      <div class="col-md-3">
+        <div class="footer-links text-dark">
+          <h6 class="text-uppercase small fw-semibold mb-3">Szybkie linki</h6>
           <ul class="list-unstyled mb-0">
-            <li><a href="/" class="text-decoration-none">
+            <li class="mb-2"><a href="/" class="text-decoration-none">
                 <i class="bi bi-house"></i> Start
               </a></li>
-            <li><a href="/about/" class="text-decoration-none">
+            <li class="mb-2"><a href="/about/" class="text-decoration-none">
                 <i class="bi bi-person"></i> O nas
               </a></li>
             <li><a href="/archive/" class="text-decoration-none">
@@ -278,16 +315,26 @@
           </ul>
         </div>
       </div>
+      <div class="col-md-3">
+        <div class="footer-links text-dark">
+          <h6 class="text-uppercase small fw-semibold mb-3">Dokumentacja</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a href="/docs/changelog/" class="text-decoration-none">
+                <i class="bi bi-clock-history"></i> Changelog
+              </a></li>
+          </ul>
+        </div>
+      </div>
     </div>
     <hr class="my-3">
-    <div class="row align-items-center">
+    <div class="row align-items-center gy-2">
       <div class="col-md-6">
         <small class="text-muted">
           © 2025 Scripterix.
           Napędzane przez Jekyll i Bootstrap.
         </small>
       </div>
-      <div class="col-md-6 text-end">
+      <div class="col-md-6 text-md-end">
         <small class="text-muted">
           Zbudowano z <i class="bi bi-heart-fill text-danger"></i> przy użyciu Jekylla
         </small>
@@ -295,6 +342,7 @@
     </div>
   </div>
 </footer>
+
 
   <!-- Bootstrap JS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

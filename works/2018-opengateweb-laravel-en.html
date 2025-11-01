@@ -10,9 +10,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   
-  <title>OpenGateWeb platform — Laravel build - Scripterix</title>
+  <title>OpenGateWeb — Laravel Rebuild - Scripterix</title>
   
-  <meta name="description" content="A retrospective case study of the 2018 Laravel-based relaunch for OpenGateWeb.">
+  <meta name="description" content="This project started as a whiteboard exercise to map reusable sections for OpenGateWeb’s sales site. I translated those sketches into Blade components backed...">
 
   <!-- Bootstrap CSS + Icons CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -172,22 +172,22 @@
     <div class="row g-4 align-items-center">
       <div class="col-lg-6">
         <span class="badge bg-primary-subtle text-primary fw-semibold px-3 py-2 mb-3 text-uppercase">Portfolio project</span>
-        <h1 class="display-5 fw-bold mb-3">OpenGateWeb platform — Laravel build</h1>
+        <h1 class="display-5 fw-bold mb-3">OpenGateWeb — Laravel Rebuild</h1>
         
-        <p class="lead text-muted mb-4">Concept build of the OpenGateWeb marketing site delivered with Laravel and Tailwind UI.</p>
+        <p class="lead text-muted mb-4">Marketing site refresh with modular case-study blocks and a lightweight content panel.</p>
         
         <dl class="row small text-muted gy-2">
           <div class="col-sm-4">
             <dt class="text-uppercase text-secondary fw-semibold">Status</dt>
           </div>
           <div class="col-sm-8">
-            <dd class="mb-0">archived</dd>
+            <dd class="mb-0">Archived</dd>
           </div>
           <div class="col-sm-4">
             <dt class="text-uppercase text-secondary fw-semibold">Year</dt>
           </div>
           <div class="col-sm-8">
-            <dd class="mb-0">2018</dd>
+            <dd class="mb-0">2024</dd>
           </div>
           <div class="col-sm-4">
             <dt class="text-uppercase text-secondary fw-semibold">Tech stack</dt>
@@ -208,7 +208,7 @@
         </dl>
         <div class="d-flex flex-wrap gap-3 mt-4">
           <a class="btn btn-primary"
-            href="/works/">
+            href="/en/portfolio/">
             <i class="bi bi-arrow-left me-2"></i>Back to portfolio
           </a>
           
@@ -218,13 +218,50 @@
       <div class="col-lg-6">
         
         <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm">
-          <img class="w-100 h-100 object-fit-cover" src="/assets/images/portfolio/coding01.jpg" alt="OpenGateWeb platform — Laravel build hero">
+          <img class="w-100 h-100 object-fit-cover" src="/assets/images/portfolio/coding01.jpg" alt="OpenGateWeb — Laravel Rebuild hero">
         </div>
         
       </div>
     </div>
   </div>
 </section>
+
+
+
+
+<section class="py-4">
+  <div class="container">
+    <div class="sibling-nav d-flex align-items-center justify-content-between gap-3 flex-nowrap">
+      <div class="sibling-nav-prev">
+        
+        <a class="btn btn-outline-primary sibling-nav-btn" href="/works/2012-wordpress-pl.html">
+          <span class="d-none d-lg-inline">
+            <i class="bi bi-arrow-left me-2"></i>Previous: Serwis WordPress — 2012
+          </span>
+          <span class="d-lg-none d-inline-flex align-items-center gap-2 fw-semibold text-uppercase small">
+            <i class="bi bi-arrow-left"></i>
+            <span>Previous</span>
+          </span>
+        </a>
+        
+      </div>
+      <div class="sibling-nav-next ms-auto text-end">
+        
+        <a class="btn btn-outline-primary sibling-nav-btn" href="/works/2018-opengateweb-laravel-pl.html">
+          <span class="d-none d-lg-inline">
+            Next: OpenGateWeb — przebudowa na Laravelu <i class="bi bi-arrow-right ms-2"></i>
+          </span>
+          <span class="d-lg-none d-inline-flex align-items-center gap-2 fw-semibold text-uppercase small">
+            <span>Next</span>
+            <i class="bi bi-arrow-right"></i>
+          </span>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="py-5 bg-light-subtle">
   <div class="container">
@@ -234,9 +271,9 @@
           <div class="card-body p-4 p-lg-5">
             <h2 class="h4 fw-semibold mb-4">Project details</h2>
             <div class="content">
-              <p>A retrospective case study of the 2018 Laravel-based relaunch for OpenGateWeb.</p>
+              <p>This project started as a whiteboard exercise to map reusable sections for OpenGateWeb’s sales site. I translated those sketches into Blade components backed by a tiny CMS so the marketing team could show or hide blocks without code changes.</p>
 
-<p>This fake portfolio entry captures the structure of the real engagements from that period: multi-language routing, SSR templates, and a modular component library compiled with Laravel Mix. It also references the automation checklists and style guide maintained in parallel Google Sheets.</p>
+<p>Because the site runs on a shared host, I trimmed assets aggressively, introduced HTTP caching headers, and made sure Time to First Byte stayed below one second even when the longer case-study modules were active.</p>
 
             </div>
           </div>
@@ -255,25 +292,27 @@
     </div>
   </div>
 </section>
+
   </main>
 
   <footer class="bg-light text-light py-4 mt-5">
   <div class="container">
-    <div class="row">
+    
+    
+    <div class="row gy-4">
       <div class="col-md-6">
-        <h5><i class="bi bi-code-slash"></i> Scripterix</h5>
-        <p class="text-muted">Scripterix – osobisty projekt edukacyjno-programistyczny Piotra Adamkowskiego. Nauka programowania od podstaw do poziomu full-stack developera w ramach wyzwania 10 000 godzin. Na stronie znajdziesz praktyczne przykłady kodu, logbook codziennej nauki, projekty front- i backendowe oraz notatki z podróży po świecie Jekylla, GitHub Pages, JavaScriptu i sztucznej inteligencji.</p>
+        <h5 class="fw-semibold"><i class="bi bi-code-slash"></i> Scripterix</h5>
+        
+        <p class="text-muted mb-0">Scripterix documents a 10,000-hour journey to full-stack mastery.</p>
       </div>
-      <div class="col-md-6 d-flex justify-content-md-end">
-        
-        
-        <div class="footer-links text-md-end text-dark">
-          <h6>Quick Links</h6>
+      <div class="col-md-3">
+        <div class="footer-links text-dark">
+          <h6 class="text-uppercase small fw-semibold mb-3">Quick Links</h6>
           <ul class="list-unstyled mb-0">
-            <li><a href="/en/" class="text-decoration-none">
+            <li class="mb-2"><a href="/en/" class="text-decoration-none">
                 <i class="bi bi-house"></i> Home
               </a></li>
-            <li><a href="/en/about/" class="text-decoration-none">
+            <li class="mb-2"><a href="/en/about/" class="text-decoration-none">
                 <i class="bi bi-person"></i> About
               </a></li>
             <li><a href="/en/archive/" class="text-decoration-none">
@@ -282,16 +321,26 @@
           </ul>
         </div>
       </div>
+      <div class="col-md-3">
+        <div class="footer-links text-dark">
+          <h6 class="text-uppercase small fw-semibold mb-3">Documentation</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a href="/docs/changelog/" class="text-decoration-none">
+                <i class="bi bi-clock-history"></i> Changelog
+              </a></li>
+          </ul>
+        </div>
+      </div>
     </div>
     <hr class="my-3">
-    <div class="row align-items-center">
+    <div class="row align-items-center gy-2">
       <div class="col-md-6">
         <small class="text-muted">
           © 2025 Scripterix.
           Powered by Jekyll & Bootstrap.
         </small>
       </div>
-      <div class="col-md-6 text-end">
+      <div class="col-md-6 text-md-end">
         <small class="text-muted">
           Built with <i class="bi bi-heart-fill text-danger"></i> using Jekyll
         </small>
@@ -299,6 +348,7 @@
     </div>
   </div>
 </footer>
+
 
   <!-- Bootstrap JS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

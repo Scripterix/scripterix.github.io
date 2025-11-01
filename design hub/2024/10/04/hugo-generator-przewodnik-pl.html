@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="pl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <title>Post #6 Hugo generator kompletny przewodnik 2025 - Scripterix</title>
+  
+  <meta name="description" content="Hugo generator to jeden z najszybszych i najwydajniejszych generatorów">
+
+  <!-- Bootstrap CSS + Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="/">
+      <i class="bi bi-code-slash"></i>
+      Scripterix
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/" title="Powrót na stronę główną" aria-label="Powrót na stronę główną">
+            <i class="bi bi-house"></i> Start
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/about/" title="Poznaj autora i misję projektu" aria-label="Poznaj autora i misję projektu">
+            <i class="bi bi-person"></i> O nas
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/archive/" title="Przegląd wszystkich wpisów i logów" aria-label="Przegląd wszystkich wpisów i logów">
+            <i class="bi bi-archive"></i> Archiwum
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/portfolio/" title="Case studies i projekty Scripterix" aria-label="Case studies i projekty Scripterix">
+            <i class="bi bi-kanban"></i> Portfolio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/challenge10k/" title="Logbook i statystyki wyzwania 10 000 godzin" aria-label="Logbook i statystyki wyzwania 10 000 godzin">
+            <i class="bi bi-lightning-charge"></i> Wyzwanie 10k
+          </a>
+        </li>
+      </ul>
+      
+
+
+
+
+<div class="dropdown ms-lg-3 mt-3 mt-lg-0">
+  <button
+    class="btn btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2"
+    type="button"
+    id="languageDropdown"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    aria-label="Język">
+    <i class="bi bi-translate" aria-hidden="true"></i>
+    <span class="fw-semibold">POLSKI</span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+    
+    
+    
+    
+    <li>
+      <span class="dropdown-item active d-flex align-items-center gap-2" aria-current="true">
+        <i class="bi bi-check2" aria-hidden="true"></i>
+        <span>POLSKI</span>
+      </span>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+      
+      
+      
+    
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center gap-2" href="/design%20hub/2024/10/04/hugo-generator-przewodnik-en.html" hreflang="en">
+        <span class="text-uppercase small text-muted">en</span>
+        <span>ENGLISH</span>
+      </a>
+    </li>
+    
+    
+    
+  </ul>
+</div>
+
+
+    </div>
+  </div>
+</nav>
+
+
+  <main class="flex-shrink-0">
+    
+
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <article class="card shadow-sm">
+        <div class="card-body">
+          <header class="mb-4">
+            <h1 class="display-4 fw-semibold text-secondary py-4">Post #6 Hugo generator kompletny przewodnik 2025</h1>
+            <div class="d-flex flex-wrap align-items-center text-muted small mb-3">
+              <span class="me-3">
+                <i class="bi bi-calendar3"></i>
+                <time datetime="2024-10-04T02:28:34+02:00">
+                  04 October 2024
+                </time>
+              </span>
+              
+              <span class="me-3">
+                <i class="bi bi-folder2"></i>
+                
+                <span class="badge bg-secondary">Design Hub</span>
+                
+              </span>
+              
+              
+              <span>
+                <i class="bi bi-tags"></i>
+                
+                <span class="badge bg-outline-primary">hugo</span>
+                
+                <span class="badge bg-outline-primary">hugo-generator</span>
+                
+              </span>
+              
+            </div>
+          </header>
+
+          <div class="content">
+            <h1 id="hugo-generator-to-jeden-z-najszybszych-i-najwydajniejszych-generatorów">Hugo generator to jeden z najszybszych i najwydajniejszych generatorów</h1>
+
+<p>Generuje strony statycznye. Po miesiącach pracy z tym narzędziem i przejściu przez pełną migrację WordPress → Hugo → WordPress, mogę podzielić się praktycznymi doświadczeniami, które pomogą Ci zrozumieć, czy Hugo to odpowiedni wybór dla Twojego projektu.</p>
+
+<h2 id="co-to-jest-hugo-generator-i-dlaczego-warto-go-znać">Co to jest Hugo Generator i dlaczego warto go znać?</h2>
+
+<p><strong>Hugo to fast and flexible static site generator</strong> napisany w języku Go, który potrafi wyrenderować kompletną stronę internetową w sekundach - często poniżej 1 sekundy. W przeciwieństwie do tradycyjnych systemów CMS jak WordPress, Hugo generuje statyczne pliki HTML, które można hostować praktycznie wszędzie.</p>
+
+<h3 id="kluczowe-zalety-hugo-generator">Kluczowe zalety Hugo Generator:</h3>
+
+<ul>
+  <li>
+    <p><strong>Błyskawiczna szybkość</strong>: Hugo renderuje ponad 10,000 stron w mniej niż 1 sekundę</p>
+  </li>
+  <li>
+    <p><strong>Zero baz danych</strong>: Wszystko oparte na plikach Markdown</p>
+  </li>
+  <li>
+    <p><strong>Wbudowany web server</strong>: Instant preview podczas developmentu</p>
+  </li>
+  <li>
+    <p><strong>Zaawansowane przetwarzanie obrazów</strong>: Automatyczne tworzenie responsive images</p>
+  </li>
+  <li>
+    <p><strong>Wsparcie dla Sass/SCSS</strong>: Wbudowany transpiler</p>
+  </li>
+  <li>
+    <p><strong>Multilingual support</strong>: Natywne wsparcie dla wielu języków</p>
+  </li>
+</ul>
+
+<p><strong>Hugo Theme PaperMod</strong>
+Strona OpenGateWeb była oparta o generator Hugo i język GO. Jednak po aktualizacji w grudniu 2024 Blog się rozjechał - niezgodności szablonów wersji Hugo i kilka innych <strong><em>fatal error</em>s</strong> zmusiło mnie do powrotu do WP.</p>
+
+<p>Theme PaperMode dla Hugo Generator to godny polecenia motyw do Hugo ze względu na swoją prostotę, posiadanie niezbędnych funkcji oraz szybkość działania. Dzięki temu motywowi, użytkownicy mogą łatwo dostosować wygląd swojej strony internetowej oraz korzystać z podstawowych, ale istotnych funkcji. Dodatkowo, szybkość działania theme PaperMode sprawia, że strony oparte na nim ładowane są błyskawicznie, co zwiększa komfort użytkowników.</p>
+
+<p><strong>Dodawanie metryki z godzinami</strong></p>
+
+<p>Dodałem tabelę na stronie Wyzwanie 10k i będzie na początku wystarczająca aby dodawać LogBook z przepracowanymi godzinami w Challange.</p>
+
+<p>Tabela będzie zawierała link do Post z numerem np #6. Nie zawsze będę tworzył post gdyż całe 2h przeznaczę na zadanie. Może być kilka zadań opisanych w jednym pośćie.</p>
+
+<p><strong>Wysyłanie cv w odpowiedzi na JobOffer</strong>s</p>
+
+<p>Dodatkowo pomyślałem że mogę wysyłać odpowiedz na <strong>Juniorskie</strong> oferty pracy <strong>Front-End</strong> oraz inne pokrewne ale związane z IT vacanty. Przy okazji robię rozeznanie co się dzieje na rynku IT. Znów jest dużo ofert Junior.</p>
+
+<p><strong>Dodawanie obrazów do Theme i kwestie renderowania</strong>.</p>
+
+<p>Jest więcej wiedzy na temat dodawania do Hugo obrazów. Można statycznie przez szablony oraz można użyć techniki bundle. Temat do rozwinięcia poniżej kilka przydatnych zasobów.</p>
+
+<h3 id="paper-mod---cover-img-how-to-">**Paper Mod - Cover IMG How To **</h3>
+
+<p><a href="https://github.com/adityatelange/hugo-PaperMod/wiki/Features#post-cover-image">https://github.com/adityatelange/hugo-PaperMod/wiki/Features#post-cover-image</a></p>
+
+<p>Post Cover Image</p>
+
+<p>In post’s page-variables add :</p>
+
+<p>cover:</p>
+
+<p>image: “&lt;image path/url&gt;”</p>
+
+<p># can also paste direct link from external site</p>
+
+<p># ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png</p>
+
+<p>alt: “<alt text="">"</alt></p>
+
+<p>caption: “<text>"</text></p>
+
+<p>relative: false # To use relative path for cover image, used in hugo Page-bundles</p>
+
+<p>When you include images in the Page Bundle, multiple sizes of the image will automatically be provided using the HTML5 srcset field.</p>
+
+<p>To reduce generation time and size of the site, you can disable this feature using</p>
+
+<p>params:</p>
+
+<p>cover:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>responsiveImages: false
+</code></pre></div></div>
+
+<p>To enable hyperlinks to the full image size on post pages, use</p>
+
+<p>params:</p>
+
+<p>cover:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>linkFullImages: true
+</code></pre></div></div>
+
+<p>Hugo Image proccessing(https://gohugo.io/content-management/image-processing/)</p>
+
+<p>Hugo Render hooks <a href="https://gohugo.io/render-hooks/">https://gohugo.io/render-hooks/</a></p>
+
+<p><strong>Zasoby PaperMod</strong></p>
+
+<p>PaperMod to wszechstronny szablon dla Hugo, który oferuje wiele zasobów i opcji konfiguracyjnych, umożliwiając dostosowanie wyglądu i funkcjonalności strony do własnych potrzeb. Oto niektóre z zasobów i opcji konfiguracyjnych dostępnych w PaperMod:</p>
+
+<ul>
+  <li>
+    <p><strong>Motywy kolorystyczne</strong>: Możliwość wyboru różnych motywów kolorystycznych, aby dopasować wygląd strony do preferencji użytkownika.</p>
+  </li>
+  <li>
+    <p><strong>Układ strony</strong> Konfigurowalne układy strony, takie jak układ z jedną kolumną, dwoma kolumnami, itp.</p>
+  </li>
+  <li>
+    <p><strong>Nagłówki i stopki</strong> Opcje dostosowywania nagłówków i stopek, w tym dodawanie własnych logo, linków do mediów społecznościowych i innych elementów.</p>
+  </li>
+  <li>
+    <p><strong>Menu nawigacyjne</strong> Możliwość tworzenia i dostosowywania menu nawigacyjnych, aby ułatwić użytkownikom poruszanie się po stronie.</p>
+  </li>
+  <li>
+    <p><strong>Widżety</strong> Dodawanie różnych widżetów, takich jak listy najnowszych postów, kategorie, tagi, itp.</p>
+  </li>
+  <li>
+    <p><strong>Obsługa obrazów</strong> Zaawansowane opcje przetwarzania obrazów, w tym responsywne obrazy, linki do pełnych rozmiarów obrazów, itp.</p>
+  </li>
+  <li>
+    <p><strong>Render hooks</strong> Możliwość dostosowywania sposobu renderowania różnych elementów strony za pomocą render hooks.</p>
+  </li>
+  <li>
+    <p><strong>SEO i analityka</strong> Wbudowane wsparcie dla SEO i integracji z narzędziami analitycznymi, takimi jak Google Analytics.</p>
+  </li>
+</ul>
+
+<p>Dzięki tym zasobom i opcjom konfiguracyjnym, PaperMod pozwala na praktycznie dowolne dostosowanie szablonu do indywidualnych potrzeb i preferencji użytkownika. Oto link do strony GitHub <strong>AdityLang Git Hugo PaperMode</strong> <a href="https://github.com/adityatelange/hugo-PaperMod/wiki/Features#profile-mode">https://github.com/adityatelange/hugo-PaperMod/wiki/Features#profile-mode </a>twórcy szablonu.</p>
+
+<p><strong>Dodawanie obrazów zostało zaimplementowane.</strong></p>
+
+<p>Robi się to przez:</p>
+
+<ul>
+  <li>
+    <p>dodaj obraz do static/img a następnie code.</p>
+  </li>
+  <li>
+    <p>w moim przypadku static/img</p>
+  </li>
+  <li>
+    <p>trzeba pamiętać o finalnej ścieźce do obrazka</p>
+  </li>
+</ul>
+
+<p>! wykrzyknik [Kodowanie] nawias klarmowy (/img/code.jpg) link do obrazka</p>
+
+<p>Więcej o tej modyfikacji a także jak dodałem title do a href jest w post #40 40 Jak dodać title w a href Hugo.</p>
+
+<p><strong>Dodatkowe flagi do CLI Hugo</strong></p>
+
+<p><strong>Hugo version</strong></p>
+
+<p>hugo version</p>
+
+<p><strong>Moja v Hugo</strong> go v0.123.0-DEV-1891d5e6b5575e3abb7e0f80c3fbce1670f9bd5e windows/amd64 BuildDate=2024-02-01T07:18:11Z</p>
+
+<p>** Usuwanie public**</p>
+
+<p>Przed budowaniem witryny w trybie produkcyjnym, upewnij się, że katalog public jest czysty. Możesz to zrobić, usuwając zawartość katalogu public przed każdym budowaniem:</p>
+
+<p>rm -rf public/*</p>
+
+<p><strong>Dodatkowe błędy w konsoli</strong></p>
+
+<p>Uruchom polecenie budowania z dodatkowymi opcjami debugowania, aby uzyskać więcej informacji na temat błędów:</p>
+
+<p>hugo –logLevel info –logLevel debug</p>
+
+<h2 id="moje-doświadczenie-z-hugo---case-study-migracji-opengateweb">Moje doświadczenie z Hugo - Case Study migracji OpenGateWeb</h2>
+
+<p><strong>Strona OpenGateWeb była pierwotnie oparta o Hugo generator i język GO.</strong> Jednak po aktualizacji w grudniu 2024, blog się dosłownie “rozjechał” - niezgodności szablonów między wersjami Hugo i kilka <strong>fatal errors</strong> zmusiło mnie do powrotu do WordPress.</p>
+
+<h3 id="co-poszło-nie-tak-podczas-aktualizacji-hugo">Co poszło nie tak podczas aktualizacji Hugo?</h3>
+
+<ul>
+  <li>
+    <p><strong>Breaking changes w API</strong>: Nowa wersja Hugo zmieniła sposób obsługi niektórych funkcji szablonów</p>
+  </li>
+  <li>
+    <p><strong>Problemy z render hooks</strong>: Customowe hook’i przestały działać</p>
+  </li>
+  <li>
+    <p><strong>Image processing errors</strong>: Błędy w przetwarzaniu obrazków po update</p>
+  </li>
+  <li>
+    <p><strong>Theme compatibility</strong>: PaperMod wymagał aktualizacji do nowej wersji Hugo</p>
+  </li>
+</ul>
+
+<h3 id="najczęstsze-błędy-hugo-i-jak-je-naprawić">Najczęstsze błędy Hugo i jak je naprawić</h3>
+
+<p>Jeśli napotkasz podobne problemy, oto co sprawdzić:</p>
+
+<p>bash</p>
+
+<h4 id="sprawdź-wersję-hugo">Sprawdź wersję Hugo</h4>
+<p>hugo version</p>
+
+<h4 id="uruchom-z-debugowaniem">Uruchom z debugowaniem</h4>
+<p>hugo –logLevel info –logLevel debug</p>
+
+<h4 id="wyczyść-cache-przed-buildem">Wyczyść cache przed buildem</h4>
+<p>rm -rf public/*</p>
+
+<p><strong>Moja wersja Hugo:</strong> go v0.123.0-DEV-1891d5e6b5575e3abb7e0f80c3fbce1670f9bd5e windows/amd64 BuildDate=2024-02-01T07:18:11Z</p>
+
+<h2 id="hugo-theme-papermod---analiza-i-konfiguracja">Hugo Theme PaperMod - Analiza i Konfiguracja</h2>
+
+<p><strong>Theme PaperMod dla Hugo Generator to godny polecenia motyw</strong> ze względu na swoją prostotę, posiadanie niezbędnych funkcji oraz błyskawiczną szybkość działania. Po miesiącach testowania mogę potwierdzić, że to jeden z najlepszych theme’ów dla Hugo.</p>
+
+<h3 id="dlaczego-papermod-dominuje-wśród-hugo-themes">Dlaczego PaperMod dominuje wśród Hugo themes?</h3>
+
+<ul>
+  <li>
+    <p><strong>Ponad 4,500 gwiazdek na GitHub</strong> - to pokazuje jego popularność</p>
+  </li>
+  <li>
+    <p><strong>Responsive design out-of-the-box</strong></p>
+  </li>
+  <li>
+    <p><strong>SEO-friendly structure</strong> z wbudowanym wsparciem dla meta tagów</p>
+  </li>
+  <li>
+    <p><strong>Dark/Light mode</strong> z automatycznym przełączaniem</p>
+  </li>
+  <li>
+    <p><strong>Szybkość ładowania</strong>: 0.3-0.6s vs 2.3s dla przeciętnej strony WordPress</p>
+  </li>
+</ul>
+
+<h3 id="konfiguracja-obrazów-w-papermod---post-cover-image">Konfiguracja obrazów w PaperMod - Post Cover Image</h3>
+
+<p>Jedną z najważniejszych funkcji PaperMod jest zaawansowana obsługa obrazów. Oto jak prawidłowo skonfigurować cover image:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yaml
+
+cover:
+  image: "&lt;image path/url&gt;"
+  # można wkleić bezpośredni link z zewnętrznej strony
+  # np. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
+  alt: "&lt;alt text&gt;"
+  caption: "&lt;text&gt;"
+  relative: false # Dla relative path w hugo Page-bundles
+</code></pre></div></div>
+
+<p><strong>Bonus - Automatyczne responsive images</strong>: Gdy używasz Page Bundle, Hugo automatycznie tworzy multiple sizes obrazka z HTML5 srcset field.</p>
+
+<h3 id="optymalizacja-obrazów-w-hugo---praktyczne-wskazówki">Optymalizacja obrazów w Hugo - Praktyczne wskazówki</h3>
+
+<p><strong>Dodawanie obrazów zostało zaimplementowane</strong> w moim projekcie na kilka sposobów:</p>
+
+<p><strong>Metoda 1: Static folder</strong></p>
+
+<p>markdown</p>
+
+<ul>
+  <li>
+    <p>Dodaj obraz do static/img</p>
+  </li>
+  <li>
+    <p>Użyj względnej ścieżki w markdown</p>
+  </li>
+  <li>
+    <p>Pamiętaj o finalnej ścieżce do obrazka</p>
+  </li>
+</ul>
+
+<p><strong>Metoda 2: Page Bundle (zalecana)</strong></p>
+
+<ul>
+  <li>
+    <p>Lepsze SEO dzięki automatycznemu srcset</p>
+  </li>
+  <li>
+    <p>Szybsze ładowanie</p>
+  </li>
+  <li>
+    <p>Lepsze cache’owanie</p>
+  </li>
+</ul>
+
+<h3 id="zaawansowane-funkcje-papermod">Zaawansowane funkcje PaperMod</h3>
+
+<p>PaperMod oferuje szereg zasobów konfiguracyjnych:</p>
+
+<ul>
+  <li>
+    <p><strong>Motywy kolorystyczne</strong>: Dostosowanie color scheme do brandu</p>
+  </li>
+  <li>
+    <p><strong>Konfigurowalne układy</strong>: Single column, multi-column layouts</p>
+  </li>
+  <li>
+    <p><strong>Customowe nagłówki i stopki</strong>: Logo, social media links</p>
+  </li>
+  <li>
+    <p><strong>Smart navigation menus</strong>: Automatyczne generowanie nawigacji</p>
+  </li>
+  <li>
+    <p><strong>SEO widgets</strong>: Latest posts, categories, tags</p>
+  </li>
+  <li>
+    <p><strong>Zaawansowana obsługa obrazów</strong>: Responsive images, full-size links</p>
+  </li>
+  <li>
+    <p><strong>Custom render hooks</strong>: Pełna kontrola nad renderowaniem</p>
+  </li>
+  <li>
+    <p><strong>Built-in analytics</strong>: Google Analytics, Search Console integration</p>
+  </li>
+</ul>
+
+<h2 id="hugo-vs-wordpress---porównanie-performance">Hugo vs WordPress - Porównanie Performance</h2>
+
+<p>Na podstawie mojego doświadczenia z migracją, oto rzeczywiste różnice:</p>
+
+<h2 id="hugo-generator---alternatywy-i-konkurencja">Hugo Generator - Alternatywy i konkurencja</h2>
+
+<p>Jeśli rozważasz inne static site generators:</p>
+
+<p><strong>Jekyll vs Hugo</strong>: Hugo jest około 100x szybszy od Jekyll w dużych projektach <strong>Eleventy vs Hugo</strong>: Hugo ma lepsze image processing <strong>Astro vs Hugo</strong>: Astro lepszy dla React devs, Hugo dla content-heavy sites <strong>Gatsby vs Hugo</strong>: Hugo prostszy w setup, Gatsby bardziej flexible dla SPAs</p>
+
+<h2 id="praktyczne-zastosowania-hugo-generator">Praktyczne zastosowania Hugo Generator</h2>
+
+<h3 id="1-corporate-i-business-websites">1. Corporate i Business websites</h3>
+
+<p>Hugo idealnie sprawdza się w projektach korporacyjnych dzięki:</p>
+
+<ul>
+  <li>
+    <p>Szybkości ładowania (SEO boost)</p>
+  </li>
+  <li>
+    <p>Bezpieczeństwu (brak baz danych do zhackowania)</p>
+  </li>
+  <li>
+    <p>Skalowalności (CDN-ready)</p>
+  </li>
+</ul>
+
+<h3 id="2-documentation-sites">2. Documentation sites</h3>
+
+<ul>
+  <li>
+    <p><a href="https://gohugo.io/">Hugo docs</a> same używają Hugo</p>
+  </li>
+  <li>
+    <p>Excellent search functionality</p>
+  </li>
+  <li>
+    <p>Multi-language support</p>
+  </li>
+  <li>
+    <p>Version control integration</p>
+  </li>
+</ul>
+
+<h3 id="3-developer-portfolios-i-personal-blogs">3. Developer portfolios i personal blogs</h3>
+
+<ul>
+  <li>
+    <p>GitHub Pages integration</p>
+  </li>
+  <li>
+    <p>Markdown-based workflow</p>
+  </li>
+  <li>
+    <p>Custom domains</p>
+  </li>
+  <li>
+    <p>Free hosting</p>
+  </li>
+</ul>
+
+<h3 id="4-e-commerce-landing-pages">4. E-commerce landing pages</h3>
+
+<ul>
+  <li>
+    <p>Blazing fast load times = better conversion</p>
+  </li>
+  <li>
+    <p>Easy A/B testing (Git branches)</p>
+  </li>
+  <li>
+    <p>CDN distribution worldwide</p>
+  </li>
+</ul>
+
+<h2 id="hugo-cli---essential-commands">Hugo CLI - Essential Commands</h2>
+
+<p>bash</p>
+
+<h1 id="instalacja-po-instalacji-go">Instalacja (po instalacji Go)</h1>
+<p>go install github.com/gohugoio/hugo@latest</p>
+
+<h1 id="extended-version-z-sass-support">Extended version z Sass support</h1>
+<p>CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@latest</p>
+
+<h1 id="stworzenie-nowego-site">Stworzenie nowego site</h1>
+<p>hugo new site my-blog</p>
+
+<h1 id="local-development-server">Local development server</h1>
+<p>hugo server -D</p>
+
+<h1 id="production-build">Production build</h1>
+<p>hugo –minify</p>
+
+<h1 id="debug-build-failures">Debug build failures</h1>
+<p>hugo –logLevel info –logLevel debug</p>
+
+<h2 id="wyzwanie-10k-hours---jak-używam-hugo-jako-dziennika-pracy">Wyzwanie 10k Hours - Jak używam Hugo jako dziennika pracy</h2>
+
+<p><strong>Dodałem tabelę na stronie <a href="https://opengateweb.com/wyzwanie-10k-hrs/">Wyzwanie 10k</a></strong> która będzie na początku wystarczająca do dodawania LogBook z przepracowanymi godzinami w Challenge.</p>
+
+<h3 id="workflow-mojego-challenge-trackera">Workflow mojego challenge trackera:</h3>
+
+<ul>
+  <li>
+    <p><strong>Tabela zawiera linki do postów</strong> z numerem np #6</p>
+  </li>
+  <li>
+    <p><strong>Nie zawsze tworzę osobny post</strong> - całe 2h mogę przeznaczyć na jedno zadanie</p>
+  </li>
+  <li>
+    <p><strong>Może być kilka zadań w jednym poście</strong> - elastyczność w raportowaniu</p>
+  </li>
+  <li>
+    <p><strong>Integracja z Hugo build process</strong> - automatyczne generowanie progress reports</p>
+  </li>
+</ul>
+
+<h3 id="dodatkowe-zastosowanie---job-applications">Dodatkowe zastosowanie - Job Applications</h3>
+
+<p><strong>Dodatkowo pomyślałem, że mogę wysyłać odpowiedzi na juniorskie oferty pracy Front-End</strong> oraz inne pokrewne IT vacancy. Przy okazji robię rozeznanie co się dzieje na rynku IT. <strong>Znów jest dużo ofert Junior</strong> - to dobry moment na wejście w branżę.</p>
+
+<h2 id="seo-w-hugo-generator---praktyczny-przewodnik">SEO w Hugo Generator - Praktyczny przewodnik</h2>
+
+<h3 id="meta-tags-i-structured-data">Meta tags i structured data</h3>
+
+<p>Hugo oferuje excellent SEO support out-of-the-box:</p>
+
+<p>yaml</p>
+
+<h1 id="w-front-matter">W front matter</h1>
+<p>title: “Hugo Generator - Kompletny Przewodnik 2025”
+description: “Praktyczny przewodnik po Hugo - od instalacji po deployment. Case study migracji WordPress → Hugo.”
+keywords: [“hugo generator”, “static site generator”, “papermod theme”]</p>
+
+<h3 id="sitemapxml-i-robotstxt">Sitemap.xml i robots.txt</h3>
+
+<p>Hugo automatycznie generuje:</p>
+
+<ul>
+  <li>
+    <p>XML sitemap</p>
+  </li>
+  <li>
+    <p>Robots.txt</p>
+  </li>
+  <li>
+    <p>RSS feeds</p>
+  </li>
+  <li>
+    <p>Canonical URLs</p>
+  </li>
+</ul>
+
+<h3 id="performance-optimization">Performance optimization</h3>
+
+<ul>
+  <li>
+    <p>Automatic image optimization</p>
+  </li>
+  <li>
+    <p>CSS/JS minification</p>
+  </li>
+  <li>
+    <p>HTML compression</p>
+  </li>
+  <li>
+    <p>CDN-ready static files</p>
+  </li>
+</ul>
+
+<h2 id="kiedy-wybrać-hugo-a-kiedy-zostać-przy-wordpress">Kiedy wybrać Hugo, a kiedy zostać przy WordPress?</h2>
+
+<h3 id="wybierz-hugo-gdy">Wybierz Hugo gdy:</h3>
+
+<ul>
+  <li>
+    <p><strong>Priorytetem jest szybkość</strong> (sub-second load times)</p>
+  </li>
+  <li>
+    <p><strong>Piszesz głównie content</strong> (blog, documentation)</p>
+  </li>
+  <li>
+    <p><strong>Masz doświadczenie z CLI</strong> i nie boisz się terminala</p>
+  </li>
+  <li>
+    <p><strong>Chcesz minimalne koszty hostingu</strong> ($0-5/month)</p>
+  </li>
+  <li>
+    <p><strong>Bezpieczeństwo jest krytyczne</strong> (zero attack surface)</p>
+  </li>
+</ul>
+
+<h3 id="zostań-przy-wordpress-gdy">Zostań przy WordPress gdy:</h3>
+
+<ul>
+  <li>
+    <p><strong>Potrzebujesz CMS dla non-techów</strong> (content team)</p>
+  </li>
+  <li>
+    <p><strong>Wymagasz dynamic functionality</strong> (user accounts, payments)</p>
+  </li>
+  <li>
+    <p><strong>Masz budżet na maintenance</strong> i security updates</p>
+  </li>
+  <li>
+    <p><strong>Potrzebujesz tysięcy pluginów</strong> z WP ecosystem</p>
+  </li>
+</ul>
+
+<h2 id="podsumowanie---czy-warto-inwestować-czas-w-hugo-generator">Podsumowanie - Czy warto inwestować czas w Hugo Generator?</h2>
+
+<p>Po przejściu pełnej pętli WordPress → Hugo → WordPress, mogę szczerze powiedzieć: <strong>Hugo Generator to potężne narzędzie, ale nie dla każdego</strong>.</p>
+
+<h3 id="pros-hugo-generator">Pros Hugo Generator:</h3>
+
+<p><strong>Niewiarygodna szybkość</strong> - 100x szybszy od konkurencji</p>
+
+<p><strong>Zero kosztów maintenance</strong> - brak baz danych, updates, security patches</p>
+
+<p><strong>Developer-friendly workflow</strong> - Git, Markdown, CLI</p>
+
+<p><strong>Excellent SEO performance</strong> - static files = fast loading</p>
+
+<p><strong>Unlimited scaling</strong> - CDN distribution worldwide</p>
+
+<h3 id="cons-hugo-generator">Cons Hugo Generator:</h3>
+
+<p>❌ <strong>Learning curve</strong> - wymaga znajomości CLI, Markdown, Go templates ❌ <strong>Limited dynamic features</strong> - brak user accounts, comments, search ❌ <strong>Breaking changes</strong> - updates mogą zepsuć site (jak w moim case) ❌ <strong>Ecosystem</strong> - mniej themes/plugins niż WordPress ❌ <strong>Non-tech content creators</strong> - trudny dla nietechnicznych użytkowników</p>
+
+<p><strong>Bottom line</strong>: Jeśli jesteś developerem lub tech-savvy content creator, który priorytetowo traktuje performance i ma czas na naukę nowych narzędzi - Hugo Generator może być game-changerem. Jeśli potrzebujesz prostego CMS-a dla zespołu lub dynamic functionality - zostań przy WordPress.</p>
+
+<p><strong>Dla OpenGateWeb</strong> powrót do WordPress był pragmatyczną decyzją - potrzebowałem stabilności i szybkiego content creation flow. Ale wiedza zdobyta podczas pracy z Hugo zdecydowanie się przydaje w innych projektach.</p>
+
+<p><strong>Linki użyteczne:</strong></p>
+
+<ul>
+  <li>
+    <p><a href="https://gohugo.io/">Hugo Official Documentation</a></p>
+  </li>
+  <li>
+    <p><a href="https://gohugo.io/getting-started/quick-start/">Hugo Quick Start Guide</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/adityatelange/hugo-PaperMod">PaperMod Theme GitHub</a></p>
+  </li>
+  <li>
+    <p><a href="https://discourse.gohugo.io/">Hugo Community Forum</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/gohugoio/hugo/releases">Hugo GitHub Releases</a></p>
+  </li>
+</ul>
+
+<p><strong>Powiązane artykuły:</strong></p>
+
+<ul>
+  <li>
+    <p><a href="/posts/40-title-a-href/">40 Jak dodać title w a href Hugo</a></p>
+  </li>
+  <li>
+    <p><a href="https://opengateweb.com/wyzwanie-10k-hrs/">Wyzwanie 10k Hours - Progress Tracking</a></p>
+  </li>
+</ul>
+
+<p><em>Ten artykuł to część serii o narzędziach web developmentu na OpenGateWeb. Jeśli podobał Ci się ten content, sprawdź inne posty w kategorii <a href="https://opengateweb.com/categories/wyzwanie/design-hub/">Design Hub</a>.</em></p>
+
+          </div>
+
+                    
+          
+          
+          
+          <footer class="mt-4 pt-3 border-top">
+            <div class="sibling-nav d-flex align-items-center justify-content-between gap-3 flex-nowrap">
+              <div class="sibling-nav-prev">
+                
+                <a href="/design%20hub/2024/10/04/hugo-generator-przewodnik-en.html" class="btn btn-outline-primary sibling-nav-btn">
+                  <span class="d-none d-lg-inline">
+                    <i class="bi bi-arrow-left me-2"></i>Poprzedni wpis: Post #6 Hugo Generator Comp...
+                  </span>
+                  <span class="d-lg-none d-inline-flex align-items-center gap-2 fw-semibold text-uppercase small">
+                    <i class="bi bi-arrow-left"></i>
+                    <span>Poprzedni wpis</span>
+                  </span>
+                </a>
+                
+              </div>
+              <div class="sibling-nav-next ms-auto text-end">
+                
+                <a href="/design%20hub/2024/10/08/bootstrap-webpack-pl.html" class="btn btn-outline-primary sibling-nav-btn">
+                  <span class="d-none d-lg-inline">
+                    Następny wpis: Post #7 Bootstrap and WebPack <i class="bi bi-arrow-right ms-2"></i>
+                  </span>
+                  <span class="d-lg-none d-inline-flex align-items-center gap-2 fw-semibold text-uppercase small">
+                    <span>Następny wpis</span>
+                    <i class="bi bi-arrow-right"></i>
+                  </span>
+                </a>
+                
+              </div>
+            </div>
+          </footer>
+
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+  <footer class="bg-light text-light py-4 mt-5">
+  <div class="container">
+    
+    
+    <div class="row gy-4">
+      <div class="col-md-6">
+        <h5 class="fw-semibold"><i class="bi bi-code-slash"></i> Scripterix</h5>
+        
+        <p class="text-muted mb-0">Scripterix – osobisty projekt edukacyjny dokumentujący wyzwanie 10 000 godzin.</p>
+      </div>
+      <div class="col-md-3">
+        <div class="footer-links text-dark">
+          <h6 class="text-uppercase small fw-semibold mb-3">Szybkie linki</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="/" class="text-decoration-none">
+                <i class="bi bi-house"></i> Start
+              </a></li>
+            <li class="mb-2"><a href="/about/" class="text-decoration-none">
+                <i class="bi bi-person"></i> O nas
+              </a></li>
+            <li><a href="/archive/" class="text-decoration-none">
+                <i class="bi bi-archive"></i> Archiwum
+              </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="footer-links text-dark">
+          <h6 class="text-uppercase small fw-semibold mb-3">Dokumentacja</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a href="/docs/changelog/" class="text-decoration-none">
+                <i class="bi bi-clock-history"></i> Changelog
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="my-3">
+    <div class="row align-items-center gy-2">
+      <div class="col-md-6">
+        <small class="text-muted">
+          © 2025 Scripterix.
+          Napędzane przez Jekyll i Bootstrap.
+        </small>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <small class="text-muted">
+          Zbudowano z <i class="bi bi-heart-fill text-danger"></i> przy użyciu Jekylla
+        </small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/format-number.js" defer></script>
+  <script src="/assets/js/hero-stats.js" defer></script>
+</body>
+
+</html>

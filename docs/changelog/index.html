@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="pl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <title>Changelog - Scripterix</title>
+  
+  <meta name="description" content="Scripterix – osobisty projekt edukacyjno-programistyczny Piotra Adamkowskiego. Nauka programowania od podstaw do poziomu full-stack developera w ramach wyzwa...">
+
+  <!-- Bootstrap CSS + Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="/">
+      <i class="bi bi-code-slash"></i>
+      Scripterix
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/" title="Powrót na stronę główną" aria-label="Powrót na stronę główną">
+            <i class="bi bi-house"></i> Start
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/about/" title="Poznaj autora i misję projektu" aria-label="Poznaj autora i misję projektu">
+            <i class="bi bi-person"></i> O nas
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/archive/" title="Przegląd wszystkich wpisów i logów" aria-label="Przegląd wszystkich wpisów i logów">
+            <i class="bi bi-archive"></i> Archiwum
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/portfolio/" title="Case studies i projekty Scripterix" aria-label="Case studies i projekty Scripterix">
+            <i class="bi bi-kanban"></i> Portfolio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/challenge10k/" title="Logbook i statystyki wyzwania 10 000 godzin" aria-label="Logbook i statystyki wyzwania 10 000 godzin">
+            <i class="bi bi-lightning-charge"></i> Wyzwanie 10k
+          </a>
+        </li>
+      </ul>
+      
+
+
+
+
+<div class="dropdown ms-lg-3 mt-3 mt-lg-0">
+  <button
+    class="btn btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2"
+    type="button"
+    id="languageDropdown"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    aria-label="Język">
+    <i class="bi bi-translate" aria-hidden="true"></i>
+    <span class="fw-semibold">POLSKI</span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+    
+    
+    
+    
+    <li>
+      <span class="dropdown-item active d-flex align-items-center gap-2" aria-current="true">
+        <i class="bi bi-check2" aria-hidden="true"></i>
+        <span>POLSKI</span>
+      </span>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    <li>
+      <span class="dropdown-item disabled d-flex align-items-center gap-2">
+        <span class="text-uppercase small text-muted">en</span>
+        <span>ENGLISH</span>
+      </span>
+    </li>
+    
+    
+    
+  </ul>
+</div>
+
+
+    </div>
+  </div>
+</nav>
+
+
+  <main class="flex-shrink-0">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="page-header-fallback py-5">
+  <div class="container">
+    <h1 class="display-5 fw-semibold">Changelog</h1>
+    
+  </div>
+</section>
+
+
+<section class="page-content-section py-5">
+  <div class="container">
+    <article class="card shadow-sm">
+      <div class="card-body p-4">
+        <h2 id="2025-11-01---translacje-archiwum-i-porządkowanie-dokumentacji">2025-11-01 - Translacje archiwum i porządkowanie dokumentacji</h2>
+
+<ul>
+  <li>Naprawiono kodowanie polskich znaków w changelogu i dokumentacji (<code class="language-plaintext highlighter-rouge">docs/docs.md</code>), dzięki czemu treści renderują się poprawnie.</li>
+  <li>Nadano unikalne <code class="language-plaintext highlighter-rouge">translation_id</code> wszystkim rocznikom archiwum (PL/EN), aby przełącznik języka przenosił użytkownika do lustrzanej wersji roku zamiast na stronę zbiorczą.</li>
+  <li>Ujednolicono dane w <code class="language-plaintext highlighter-rouge">_data/timeline_years.yml</code>, aby opisy odznak osi czasu były poprawne w obu językach.</li>
+</ul>
+
+<h2 id="2025-10-25---archive-timeline-redesign--footer-docs-link">2025-10-25 - Archive timeline redesign &amp; footer docs link</h2>
+
+<ul>
+  <li>Przebudowano stronę archiwum: na głównej widoczne są interaktywne odznaki lat prowadzące do stron rocznikowych zamiast listy wpisów.</li>
+  <li>Dodano dane <code class="language-plaintext highlighter-rouge">_data/timeline_years.yml</code>, layout <code class="language-plaintext highlighter-rouge">archive-year</code> oraz dedykowane strony rocznikowe (PL/EN) dla lat 2009, 2018, 2020, 2022 i 2024.</li>
+  <li>Uzupełniono wpisy portfolio o pole <code class="language-plaintext highlighter-rouge">date</code>, aby można je było sortować w osi czasu razem z postami i logbookiem.</li>
+  <li>Rozszerzono stopkę o kolumnę dokumentacji z linkiem do changelogu.</li>
+  <li>Zaktualizowano stylistykę (<code class="language-plaintext highlighter-rouge">assets/css/main.css</code>) oraz include, aby wspierały nowe odznaki i widok rocznikowy.</li>
+  <li>Dodano dzisiejsze wpisy logbooka (PL/EN) dokumentujące prace nad przebudową archiwum.</li>
+</ul>
+
+<h2 id="2025-10-25---challenge10k-hours-clarification--new-translations">2025-10-25 - Challenge10k hours clarification &amp; new translations</h2>
+
+<ul>
+  <li>Dodano polski odpowiednik wpisu “Next-Gen Creativity” (<code class="language-plaintext highlighter-rouge">_posts/2024-10-12-next-gen-creativity.md</code>) połączony z wersją EN.</li>
+  <li>Dodano angielski wariant “Mój Gist” (<code class="language-plaintext highlighter-rouge">_posts/2024-10-12-moj-gist-en.md</code>) oraz lustrzaną wersję EN wpisu “Calculator Math Func OOP” (<code class="language-plaintext highlighter-rouge">_posts/2024-10-14-function-oop-calculator-en.md</code>).</li>
+  <li>Uzupełniono <code class="language-plaintext highlighter-rouge">docs/docs.md</code> o opis działania pól <code class="language-plaintext highlighter-rouge">hours_spent</code>, <code class="language-plaintext highlighter-rouge">cumulative_hours</code> i <code class="language-plaintext highlighter-rouge">writing_hours</code> w kontekście wyzwania 10 000 godzin.</li>
+  <li>Zweryfikowano konfigurację Challenge10k: licznik celu korzysta tylko z <code class="language-plaintext highlighter-rouge">hours_spent</code> w logbooku, natomiast <code class="language-plaintext highlighter-rouge">writing_hours</code> pozostają metadanymi pomocniczymi.</li>
+</ul>
+
+<h2 id="2025-10-23---navigation--hero-polish">2025-10-23 - Navigation &amp; Hero polish</h2>
+
+<ul>
+  <li>Scope confirmed against roadmap “zero pluginów” rule - all updates stay within Liquid, HTML, and Bootstrap utilities.</li>
+  <li>Kolejność prac:
+    <ol>
+      <li>Dropdown językowy: aktywny stan + micro-copy (bez dodatkowych bibliotek).</li>
+      <li>Tooltipy w nawigacji: <code class="language-plaintext highlighter-rouge">title</code>/<code class="language-plaintext highlighter-rouge">aria-label</code> dla pozycji menu z istniejących tłumaczeń.</li>
+      <li>Hero sekcje: ujednolicenie przycisków CTA na stronach (<code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">challenge10k</code>, <code class="language-plaintext highlighter-rouge">portfolio</code>, <code class="language-plaintext highlighter-rouge">archive</code>, <code class="language-plaintext highlighter-rouge">about</code>) z kontrolą tłumaczeń.</li>
+    </ol>
+  </li>
+  <li>RSS link pominięty na dziś (pozostaje w backlogu).</li>
+</ul>
+
+<h2 id="2025-10-23---about-page-rewrite">2025-10-23 - About page rewrite</h2>
+
+<ul>
+  <li>Zaktualizowano biogram w pl/en bez HTML - treści trafiły do <code class="language-plaintext highlighter-rouge">_data/translations.yml</code>.</li>
+  <li>Usunięto odniesienia do OpenGateWeb, podkreślono bieżące projekty Scripterix i klientów.</li>
+</ul>
+
+<h2 id="2024-10-30---changelog-tworzymy-changelog-dla-łatwiejszego-śledzenia-zmian-na-stronie">2024-10-30 - Changelog tworzymy changelog dla łatwiejszego śledzenia zmian na stronie.</h2>
+
+<ul>
+  <li>Dodano plik <code class="language-plaintext highlighter-rouge">changelog.md</code> w <code class="language-plaintext highlighter-rouge">/docs</code> z podstawową strukturą.</li>
+  <li>Plik będzie aktualizowany przy każdej większej zmianie lub aktualizacji treści strony.</li>
+  <li>Changelog dostępny z poziomu stopki strony dla wygody użytkowników.</li>
+  <li>Dodano nowe wpisy POST:
+    <ul>
+      <li>Next-Gen Creativity (EN/PL)</li>
+      <li>Mój Gist (PL/EN)</li>
+      <li>Calculator Function vs OOP (PL/EN)</li>
+    </ul>
+  </li>
+  <li>Poprawiono drobne błędy w istniejących postach oraz usunięto błąd polskich liter w przycisku cards “Otwórz”
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn-outline-primary btn-sm px-3"</span> <span class="na">href=</span><span class="s">"/code/2024/10/14/moj-gist.html"</span><span class="nt">&gt;</span>
+    Otwórz <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"bi bi-arrow-up-right ms-1"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span>
+  <span class="nt">&lt;/a&gt;</span>
+</code></pre></div>    </div>
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"archive-card__badge"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"archive-card__icon"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"bi bi-journal-text"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span>
+  <span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span&gt;</span>Artykuł<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>    </div>
+    <p>footer napis w HTML też bez polskich liter</p>
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-muted"</span><span class="nt">&gt;</span>Scripterix - osobisty projekt edukacyjny dokumentujący wyzwanie 10 000 godzin.<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Aktualizacja changelogu przy każdej większej zmianie na stronie.</li>
+</ul>
+
+      </div>
+    </article>
+  </div>
+</section>
+  </main>
+
+  <footer class="bg-light text-light py-4 mt-5">
+  <div class="container">
+    
+    
+    <div class="row gy-4">
+      <div class="col-md-6">
+        <h5 class="fw-semibold"><i class="bi bi-code-slash"></i> Scripterix</h5>
+        
+        <p class="text-muted mb-0">Scripterix – osobisty projekt edukacyjny dokumentujący wyzwanie 10 000 godzin.</p>
+      </div>
+      <div class="col-md-3">
+        <div class="footer-links text-dark">
+          <h6 class="text-uppercase small fw-semibold mb-3">Szybkie linki</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="/" class="text-decoration-none">
+                <i class="bi bi-house"></i> Start
+              </a></li>
+            <li class="mb-2"><a href="/about/" class="text-decoration-none">
+                <i class="bi bi-person"></i> O nas
+              </a></li>
+            <li><a href="/archive/" class="text-decoration-none">
+                <i class="bi bi-archive"></i> Archiwum
+              </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="footer-links text-dark">
+          <h6 class="text-uppercase small fw-semibold mb-3">Dokumentacja</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a href="/docs/changelog/" class="text-decoration-none">
+                <i class="bi bi-clock-history"></i> Changelog
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="my-3">
+    <div class="row align-items-center gy-2">
+      <div class="col-md-6">
+        <small class="text-muted">
+          © 2025 Scripterix.
+          Napędzane przez Jekyll i Bootstrap.
+        </small>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <small class="text-muted">
+          Zbudowano z <i class="bi bi-heart-fill text-danger"></i> przy użyciu Jekylla
+        </small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/format-number.js" defer></script>
+  <script src="/assets/js/hero-stats.js" defer></script>
+</body>
+
+</html>

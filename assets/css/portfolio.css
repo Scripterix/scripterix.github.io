@@ -152,3 +152,63 @@
 .work-hero .ratio img {
   object-fit: cover;
 }
+
+/* Portfolio summary + grid */
+.portfolio-stats-section {
+  background: #f8fafc;
+}
+
+.portfolio-stats {
+  border-radius: 1.5rem;
+}
+
+.portfolio-stat {
+  padding: 0.5rem 0;
+}
+
+.portfolio-stat__value {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.portfolio-stat__label {
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.portfolio-stat__updated {
+  color: #6b7280;
+}
+
+.portfolio-card {
+  background: #fff;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 1.25rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-card__status {
+  background: rgba(99, 102, 241, 0.15);
+  color: #4338ca;
+}
+
+.portfolio-card__actions {
+  margin-top: auto;
+}
+
+.portfolio-grid-section {
+  background: #fefefe;
+}

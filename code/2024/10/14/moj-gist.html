@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="pl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <title>Post #8 Mój Gist - Scripterix</title>
+  
+  <meta name="description" content="Przegląd Gist oraz przypomnienie Git i Bash">
+
+  <!-- Bootstrap CSS + Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="/">
+      <i class="bi bi-code-slash"></i>
+      Scripterix
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/" title="Powrót na stronę główną" aria-label="Powrót na stronę główną">
+            <i class="bi bi-house"></i> Start
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/about/" title="Poznaj autora i misję projektu" aria-label="Poznaj autora i misję projektu">
+            <i class="bi bi-person"></i> O nas
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/archive/" title="Przegląd wszystkich wpisów i logów" aria-label="Przegląd wszystkich wpisów i logów">
+            <i class="bi bi-archive"></i> Archiwum
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/portfolio/" title="Case studies i projekty Scripterix" aria-label="Case studies i projekty Scripterix">
+            <i class="bi bi-kanban"></i> Portfolio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "
+            href="/challenge10k/" title="Logbook i statystyki wyzwania 10 000 godzin" aria-label="Logbook i statystyki wyzwania 10 000 godzin">
+            <i class="bi bi-lightning-charge"></i> Wyzwanie 10k
+          </a>
+        </li>
+      </ul>
+      
+
+
+
+
+<div class="dropdown ms-lg-3 mt-3 mt-lg-0">
+  <button
+    class="btn btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2"
+    type="button"
+    id="languageDropdown"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    aria-label="Język">
+    <i class="bi bi-translate" aria-hidden="true"></i>
+    <span class="fw-semibold">POLSKI</span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+    
+    
+    
+    
+    <li>
+      <span class="dropdown-item active d-flex align-items-center gap-2" aria-current="true">
+        <i class="bi bi-check2" aria-hidden="true"></i>
+        <span>POLSKI</span>
+      </span>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+      
+      
+      
+    
+    
+    <li>
+      <a class="dropdown-item d-flex align-items-center gap-2" href="/code/2024/10/14/moj-gist-en.html" hreflang="en">
+        <span class="text-uppercase small text-muted">en</span>
+        <span>ENGLISH</span>
+      </a>
+    </li>
+    
+    
+    
+  </ul>
+</div>
+
+
+    </div>
+  </div>
+</nav>
+
+
+  <main class="flex-shrink-0">
+    
+
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <article class="card shadow-sm">
+        <div class="card-body">
+          <header class="mb-4">
+            <h1 class="display-4 fw-semibold text-secondary py-4">Post #8 Mój Gist</h1>
+            <div class="d-flex flex-wrap align-items-center text-muted small mb-3">
+              <span class="me-3">
+                <i class="bi bi-calendar3"></i>
+                <time datetime="2024-10-14T00:27:46+02:00">
+                  14 October 2024
+                </time>
+              </span>
+              
+              <span class="me-3">
+                <i class="bi bi-folder2"></i>
+                
+                <span class="badge bg-secondary">Code</span>
+                
+              </span>
+              
+              
+              <span>
+                <i class="bi bi-tags"></i>
+                
+                <span class="badge bg-outline-primary">git</span>
+                
+                <span class="badge bg-outline-primary">bash</span>
+                
+                <span class="badge bg-outline-primary">gist</span>
+                
+                <span class="badge bg-outline-primary">github</span>
+                
+              </span>
+              
+            </div>
+          </header>
+
+          <div class="content">
+            <p><strong>Przegląd Gist oraz przypomnienie Git i Bash</strong></p>
+
+<p><a href="https://gist.github.com/Scripterix">Gist Scripterix</a> to repozytorium na portalu GitHub, które zawiera różnorodne skrypty i rozwiązania programistyczne przygotowane przez użytkownika o pseudonimie Scripterix. Repozytorium to jest pełne przydatnych narzędzi i kodów źródłowych, które mogą być wykorzystane do rozwiązywania różnorodnych problemów programistycznych. Osoby korzystające z Gist Scripterix mogą znaleźć tu wiele cennych wskazówek i inspiracji do własnych projektów.Jeśli chodzi o konkretną zawartość Gist - Scripterix, można w niej znaleźć skrypty w różnych językach programowania, w tym Python, Java, JavaScript i wiele innych. Skrypty te dotyczą różnorodnych zagadnień związanych z programowaniem, takich jak obsługa plików, manipulacja danymi, tworzenie interfejsów użytkownika czy też rozwiązywanie problemów matematycznych. Dzięki różnorodności tematów i języków programowania, Gist Scripterix jest bogatym źródłem wiedzy dla programistów o różnym stopniu zaawansowania. Warto również podkreślić, że Gist - Scripterix jest aktywnie rozwijane i uzupełniane o nowe skrypty oraz rozwiązania. Użytkownicy mogą śledzić repozytorium i być na bieżąco z najnowszymi dodatkami i aktualizacjami. Dzięki temu mogą być pewni, że znajdą tutaj nie tylko starannie opracowane, ale także aktualne i zgodne ze standardami branżowymi rozwiązania. Całość sprawia, że Gist Scripterix jest cennym źródłem wsparcia i inspiracji dla programistów poszukujących nowych pomysłów i skutecznych rozwiązań w swojej pracy zawodowej.</p>
+
+<p>Gist GitHub Functions - <a href="https://gist.github.com/Scripterix/5d282814983d900f2e6e7e1d54412bc7">kliknij tutaj</a></p>
+
+<h2 id="gist-index-poniżej-znajdziesz-listę-kodu-znajdującego-się-na-gist-scripterix"><strong>Gist</strong> <strong>index</strong> poniżej znajdziesz listę kodu znajdującego się na Gist Scripterix</h2>
+
+<p>ES6 Ecma262 201</p>
+
+<p>Bulma Carousel with Text Content</p>
+
+<p>Flex CSS</p>
+
+<p>Flex and Grid : grid nested in flex</p>
+
+<p>Bootstrap Modal v4.5.3</p>
+
+<p>JWT</p>
+
+<p>Ideał</p>
+
+<p><strong>Git Bash</strong></p>
+
+<p>W Gist zawarłem trochę polceceń CLI do obsługi wersjonowania, przesyłania repozytorium na GitHub, robienia komentarzy oraz większość typowych komend.</p>
+
+<p>Do rozszerzenia i dodania jest git-stash — zachowanie zmian w brudnym katalogu roboczym. Przykłady użycia</p>
+
+<p>Zasoby Git <strong><a href="https://git-scm.com/">https://git-scm.com/</a></strong></p>
+
+<h1 id="httpsgit-scmcomdoc">https://git-scm.com/doc</h1>
+
+<p>// Initialize local repo</p>
+
+<h1 id="git-init">git init</h1>
+
+<p>// Add File to Index &amp;&amp;</p>
+
+<h1 id="git-add">git add</h1>
+
+<h1 id="git-add-js">git add *.js</h1>
+
+<p>// Add all</p>
+
+<h1 id="git-add-">git add .</h1>
+
+<p>// Rm File from Index</p>
+
+<h1 id="git-rm-cashed-indexhtml">git rm –cashed index.html</h1>
+
+<p>// Check working tree</p>
+
+<h1 id="git-status">git status</h1>
+
+<p>// Commit Changes to Index</p>
+
+<h1 id="git-commit">git commit</h1>
+
+<p>// Instert</p>
+
+<h1 id="i">i</h1>
+
+<p>// Commit status</p>
+
+<h1 id="wq">:wq</h1>
+
+<p>// Commit Changes with Comments inline</p>
+
+<h1 id="git-commit--m-changes-appjs">git commit -m ‘Changes app.js’</h1>
+
+<p>// Push to remote repo</p>
+
+<h1 id="git-push">git push</h1>
+
+<p>// Create file to ignore register</p>
+
+<p>// in gitignore file name the name ex; log.txt all folder /dir2</p>
+
+<h1 id="gitignore">gitignore</h1>
+
+<p>// Branches = Master B - all project, working on module ex: login Login Branch</p>
+
+<h1 id="git-branch-login">git branch login</h1>
+
+<p>** Polecane kursy Git**</p>
+
+<p>Jedna z ciekawszych pozycji kursów Git i sposobów wersjonowanie jest <strong>kursgita.pl</strong>  by Maciej Aniserowicz. Nie trzeba nic dodawać. Kurs jest po polsku  <a href="https://kursgita.pl/">Link do kursu Git</a></p>
+
+<p>Na głównej stronie Git możemy pobrać książkę napisaną przez Scott Chacon i Ben Straub. Książka ta nosi tytuł <a href="https://git-scm.com/book/en/v2">“Pro Git”</a> i jest dostępna za darmo w formie elektronicznej. Znajują się tam także refencje <a href="https://git-scm.com/doc">Docs</a> przygotowane przez twórców Git.</p>
+
+          </div>
+
+                    
+          
+          
+          
+          <footer class="mt-4 pt-3 border-top">
+            <div class="sibling-nav d-flex align-items-center justify-content-between gap-3 flex-nowrap">
+              <div class="sibling-nav-prev">
+                
+                <a href="/code/2024/10/14/moj-gist-en.html" class="btn btn-outline-primary sibling-nav-btn">
+                  <span class="d-none d-lg-inline">
+                    <i class="bi bi-arrow-left me-2"></i>Poprzedni wpis: Post #8 My Gist
+                  </span>
+                  <span class="d-lg-none d-inline-flex align-items-center gap-2 fw-semibold text-uppercase small">
+                    <i class="bi bi-arrow-left"></i>
+                    <span>Poprzedni wpis</span>
+                  </span>
+                </a>
+                
+              </div>
+              <div class="sibling-nav-next ms-auto text-end">
+                
+                <a href="/coding%20corner/2025/02/15/function-oop-calculator-en.html" class="btn btn-outline-primary sibling-nav-btn">
+                  <span class="d-none d-lg-inline">
+                    Następny wpis: Post #9 Calculator Math Fun... <i class="bi bi-arrow-right ms-2"></i>
+                  </span>
+                  <span class="d-lg-none d-inline-flex align-items-center gap-2 fw-semibold text-uppercase small">
+                    <span>Następny wpis</span>
+                    <i class="bi bi-arrow-right"></i>
+                  </span>
+                </a>
+                
+              </div>
+            </div>
+          </footer>
+
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+  <footer class="bg-light text-light py-4 mt-5">
+  <div class="container">
+    
+    
+    <div class="row gy-4">
+      <div class="col-md-6">
+        <h5 class="fw-semibold"><i class="bi bi-code-slash"></i> Scripterix</h5>
+        
+        <p class="text-muted mb-0">Scripterix – osobisty projekt edukacyjny dokumentujący wyzwanie 10 000 godzin.</p>
+      </div>
+      <div class="col-md-3">
+        <div class="footer-links text-dark">
+          <h6 class="text-uppercase small fw-semibold mb-3">Szybkie linki</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="/" class="text-decoration-none">
+                <i class="bi bi-house"></i> Start
+              </a></li>
+            <li class="mb-2"><a href="/about/" class="text-decoration-none">
+                <i class="bi bi-person"></i> O nas
+              </a></li>
+            <li><a href="/archive/" class="text-decoration-none">
+                <i class="bi bi-archive"></i> Archiwum
+              </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="footer-links text-dark">
+          <h6 class="text-uppercase small fw-semibold mb-3">Dokumentacja</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a href="/docs/changelog/" class="text-decoration-none">
+                <i class="bi bi-clock-history"></i> Changelog
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="my-3">
+    <div class="row align-items-center gy-2">
+      <div class="col-md-6">
+        <small class="text-muted">
+          © 2025 Scripterix.
+          Napędzane przez Jekyll i Bootstrap.
+        </small>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <small class="text-muted">
+          Zbudowano z <i class="bi bi-heart-fill text-danger"></i> przy użyciu Jekylla
+        </small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/format-number.js" defer></script>
+  <script src="/assets/js/hero-stats.js" defer></script>
+</body>
+
+</html>
