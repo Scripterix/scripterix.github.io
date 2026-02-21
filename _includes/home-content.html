@@ -19,10 +19,10 @@
         <p class="lead text-white-50 mb-4">{{ home_strings.hero.lead | default: 'Nowoczesna witryna Jekyll ze stylami Bootstrap 5.3 z CDN' }}</p>
         <div class="d-flex flex-wrap gap-3">
           <a class="btn btn-light btn-lg shadow-sm" href="{{ about_url | relative_url }}">
-            <i class="bi bi-lightning-charge-fill me-2"></i>{{ home_strings.hero.button | default: 'Poznaj szczegĂłĹ‚y' }}
+            <i class="bi bi-lightning-charge-fill me-2"></i>{{ home_strings.hero.button | default: 'Poznaj szczegóły' }}
           </a>
           <a class="btn btn-outline-light btn-lg" href="#recent-posts">
-            <i class="bi bi-journal-text me-2"></i>{{ home_strings.hero.secondary | default: 'PrzeglÄ…daj wpisy' }}
+            <i class="bi bi-journal-text me-2"></i>{{ home_strings.hero.secondary | default: 'Przeglądaj wpisy' }}
           </a>
         </div>
       </div>
@@ -51,19 +51,19 @@ translation_id: home
           <div class="col-4">
             <div class="metric-card text-center p-3 border rounded-3 bg-white bg-opacity-75 text-dark">
               <div class="metric-value fw-bold">{{ home_strings.metrics.projects.value | default: '120+' }}</div>
-              <div class="metric-label small text-dark">{{ home_strings.metrics.projects.label | default: 'WdroĹĽone serwisy' }}</div>
+              <div class="metric-label small text-dark">{{ home_strings.metrics.projects.label | default: 'Wdrożone serwisy' }}</div>
             </div>
           </div>
           <div class="col-4">
             <div class="metric-card text-center p-3 border rounded-3 bg-white bg-opacity-75 text-dark">
               <div class="metric-value fw-bold">{{ home_strings.metrics.uptime.value | default: '99,9%' }}</div>
-              <div class="metric-label small text-dark">{{ home_strings.metrics.uptime.label | default: 'Udane wdroĹĽenia' }}</div>
+              <div class="metric-label small text-dark">{{ home_strings.metrics.uptime.label | default: 'Udane wdrożenia' }}</div>
             </div>
           </div>
           <div class="col-4">
             <div class="metric-card text-center p-3 border rounded-3 bg-white bg-opacity-75 text-dark">
               <div class="metric-value fw-bold">{{ home_strings.metrics.community.value | default: '8k+' }}</div>
-              <div class="metric-label small text-dark">{{ home_strings.metrics.community.label | default: 'OsĂłb w spoĹ‚ecznoĹ›ci' }}</div>
+              <div class="metric-label small text-dark">{{ home_strings.metrics.community.label | default: 'Osób w społeczności' }}</div>
             </div>
           </div>
         </div>
@@ -82,8 +82,8 @@ translation_id: home
             <div class="icon-wrap bg-warning-subtle text-warning mb-3">
               <i class="bi bi-lightning-fill"></i>
             </div>
-            <h5 class="card-title fw-semibold">{{ home_strings.features.fast.title | default: 'Szybko i nowoczeĹ›nie' }}</h5>
-            <p class="card-text text-muted">{{ home_strings.features.fast.body | default: 'Generator statycznych stron Jekyll z Bootstrap 5.3 dla nowoczesnego, responsywnego wyglÄ…du.' }}</p>
+            <h5 class="card-title fw-semibold">{{ home_strings.features.fast.title | default: 'Szybko i nowocześnie' }}</h5>
+            <p class="card-text text-muted">{{ home_strings.features.fast.body | default: 'Generator statycznych stron Jekyll z Bootstrap 5.3 dla nowoczesnego, responsywnego wyglądu.' }}</p>
           </div>
         </div>
       </div>
@@ -94,7 +94,7 @@ translation_id: home
               <i class="bi bi-cloud-download"></i>
             </div>
             <h5 class="card-title fw-semibold">{{ home_strings.features.cdn.title | default: 'Dostarczane z CDN' }}</h5>
-            <p class="card-text text-muted">{{ home_strings.features.cdn.body | default: 'Bootstrap Ĺ‚adowany z CDN dla szybszego dziaĹ‚ania i bez lokalnych zaleĹĽnoĹ›ci.' }}</p>
+            <p class="card-text text-muted">{{ home_strings.features.cdn.body | default: 'Bootstrap ładowany z CDN dla szybszego działania i bez lokalnych zależności.' }}</p>
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@ translation_id: home
               <i class="bi bi-code-slash"></i>
             </div>
             <h5 class="card-title fw-semibold">{{ home_strings.features.clean.title | default: 'Czysty kod' }}</h5>
-            <p class="card-text text-muted">{{ home_strings.features.clean.body | default: 'PodĹ›wietlanie skĹ‚adni w stylu Matrix z wĹ‚asnymi stylami CSS.' }}</p>
+            <p class="card-text text-muted">{{ home_strings.features.clean.body | default: 'Podświetlanie składni w stylu Matrix z własnymi stylami CSS.' }}</p>
           </div>
         </div>
       </div>
@@ -118,7 +118,7 @@ translation_id: home
     <div class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between mb-4">
       <div>
         <h2 class="fw-bold mb-2">{{ home_strings.posts.heading | default: 'Najnowsze wpisy' }}</h2>
-        <p class="text-muted mb-0">{{ home_strings.posts.caption | default: 'ĹšwieĹĽe aktualizacje bloga, wybrane specjalnie dla Ciebie.' }}</p>
+        <p class="text-muted mb-0">{{ home_strings.posts.caption | default: 'Świeże aktualizacje bloga, wybrane specjalnie dla Ciebie.' }}</p>
       </div>
       <a class="btn btn-outline-primary mt-3 mt-lg-0" href="{{ archive_url | relative_url }}">
         <i class="bi bi-archive me-2"></i>{{ nav_strings.archive | default: 'Archiwum' }}
@@ -141,7 +141,7 @@ translation_id: home
             <p class="text-muted flex-grow-1">{{ post.excerpt | strip_html | truncate: 120 }}</p>
             <div class="d-flex align-items-center justify-content-between mt-4 text-muted small">
               <span><i class="bi bi-calendar3 me-2"></i>{% include helpers/date-only.html value=post.date format=list_date_format %}</span>
-              <span class="fw-semibold">{{ home_strings.posts.read_more | default: 'Czytaj dalej' }} â†’</span>
+              <span class="fw-semibold">{{ home_strings.posts.read_more | default: 'Czytaj dalej' }} &rarr;</span>
             </div>
           </div>
         </article>
@@ -151,7 +151,7 @@ translation_id: home
     {% else %}
     <div class="card border-0 shadow-sm bg-light">
       <div class="card-body py-5 text-center">
-        <p class="lead mb-0">{{ home_strings.posts.empty | default: 'Brak opublikowanych wpisĂłw.' }}</p>
+        <p class="lead mb-0">{{ home_strings.posts.empty | default: 'Brak opublikowanych wpisów.' }}</p>
       </div>
     </div>
     {% endif %}
@@ -163,13 +163,13 @@ translation_id: home
     <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
       <div class="row g-0 align-items-center">
         <div class="col-lg-7 p-5">
-          <h2 class="fw-bold mb-3">{{ home_strings.cta.title | default: 'Gotowy, by uruchomiÄ‡ coĹ› piÄ™knego?' }}</h2>
-          <p class="text-muted mb-4">{{ home_strings.cta.body | default: 'PoĹ‚Ä…cz szybkoĹ›Ä‡ statycznych generatorĂłw z dopracowanym designem i publikuj wielojÄ™zyczne strony w rekordowym tempie.' }}</p>
+          <h2 class="fw-bold mb-3">{{ home_strings.cta.title | default: 'Gotowy, by uruchomić coś pięknego?' }}</h2>
+          <p class="text-muted mb-4">{{ home_strings.cta.body | default: 'Połącz szybkość statycznych generatorów z dopracowanym designem i publikuj wielojęzyczne strony w rekordowym tempie.' }}</p>
           <div class="d-flex flex-wrap gap-3 align-items-center">
             <a class="btn btn-primary btn-lg" href="mailto:{{ site.email }}">
               <i class="bi bi-send me-2"></i>{{ home_strings.cta.button | default: 'Zaplanuj projekt' }}
             </a>
-            <span class="text-muted small">{{ home_strings.cta.note | default: 'Potrzebujesz migracji treĹ›ci? ZrĂłbmy to razem.' }}</span>
+            <span class="text-muted small">{{ home_strings.cta.note | default: 'Potrzebujesz migracji treści? Zróbmy to razem.' }}</span>
           </div>
         </div>
         <div class="col-lg-5 d-none d-lg-block">
