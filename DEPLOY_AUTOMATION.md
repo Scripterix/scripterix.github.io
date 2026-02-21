@@ -54,3 +54,20 @@ git push origin main
 - Sprawdz, czy `Pages` ma source ustawione na `GitHub Actions`.
 - Sprawdz, czy nie ma `.nojekyll`.
 - Sprawdz, czy `_config.yml` i Liquid nie daja warningow krytycznych.
+
+## Jak teraz pracujemy z Jekyllem 21.02.2026
+- Zrodla w  scripterix-clean 
+
+
+git pull origin main
+npm run new:post -- --title "Tytul" --lang pl --slug tytul
+npm run new:log -- --title "Dzien nauki" --lang pl --slug dzien-nauki
+npm run new:work -- --title "Projekt" --lang pl --slug projekt
+bundle exec jekyll serve
+git add .
+git commit -m "Add content"
+git push origin main
+
+
+Czyli robię ściągnięcie repo na local 
+potem robię zmianę lub dodanie aktulaizacje i wypycham na reo i wtedy GitHub Actions robi build i deploy na Pages.
