@@ -1,0 +1,60 @@
+# Site settings
+# --------------
+
+title: Scripterix
+email: piotr.adamkowski@gmail.com
+description: >-
+  Scripterix – osobisty projekt edukacyjno-programistyczny Piotra Adamkowskiego.
+  Nauka programowania od podstaw do poziomu full-stack developera w ramach
+  wyzwania 10 000 godzin. Na stronie znajdziesz praktyczne przykłady kodu,
+  logbook codziennej nauki, projekty front- i backendowe oraz notatki z podróży
+  po świecie Jekylla, GitHub Pages, JavaScriptu i sztucznej inteligencji.
+baseurl: ""
+url: "https://scripterix.github.io"
+twitter_username: opengateweb
+github_username: scripterix
+
+# Plugins supported by GitHub Pages
+plugins:
+  - jekyll-paginate
+
+# Collections
+collections:
+  works:
+    output: true
+  logbook:
+    output: true
+    permalink: /challenge10k/log/:slug/
+    sort_by: date
+    order: descending
+
+# Pagination can be enabled later when a dedicated paginated index template exists.
+
+# Languages
+default_lang: pl
+languages:
+  - code: pl
+    label: Polski
+  - code: en
+    label: English
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: pl
+  - scope:
+      path: "_posts"
+    values:
+      layout: post
+  - scope:
+      path: "_logbook"
+    values:
+      layout: logbook
+      lang: pl
+  - scope:
+      path: "_works"
+    values:
+      layout: work
+      lang: pl

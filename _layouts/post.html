@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+{% assign post_strings = t.post | default: empty %}
+{% assign post_date_format = post_strings.date_format | default: "%Y-%m-%d" %}
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <article class="card shadow-sm">
+        <div class="card-body">
+          <header class="mb-4">
+            <h1 class="display-4 fw-semibold text-secondary py-4">{{ page.title }}</h1>
+            <div class="d-flex flex-wrap align-items-center text-muted small mb-3">
+              <span class="me-3">
+                <i class="bi bi-calendar3"></i>
+                <time datetime="{{ page.date | date_to_xmlschema }}">
+                  {% include helpers/date-only.html value=page.date format=post_date_format %}
+                </time>
+              </span>
+              {% if page.categories %}
+              <span class="me-3">
+                <i class="bi bi-folder2"></i>
+                {% for category in page.categories %}
+                <span class="badge bg-secondary">{{ category }}</span>
+                {% endfor %}
+              </span>
+              {% endif %}
+              {% if page.tags %}
+              <span>
+                <i class="bi bi-tags"></i>
+                {% for tag in page.tags %}
+                <span class="badge bg-outline-primary">{{ tag }}</span>
+                {% endfor %}
+              </span>
+              {% endif %}
+            </div>
+          </header>
+
+          <div class="content">
+            {{ content }}
+          </div>
+
+          <footer class="mt-4 pt-3 border-top">
+            <div class="row">
+              <div class="col-md-6">
+                {% if page.previous %}
+                <a href="{{ page.previous.url | relative_url }}" class="btn btn-outline-primary">
+                  <i class="bi bi-arrow-left"></i> {{ post_strings.previous | default: 'Poprzedni wpis' }}: {{ page.previous.title | truncate: 30 }}
+                </a>
+                {% endif %}
+              </div>
+              <div class="col-md-6 text-end">
+                {% if page.next %}
+                <a href="{{ page.next.url | relative_url }}" class="btn btn-outline-primary">
+                  {{ post_strings.next | default: 'NastÄ™pny wpis' }}: {{ page.next.title | truncate: 30 }} <i class="bi bi-arrow-right"></i>
+                </a>
+                {% endif %}
+              </div>
+            </div>
+          </footer>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>

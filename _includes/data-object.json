@@ -1,0 +1,112 @@
+{%- assign item = include.item -%
+}
+{%- assign fields = include.fields | default: empty -%
+}
+{%- assign extras = include.extras | default: empty -%
+}
+{%- capture pairs -%
+}
+  {%- for field in fields -%
+}
+    {%- case field -%
+}
+    {%- when 'title' -%
+}
+      "title": {
+  { item.title | jsonify
+  }
+}
+    {%- when 'summary' -%
+}
+      {%- assign summary_text = item.summary | default: item.excerpt | default: item.content | strip_html | strip_newlines -%
+}
+      {%- assign truncate_at = include.summary_truncate | default: 160 -%
+}
+      "summary": {
+  { summary_text | truncate: truncate_at,
+    "…" | jsonify
+  }
+}
+    {%- when 'date' -%
+}
+      "date": {
+  { item.date | date_to_xmlschema | jsonify
+  }
+}
+    {%- when 'url' -%
+}
+      "url": {
+  { item.url | relative_url | jsonify
+  }
+}
+    {%- when 'lang' -%
+}
+      {%- assign item_lang = item.lang | default: site.default_lang -%
+}
+      "lang": {
+  { item_lang | jsonify
+  }
+}
+    {%- when 'tags' -%
+}
+      {%- assign tags_array = item.tags -%
+}
+      {%- if tags_array == nil or tags_array == empty -%
+}
+        {%- assign tags_array = item.categories -%
+}
+      {%- endif -%
+}
+      "tags": {% if tags_array %
+}{
+  { tags_array | uniq | jsonify
+  }
+}{% else %
+}[]{% endif %
+}
+    {%- else -%
+}
+      "{{ field }}": {
+  { item[field
+    ] | jsonify
+  }
+}
+    {%- endcase -%
+}
+    {%- unless forloop.last and extras == empty -%
+},
+{% endunless -%
+}
+  {%- endfor -%
+}
+  {%- for extra in extras -%
+}
+    {%- assign key = extra.key -%
+}
+    {%- assign value = extra.value -%
+}
+    {%- assign rendered_value = item[value
+  ] -%
+}
+    {%- if rendered_value -%
+}
+      "{{ key }}": {
+  { rendered_value | jsonify
+  }
+}
+      {%- unless forloop.last -%
+},
+{% endunless -%
+}
+    {%- endif -%
+}
+  {%- endfor -%
+}
+{%- endcapture -%
+}
+{
+  {
+    { pairs | strip
+    }
+  }
+}

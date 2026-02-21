@@ -1,0 +1,42 @@
+{% assign locale = page.lang | default: site.default_lang | default: 'pl' %}
+{% assign works = site.works | where: 'lang', locale | sort: 'date' | reverse %}
+{% if works and works.size > 0 %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">{% if locale == 'pl' %}Rok{% else %}Year{% endif %}</th>
+      <th scope="col">{% if locale == 'pl' %}Tytuł i opis{% else %}Title &amp; summary{% endif %}</th>
+      <th scope="col">{% if locale == 'pl' %}Status{% else %}Status{% endif %}</th>
+      <th scope="col">Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for work in works %}
+    {% assign title = work.title %}
+    {% assign summary = work.summary | default: work.excerpt | default: work.content %}
+    {% assign status = work.status %}
+    {% assign year = work.year %}
+    {% if year == nil or year == '' %}
+      {% if work.date %}
+        {% assign year = work.date | date: '%Y' %}
+      {% else %}
+        {% assign year = '-' %}
+      {% endif %}
+    {% endif %}
+    {% assign link = work.url %}
+    <tr>
+      <td>{{ year }}</td>
+      <td><strong>{{ title }}</strong><br><span class="text-muted">{{ summary }}</span></td>
+      <td>{{ status }}</td>
+      <td>
+        {% if link %}
+        <a href="{{ link | relative_url }}" class="text-decoration-none">{% if locale == 'pl' %}Zobacz{% else %}View{% endif %}</a>
+        {% else %}&mdash;{% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="text-muted">{% if locale == 'pl' %}Portfolio w budowie — wpisy pojawią się wkrótce.{% else %}Portfolio is in progress — entries will appear soon.{% endif %}</p>
+{% endif %}

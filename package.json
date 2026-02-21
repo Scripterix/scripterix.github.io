@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "stats": "node scripts/generate-stats.js"
+    "stats": "node scripts/generate-stats.js",
+    "new:post": "node scripts/new-entry.js post",
+    "new:log": "node scripts/new-entry.js log",
+    "new:work": "node scripts/new-entry.js work"
   }
 }

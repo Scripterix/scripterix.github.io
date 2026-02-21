@@ -1,0 +1,160 @@
+---
+layout: default
+---
+
+{% assign current_lang = page.lang | default: site.default_lang %}
+{% assign is_pl = false %}
+{% if current_lang == 'pl' %}
+{% assign is_pl = true %}
+{% endif %}
+{% assign hero_image = page.featured_image | default: '/assets/images/portfolio/coding01.jpg' %}
+{% assign tech_list = page.tech | default: page.tags %}
+{% assign log_reference = page.logbook_ref | first %}
+{% assign status_value = page.status %}
+{% if status_value == nil or status_value == '' %}
+{% if is_pl %}
+{% assign status_value = 'W toku' %}
+{% else %}
+{% assign status_value = 'In-progress' %}
+{% endif %}
+{% endif %}
+{% assign year_value = page.year %}
+{% if year_value == nil or year_value == '' %}
+{% if page.date %}
+{% assign year_value = page.date | date: '%Y' %}
+{% else %}
+{% assign year_value = '' %}
+{% endif %}
+{% endif %}
+
+{% if is_pl %}
+{% assign hero_badge = 'Projekt portfolio' %}
+{% assign summary_label = 'Skrót' %}
+{% assign status_label = 'Status' %}
+{% assign year_label = 'Rok' %}
+{% assign tech_label = 'Technologie' %}
+{% assign logbook_label = 'Logbook' %}
+{% assign logbook_cta = 'Zobacz wpis logbooka' %}
+{% assign github_cta = 'Repozytorium na GitHubie' %}
+{% assign back_cta = 'Wróć do portfolio' %}
+{% assign content_heading = 'Opis projektu' %}
+{% assign stack_empty = 'Brak listy technologii.' %}
+{% assign logbook_empty = 'Brak powiązanych wpisów.' %}
+{% else %}
+{% assign hero_badge = 'Portfolio project' %}
+{% assign summary_label = 'Summary' %}
+{% assign status_label = 'Status' %}
+{% assign year_label = 'Year' %}
+{% assign tech_label = 'Tech stack' %}
+{% assign logbook_label = 'Logbook' %}
+{% assign logbook_cta = 'View logbook entry' %}
+{% assign github_cta = 'View on GitHub' %}
+{% assign back_cta = 'Back to portfolio' %}
+{% assign content_heading = 'Project details' %}
+{% assign stack_empty = 'Tech stack not provided.' %}
+{% assign logbook_empty = 'No related logbook entries.' %}
+{% endif %}
+
+<section class="work-hero py-5">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <span class="badge bg-primary-subtle text-primary fw-semibold px-3 py-2 mb-3 text-uppercase">{{ hero_badge
+          }}</span>
+        <h1 class="display-5 fw-bold mb-3">{{ page.title }}</h1>
+        {% if page.summary %}
+        <p class="lead text-muted mb-4">{{ page.summary }}</p>
+        {% endif %}
+        <dl class="row small text-muted gy-2">
+          <div class="col-sm-4">
+            <dt class="text-uppercase text-secondary fw-semibold">{{ status_label }}</dt>
+          </div>
+          <div class="col-sm-8">
+            <dd class="mb-0">{{ status_value }}</dd>
+          </div>
+          <div class="col-sm-4">
+            <dt class="text-uppercase text-secondary fw-semibold">{{ year_label }}</dt>
+          </div>
+          <div class="col-sm-8">
+            <dd class="mb-0">{{ year_value }}</dd>
+          </div>
+          <div class="col-sm-4">
+            <dt class="text-uppercase text-secondary fw-semibold">{{ tech_label }}</dt>
+          </div>
+          <div class="col-sm-8">
+            <dd class="mb-0">
+              {% if tech_list %}
+              {% for tag in tech_list %}
+              <span class="badge bg-light text-secondary border me-1 mb-1">{{ tag }}</span>
+              {% endfor %}
+              {% else %}
+              {{ stack_empty }}
+              {% endif %}
+            </dd>
+          </div>
+        </dl>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a class="btn btn-primary"
+            href="{% if current_lang == 'pl' %}{{ '/pl/works/' | relative_url }}{% else %}{{ '/works/' | relative_url }}{% endif %}">
+            <i class="bi bi-arrow-left me-2"></i>{{ back_cta }}
+          </a>
+          {% if log_reference %}
+          <a class="btn btn-outline-primary"
+            href="{{ '/challenge10k/log/' | append: log_reference | append: '/' | relative_url }}">
+            <i class="bi bi-journal-check me-2"></i>{{ logbook_cta }}
+          </a>
+          {% endif %}
+          {% if page.github_repo and page.github_repo != '' %}
+          <a class="btn btn-outline-secondary" href="{{ page.github_repo }}" target="_blank" rel="noopener">
+            <i class="bi bi-github me-2"></i>{{ github_cta }}
+          </a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-lg-6">
+        {% if hero_image %}
+        <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm">
+          <img class="w-100 h-100 object-fit-cover" src="{{ hero_image | relative_url }}" alt="{{ page.title }} hero">
+        </div>
+        {% else %}
+        <div
+          class="ratio ratio-16x9 bg-light rounded-4 d-flex align-items-center justify-content-center text-muted border">
+          <i class="bi bi-image" style="font-size: 2rem;"></i>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light-subtle">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <article class="card shadow-sm border-0">
+          <div class="card-body p-4 p-lg-5">
+            <h2 class="h4 fw-semibold mb-4">{{ content_heading }}</h2>
+            <div class="content">
+              {{ content }}
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="col-lg-4">
+        <div class="card shadow-sm border-0">
+          <div class="card-body">
+            <h3 class="h6 text-uppercase text-secondary fw-semibold mb-3">{{ logbook_label }}</h3>
+            {% if log_reference %}
+            <a class="btn btn-outline-primary w-100"
+              href="{{ '/challenge10k/log/' | append: log_reference | append: '/' | relative_url }}">
+              <i class="bi bi-journal-text me-2"></i>{{ logbook_cta }}
+            </a>
+            {% else %}
+            <p class="text-muted small mb-0">{{ logbook_empty }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

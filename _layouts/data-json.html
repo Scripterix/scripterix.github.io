@@ -1,0 +1,25 @@
+---
+layout: null
+---
+{%- assign collection_name = page.collection | default: nil -%}
+{%- assign items = empty -%}
+{%- if collection_name -%}
+{%- assign items = site[collection_name] | default: empty -%}
+{%- endif -%}
+{%- if page.sort_by -%}
+{%- assign items = items | sort: page.sort_by -%}
+{%- endif -%}
+{%- if page.sort_reverse and page.sort_reverse != false -%}
+{%- assign items = items | reverse -%}
+{%- endif -%}
+{%- if page.limit -%}
+{%- assign items = items | slice: 0, page.limit -%}
+{%- endif -%}
+[
+{%- for item in items -%}
+{%- include data-object.liquid item=item fields=page.fields extras=page.extras summary_truncate=page.summary_truncate
+-%}
+{%- unless forloop.last -%},
+{%- endunless -%}
+{%- endfor -%}
+]

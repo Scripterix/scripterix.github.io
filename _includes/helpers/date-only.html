@@ -1,0 +1,10 @@
+{% assign date_value = include.value %}
+{% assign provided_format = include.format %}
+{% assign sanitized_format = provided_format | default: '%Y-%m-%d' %}
+{% assign format_upper = sanitized_format | upcase %}
+{% if format_upper contains '%H' or format_upper contains '%I' or format_upper contains '%T' or format_upper contains '%S' %}
+  {% assign sanitized_format = '%Y-%m-%d' %}
+{% endif %}
+{% if date_value %}
+  {{ date_value | date: sanitized_format }}
+{% endif %}

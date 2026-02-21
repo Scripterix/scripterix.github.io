@@ -1,0 +1,64 @@
+<footer class="bg-light text-light py-4 mt-5">
+  <div class="container">
+    {% assign current_lang = page.lang | default: site.default_lang | default: 'pl' %}
+    {% if current_lang == 'en' %}
+      {% assign home_url = '/en/' %}
+      {% assign about_url = '/en/about/' %}
+      {% assign archive_url = '/en/archive/' %}
+    {% else %}
+      {% assign home_url = '/' %}
+      {% assign about_url = '/about/' %}
+      {% assign archive_url = '/archive/' %}
+    {% endif %}
+
+    <div class="row gy-4">
+      <div class="col-md-6">
+        <h5 class="fw-semibold"><i class="bi bi-code-slash"></i> {{ site.title | default: "Scripterix" }}</h5>
+        <p class="text-muted mb-0">
+          {{ t.footer.description | default: site.description | default: "Scripterix documents a 10,000-hour journey to full-stack mastery." }}
+        </p>
+      </div>
+      <div class="col-md-3">
+        <div class="footer-links text-dark">
+          <h6 class="text-uppercase small fw-semibold mb-3">{{ t.footer.quick_links | default: 'Quick Links' }}</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="{{ home_url | relative_url }}" class="text-decoration-none">
+                <i class="bi bi-house"></i> {{ t.nav.home | default: 'Start' }}
+              </a></li>
+            <li class="mb-2"><a href="{{ about_url | relative_url }}" class="text-decoration-none">
+                <i class="bi bi-person"></i> {{ t.nav.about | default: 'About' }}
+              </a></li>
+            <li><a href="{{ archive_url | relative_url }}" class="text-decoration-none">
+                <i class="bi bi-archive"></i> {{ t.nav.archive | default: 'Archive' }}
+              </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="footer-links text-dark">
+          <h6 class="text-uppercase small fw-semibold mb-3">{{ t.footer.documentation | default: 'Documentation' }}</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a href="{{ '/docs/changelog/' | relative_url }}" class="text-decoration-none">
+                <i class="bi bi-clock-history"></i> {{ t.footer.changelog | default: 'Changelog' }}
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-3">
+    <div class="row align-items-center gy-2">
+      <div class="col-md-6">
+        <small class="text-muted">
+          &copy; {{ 'now' | date: "%Y" }} {{ site.title | default: "Scripterix" }}.
+          {{ t.footer.built_with | default: 'Powered by Jekyll & Bootstrap.' }}
+        </small>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <small class="text-muted">
+          {{ t.footer.love | default: 'Built with <i class="bi bi-heart-fill text-danger"></i> using Jekyll' | markdownify | strip | replace: '<p>', '' | replace: '</p>', '' }}
+        </small>
+      </div>
+    </div>
+  </div>
+</footer>
