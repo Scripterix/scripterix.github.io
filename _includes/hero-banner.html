@@ -1,0 +1,44 @@
+{% assign theme = include.theme | default: 'ocean' %}
+<section class="hero-banner hero-banner--{{ theme }} py-5 py-lg-6 position-relative overflow-hidden">
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        {% if include.badge %}
+        <span class="hero-banner-badge badge rounded-pill bg-white text-dark fw-semibold px-3 py-2 mb-3 shadow-sm">
+          {{ include.badge }}
+        </span>
+        {% endif %}
+        {% if include.title %}
+        <h1 class="display-4 fw-bold text-white mb-3">{{ include.title }}</h1>
+        {% endif %}
+        {% if include.lead %}
+        <p class="lead text-white-50 mb-4">{{ include.lead }}</p>
+        {% endif %}
+        {% if include.primary_label or include.secondary_label %}
+        <div class="d-flex flex-wrap gap-3">
+          {% if include.primary_label %}
+          <a class="btn btn-light btn-lg shadow-sm" href="{{ include.primary_url | default: '#' }}">
+            {% if include.primary_icon %}<i class="bi {{ include.primary_icon }} me-2"></i>{% endif %}
+            {{ include.primary_label }}
+          </a>
+          {% endif %}
+          {% if include.secondary_label %}
+          <a class="btn btn-outline-light btn-lg" href="{{ include.secondary_url | default: '#' }}">
+            {% if include.secondary_icon %}<i class="bi {{ include.secondary_icon }} me-2"></i>{% endif %}
+            {{ include.secondary_label }}
+          </a>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+      {% if include.extra %}
+      <div class="col-lg-5">
+        <div class="hero-banner-extra card border-0 shadow-lg rounded-4 overflow-hidden">
+          {% include {{ include.extra }} %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="hero-banner-glow"></div>
+</section>

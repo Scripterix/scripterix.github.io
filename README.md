@@ -25,14 +25,26 @@ bundle exec jekyll serve
 
 > Uwaga: środowisko GitHub Pages automatycznie obsługuje tylko whitelistingowane wtyczki, dlatego używamy wyłącznie `jekyll-paginate`.
 
-## Deployment na GitHub Pages
+## Szybkie dodawanie treści
 
-To repozytorium zawiera **pre-built statyczne pliki HTML** (wygenerowane przez Jekyll lokalnie). GitHub Pages serwuje te pliki bezpośrednio dzięki obecności pliku `.nojekyll` w głównym katalogu, który wyłącza automatyczne przetwarzanie przez Jekyll na serwerze GitHub Pages.
+Nowe wpisy można generować szablonem:
 
-**Ważne:** Po każdej aktualizacji contentu należy:
-1. Lokalnie zbudować stronę: `bundle exec jekyll build`
-2. Commitować wygenerowane pliki HTML
-3. Pushować zmiany do repozytorium
+```bash
+npm run new:post -- --title "Tytul wpisu" --lang pl --slug tytul-wpisu
+npm run new:log -- --title "Dzien nauki" --lang pl --slug dzien-nauki
+npm run new:work -- --title "Nazwa projektu" --lang pl --slug nazwa-projektu
+```
+
+Opcjonalne flagi:
+- `--date YYYY-MM-DD`
+- `--translation-id custom-id`
+- `--force` (nadpisanie istniejącego pliku)
+
+## Deployment
+
+- Repo zawiera tylko zrodla Jekyll (bez commitowania `_site`).
+- Publikacja odbywa sie przez GitHub Actions (`.github/workflows/pages.yml`).
+- W `Settings -> Pages` ustaw `Source: GitHub Actions`.
 
 ## Planowane ulepszenia
 
@@ -40,3 +52,28 @@ To repozytorium zawiera **pre-built statyczne pliki HTML** (wygenerowane przez J
 - Rozbudować `challenge10k` o wykres słupkowy miesięcznych godzin (możliwe z wykorzystaniem Chart.js lub lekkiego SVG).
 - Przygotować pliki JSON (w `assets/data/`) tak, aby eksportowały również zliczenia godzin i informacje o parach tłumaczeń.
 - Uzupełnić metadane SEO (`og:` i `twitter:`) po ustaleniu finalnych tekstów w obu językach.
+
+
+## Notatki deweloperskie (BOM, build, cache)
+
+- Wszystkie pliki `.md` i `.markdown` zapisuj jako czysty UTF-8 bez BOM. Najprosciej uzyc malego skryptu w Pythonie:
+  ```powershell
+  @'
+  from pathlib import Path
+  path = Path(''sciezka/do/pliku.md'')
+  text = path.read_text(encoding='utf-8-sig')
+  path.write_text(text, encoding='utf-8', newline='\n')
+  '@ | python -
+  ```
+  `utf-8-sig` usuwa BOM przy odczycie, a zapis nastepuje juz bez dodatkowych bajtow.
+- Jesli edycja w terminalu psuje znaki PL, generuj zawartosc przez Pythona z sekwencjami Unicode:
+  ```powershell
+  @'
+  from pathlib import Path
+  content = "Wsp\u00f3lna o\u015b czasu"
+  Path('sciezka/do/pliku.md').write_text(content, encoding='utf-8', newline='\n')
+  '@ | python -
+  ```
+  Po zapisie uruchom `rg -n '\?' sciezka/do/pliku.md`, aby upewnic sie, ze nie zostaly zadne utracone znaki.
+- Build wywoluj w katalogu `scripterix.github.io`, a wynik publikuj np. `bundle exec jekyll build --destination ../scripterix-remote`. W katalogu z buildem nie wprowadzaj recznych zmian.
+- `.jekyll-cache/` przyspiesza kolejne buildy, ale w razie problemow mozna go bezpiecznie usunac (`bundle exec jekyll clean` czysci tez `_site`).

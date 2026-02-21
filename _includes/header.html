@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="{{ '/' | relative_url }}">
+      <i class="bi bi-code-slash"></i>
+      {{ site.title | default: "My Jekyll Site" }}
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      {% assign current_lang = page.lang | default: site.default_lang | default: 'pl' %}
+      {% assign nav_strings = t.nav | default: empty %}
+      {% if current_lang == 'en' %}
+        {% assign home_url = '/en/' %}
+        {% assign about_url = '/en/about/' %}
+        {% assign archive_url = '/en/archive/' %}
+        {% assign portfolio_url = '/en/portfolio/' %}
+        {% assign challenge_url = '/en/challenge10k/' %}
+      {% else %}
+        {% assign home_url = '/' %}
+        {% assign about_url = '/about/' %}
+        {% assign archive_url = '/archive/' %}
+        {% assign portfolio_url = '/portfolio/' %}
+        {% assign challenge_url = '/challenge10k/' %}
+      {% endif %}
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link {% if page.translation_id == 'home' or page.url == '/' %}active{% endif %}"
+            href="{{ home_url | relative_url }}">
+            <i class="bi bi-house"></i> {{ nav_strings.home | default: 'Start' }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if page.translation_id == 'about' %}active{% endif %}"
+            href="{{ about_url | relative_url }}">
+            <i class="bi bi-person"></i> {{ nav_strings.about | default: 'About' }}
+          </a>
+        </li>
+        {% assign is_archive = false %}
+        {% if page.translation_id == 'archive' %}
+          {% assign is_archive = true %}
+        {% endif %}
+        {% if page.translation_id and page.translation_id contains 'archive-' %}
+          {% assign is_archive = true %}
+        {% endif %}
+        <li class="nav-item">
+          <a class="nav-link {% if is_archive %}active{% endif %}"
+            href="{{ archive_url | relative_url }}">
+            <i class="bi bi-archive"></i> {{ nav_strings.archive | default: 'Archive' }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if page.translation_id == 'portfolio' or page.collection == 'works' %}active{% endif %}"
+            href="{{ portfolio_url | relative_url }}">
+            <i class="bi bi-kanban"></i> {{ nav_strings.portfolio | default: 'Portfolio' }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if page.translation_id == 'challenge10k' or page.collection == 'logbook' %}active{% endif %}"
+            href="{{ challenge_url | relative_url }}">
+            <i class="bi bi-lightning-charge"></i> {{ nav_strings.challenge | default: 'Challenge10k' }}
+          </a>
+        </li>
+      </ul>
+      {% include language-switcher.html %}
+    </div>
+  </div>
+</nav>

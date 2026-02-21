@@ -1,0 +1,45 @@
+{% assign languages = site.languages | default: nil %}
+{% assign current_lang = page.lang | default: site.default_lang | default: 'pl' %}
+{% if languages and languages.size > 1 %}
+<div class="dropdown ms-lg-3 mt-3 mt-lg-0">
+  <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="languageDropdown"
+    data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="bi bi-translate"></i>
+    {{ t.language | default: 'Language' }}
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+    {% for lang in languages %}
+    {% assign code = lang.code %}
+    {% assign label = lang.label %}
+    {% if code == current_lang %}
+    <li><span class="dropdown-item active">{{ label }} ✓</span></li>
+    {% else %}
+    {% assign target = nil %}
+    {% if page.translation_id %}
+      {% assign target = site.pages | where: 'translation_id', page.translation_id | where: 'lang', code | first %}
+      {% if target == nil %}
+        {% assign target = site.posts | where: 'translation_id', page.translation_id | where: 'lang', code | first %}
+      {% endif %}
+      {% if target == nil %}
+        {% for collection in site.collections %}
+          {% if collection.label != 'posts' and collection.label != 'pages' %}
+            {% assign docs = collection.docs | where: 'translation_id', page.translation_id | where: 'lang', code %}
+            {% assign candidate = docs | first %}
+            {% if candidate %}
+              {% assign target = candidate %}
+              {% break %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+    {% if target %}
+    <li><a class="dropdown-item" href="{{ target.url | relative_url }}">{{ label }}</a></li>
+    {% else %}
+    <li><span class="dropdown-item disabled">{{ label }}</span></li>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}

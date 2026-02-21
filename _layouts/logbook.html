@@ -1,0 +1,103 @@
+---
+layout: default
+---
+
+{% assign post_strings = t.post | default: empty %}
+{% assign post_date_format = post_strings.date_format | default: "%Y-%m-%d" %}
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+      <article class="card shadow-sm border-0">
+        <div class="card-body p-4 p-lg-5">
+          <header class="mb-4">
+            <p class="text-uppercase small text-primary fw-semibold mb-2">Challenge10k Â· {{ page.phase | capitalize }}
+            </p>
+            <h1 class="display-5 fw-bold text-dark">{{ page.title }}</h1>
+            <div class="d-flex flex-wrap align-items-center gap-3 text-muted small">
+              <span><i class="bi bi-calendar3 me-1"></i>{% include helpers/date-only.html value=page.date format=post_date_format %}</span>
+              <span><i class="bi bi-stopwatch me-1"></i>{{ page.hours_spent }} h</span>
+              {% if page.cumulative_hours %}
+              <span><i class="bi bi-graph-up me-1"></i>{{ page.cumulative_hours }} h total</span>
+              {% endif %}
+              {% assign reading_minutes = page.reading_time | default: 0 | ceil %}
+              {% if reading_minutes > 0 %}
+              <span><i class="bi bi-book me-1"></i>{{ reading_minutes }} min read</span>
+              {% endif %}
+              {% if page.words %}
+              <span><i class="bi bi-123 me-1"></i>{{ page.words }} words</span>
+              {% endif %}
+            </div>
+          </header>
+
+          {% if page.summary %}
+          <div class="alert alert-info bg-light border-0 text-dark mb-4">
+            <strong>{{ t.home.features.clean.title | default: 'Czysty kod' }}</strong>
+            <p class="mb-0">{{ page.summary }}</p>
+          </div>
+          {% endif %}
+
+          <dl class="row g-3 challenge-log-meta mb-5">
+            {% if page.focus_area %}
+            <div class="col-md-6">
+              <dt class="small text-uppercase text-muted">Focus area</dt>
+              <dd class="fs-6 fw-semibold">{{ page.focus_area }}</dd>
+            </div>
+            {% endif %}
+            {% if page.mood %}
+            <div class="col-md-6">
+              <dt class="small text-uppercase text-muted">Mood</dt>
+              <dd class="fs-6 fw-semibold">{{ page.mood }}</dd>
+            </div>
+            {% endif %}
+            {% if page.tags %}
+            <div class="col-md-6">
+              <dt class="small text-uppercase text-muted">Tags</dt>
+              <dd>
+                {% for tag in page.tags %}
+                <span class="badge rounded-pill bg-primary-subtle text-primary me-2">{{ tag }}</span>
+                {% endfor %}
+              </dd>
+            </div>
+            {% endif %}
+            {% if page.resources %}
+            <div class="col-md-6">
+              <dt class="small text-uppercase text-muted">Resources</dt>
+              <dd>
+                <ul class="list-unstyled mb-0">
+                  {% for resource in page.resources %}
+                  <li><a class="text-decoration-none" href="{{ resource.url }}" target="_blank" rel="noopener">{{
+                      resource.name }}</a></li>
+                  {% endfor %}
+                </ul>
+              </dd>
+            </div>
+            {% endif %}
+          </dl>
+
+          <div class="challenge-log-content">
+            {{ content }}
+          </div>
+        </div>
+        <footer class="card-footer bg-light border-0 py-3">
+          <div class="d-flex justify-content-between">
+            <div>
+              {% if page.previous %}
+              <a class="btn btn-outline-primary btn-sm" href="{{ page.previous.url | relative_url }}">
+                <i class="bi bi-arrow-left me-1"></i>{{ page.previous.title | truncate: 32 }}
+              </a>
+              {% endif %}
+            </div>
+            <div class="text-end">
+              {% if page.next %}
+              <a class="btn btn-outline-primary btn-sm" href="{{ page.next.url | relative_url }}">
+                {{ page.next.title | truncate: 32 }}<i class="bi bi-arrow-right ms-1"></i>
+              </a>
+              {% endif %}
+            </div>
+          </div>
+        </footer>
+      </article>
+    </div>
+  </div>
+</div>

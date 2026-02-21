@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+{% assign hero_title = page.hero_title | default: page.title %}
+{% assign hero_lead = page.hero_lead | default: page.description %}
+{% assign hero_badge = page.hero_badge %}
+{% assign hero_theme = page.hero_theme | default: nil %}
+
+{% assign primary_label = page.hero_primary_cta.label %}
+{% assign primary_url = page.hero_primary_cta.url | default: '#' %}
+{% assign primary_icon = page.hero_primary_cta.icon %}
+
+{% assign secondary_label = page.hero_secondary_cta.label %}
+{% assign secondary_url = page.hero_secondary_cta.url | default: '#' %}
+{% assign secondary_icon = page.hero_secondary_cta.icon %}
+
+{% assign hero_extra = page.hero_extra_include | default: page.hero_extra_partial %}
+
+{% assign hero_enabled = false %}
+{% if hero_theme %}{% assign hero_enabled = true %}{% endif %}
+{% if hero_badge %}{% assign hero_enabled = true %}{% endif %}
+{% if hero_lead %}{% assign hero_enabled = true %}{% endif %}
+{% if primary_label %}{% assign hero_enabled = true %}{% endif %}
+{% if secondary_label %}{% assign hero_enabled = true %}{% endif %}
+
+{% if hero_enabled %}
+  {% include hero-banner.html
+    theme=hero_theme
+    badge=hero_badge
+    title=hero_title
+    lead=hero_lead
+    primary_label=primary_label
+    primary_url=primary_url
+    primary_icon=primary_icon
+    secondary_label=secondary_label
+    secondary_url=secondary_url
+    secondary_icon=secondary_icon
+    extra=hero_extra %}
+{% else %}
+<section class="page-header-fallback py-5">
+  <div class="container">
+    <h1 class="display-5 fw-semibold">{{ hero_title }}</h1>
+    {% if hero_lead %}
+    <p class="lead text-muted">{{ hero_lead }}</p>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+<section class="page-content-section py-5{% if hero_enabled %} page-content-section--overlap{% endif %}">
+  <div class="container">
+    <article class="card shadow-sm">
+      <div class="card-body">
+        {{ content }}
+      </div>
+    </article>
+  </div>
+</section>
