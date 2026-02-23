@@ -185,7 +185,7 @@ pl:
   footer:
     quick_links: "Szybkie linki"
     built_with: "Napędzane przez Jekyll i Bootstrap."
-    love: "Zbudowano z <i class=&quot;bi bi-heart-fill text-danger&quot;></i> przy użyciu Jekylla"
+    love: "Zbudowano z <i class=\"bi bi-heart-fill text-danger\"></i> przy użyciu Jekylla"
     documentation: "Dokumentacja"
     changelog: "Changelog"
     description: "Scripterix – osobisty projekt edukacyjny dokumentujący wyzwanie 10 000 godzin."
@@ -381,7 +381,7 @@ en:
   footer:
     quick_links: "Quick Links"
     built_with: "Powered by Jekyll & Bootstrap."
-    love: "Built with <i class=&quot;bi bi-heart-fill text-danger&quot;></i> using Jekyll"
+    love: "Built with <i class=\"bi bi-heart-fill text-danger\"></i> using Jekyll"
     documentation: "Documentation"
     changelog: "Changelog"
     description: "Scripterix – personal learning project documenting the 10,000-hour challenge."
