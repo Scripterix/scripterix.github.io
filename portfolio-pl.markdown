@@ -7,9 +7,9 @@ permalink: /portfolio/
 hero_theme: orchid
 hero_badge: "Portfolio"
 hero_title: "Portfolio Scripterix"
-hero_lead: "Ĺ»ywe archiwum wdroĹĽonych produktĂłw, eksperymentĂłw i automatyzacji z ostatnich lat."
+hero_lead: "Żywe archiwum wdrożonych produktów, eksperymentów i automatyzacji z ostatnich lat."
 hero_primary_cta:
-  label: "PrzeglÄ…daj projekty"
+  label: "Przeglądaj projekty"
   url: "#portfolio-grid"
   icon: bi-kanban
 hero_secondary_cta:
@@ -125,7 +125,7 @@ hero_secondary_cta:
           <div class="portfolio-card__actions d-flex flex-wrap gap-2">
             {% if link %}
             <a class="btn btn-outline-primary btn-sm" href="{{ link | relative_url }}">
-              <i class="bi bi-journal-text me-1"></i>{{ t.portfolio.labels.details | default: 'SzczegĂłĹ‚y' }}
+              <i class="bi bi-journal-text me-1"></i>{{ t.portfolio.labels.details | default: 'Szczegóły' }}
             </a>
             {% endif %}
             {% if work.github_repo %}
