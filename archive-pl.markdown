@@ -41,10 +41,25 @@ hero_secondary_cta:
       <div class="timeline-badges-wrapper my-4">
         <div class="d-flex flex-wrap justify-content-center gap-3">
           {% for year in sorted_years %}
+          {% assign has_year_page = false %}
+          {% assign year_url = '' %}
+          {% for p in site.pages %}
+            {% if p.layout == 'archive-year' and p.lang == page.lang %}
+              {% assign p_year = p.archive_year | append: '' %}
+              {% if p_year == year %}
+                {% assign has_year_page = true %}
+                {% assign year_url = p.url %}
+                {% break %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+
+          {% if has_year_page %}
           <a class="badge bg-primary fw-semibold fs-5 px-4 py-3 d-flex align-items-center justify-content-center text-decoration-none"
-            href="{{ archive_base }}{{ year }}/" title="{{ year }}">
+            href="{{ year_url | relative_url }}" title="{{ year }}">
             {{ year }}
           </a>
+          {% endif %}
           {% endfor %}
         </div>
       </div>
