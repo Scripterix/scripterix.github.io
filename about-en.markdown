@@ -30,7 +30,7 @@ When Magento arrived in 2008, I migrated the store to **Magento 1.0.9**. It deli
 
 ### Early client work
 
-Friends soon asked for help. I built and maintained the Café Philosophique community site for philosophy meetups, then partnered with ACS on **x4y.pl**, a Magento-powered store for printing supplies. Within months it attracted over 1,500 daily users and generated valuable B2B leads thanks to a custom configurator and solid SEO.
+Friends soon asked for help. I built and maintained the Café Philosophique community site for philosophy meetups, then partnered with ACS on [**x4y.pl**](/works/2008-magento-en.html), a Magento-powered store for printing supplies. Within months it attracted over 1,500 daily users and generated valuable B2B leads thanks to a custom configurator and solid SEO. The full breakdown is available in the case study: [Magento 1 — ecommerce rollout (2008)](/works/2008-magento-en.html).
 
 In 2010 I launched **Subcomm.pl**, a winch and accessories shop, followed by **MiauHau.com**, a 4,000-product pet store developed with a three-person team. We combined SEO, word-of-mouth tactics, and social media to grow the brand.
 

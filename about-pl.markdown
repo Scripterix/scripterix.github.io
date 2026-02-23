@@ -30,7 +30,7 @@ Gdy w 2008 roku pojawiło się Magento, przeniosłem sklep na **Magento 1.0.9**.
 
 ### Pierwsze realizacje dla klientów
 
-Wkrótce znajomi zaczęli prosić o wsparcie. Zbudowałem i utrzymywałem stronę Café Philosophique dla społeczności filozoficznych spotkań, a następnie pomogłem firmie ACS wdrożyć **x4y.pl** – sklep z materiałami eksploatacyjnymi do drukarek. Dzięki autorskiemu konfiguratorowi i SEO serwis przyciągał ponad 1500 użytkowników dziennie oraz generował wartościowe leady B2B.
+Wkrótce znajomi zaczęli prosić o wsparcie. Zbudowałem i utrzymywałem stronę Café Philosophique dla społeczności filozoficznych spotkań, a następnie pomogłem firmie ACS wdrożyć [**x4y.pl**](/works/2008-magento-pl.html) – sklep z materiałami eksploatacyjnymi do drukarek. Dzięki autorskiemu konfiguratorowi i SEO serwis przyciągał ponad 1500 użytkowników dziennie oraz generował wartościowe leady B2B. Szczegóły wdrożenia opisałem w case study: [Magento 1 — wdrożenie sklepu e-commerce (2008)](/works/2008-magento-pl.html).
 
 W 2010 roku powstał **Subcomm.pl**, sklep z wyciągarkami i akcesoriami, a niedługo później **MiauHau.com** – ponad 4000 produktów dla psów i kotów, rozwijane we współpracy trzyosobowego zespołu. Połączyliśmy SEO, marketing szeptany i media społecznościowe, by wzmocnić markę.
 
