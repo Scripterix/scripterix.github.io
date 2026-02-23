@@ -2,23 +2,26 @@
   {
     "slug": "magento-2008",
     "title": {
-      "pl": "Sklep Magento — era 2008",
-      "en": "Magento Store — 2008 era"
+      "pl": "Magento 1 — wdrożenie sklepu e-commerce (2008)",
+      "en": "Magento 1 — ecommerce rollout (2008)"
     },
     "year": 2008,
     "tech": [
-      "Magento",
-      "PHP"
+      "Magento 1",
+      "PHP",
+      "MySQL",
+      "SEO",
+      "Google Ads"
     ],
     "summary": {
-      "pl": "Implementacja sklepu B2C",
-      "en": "Built B2C e-commerce store"
+      "pl": "Konfiguracja Magento 1, katalog z XLS i przelicznikiem EUR oraz SEO i Google Ads.",
+      "en": "Magento 1 setup, XLS-based catalog pricing with EUR conversion, plus SEO and Google Ads."
     },
-    "image": "/assets/images/portfolio/coding01.jpg",
-    "github": "https://github.com/user/magento2008",
+    "image": "/assets/images/x4y.png",
+    "github": "",
     "post_refs": [],
     "logbook_refs": [
-      "log-2008-09-05"
+      "magento-2008-rollout"
     ]
   },
   {
