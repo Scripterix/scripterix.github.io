@@ -4,7 +4,7 @@ title: "Dodanie strony o Hugo Generator - logbook"
 date: 2026-02-24
 translation_id: dodanie-strony-hugo-generator-2026-02-24
 hours_spent: 2
-cumulative_hours:
+cumulative_hours: 4
 phase: learning
 focus_area: "Hugo, content migration, publikacja treści"
 mood: "Skupiony"
