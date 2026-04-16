@@ -141,7 +141,7 @@ translation_id: home
             <p class="text-muted flex-grow-1">{{ post.excerpt | strip_html | truncate: 120 }}</p>
             <div class="d-flex align-items-center justify-content-between mt-4 text-muted small">
               <span><i class="bi bi-calendar3 me-2"></i>{% include helpers/date-only.html value=post.date format=list_date_format %}</span>
-              <span class="fw-semibold">{{ home_strings.posts.read_more | default: 'Czytaj dalej' }} &rarr;</span>
+              <span class="fw-semibold">{{ home_strings.posts.read_more | default: 'Czytaj dalej' }} →</span>
             </div>
           </div>
         </article>

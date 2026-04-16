@@ -180,8 +180,13 @@
          {%- if item.external -%}
            <li><a href="{{ item.external }}" target="_blank" rel="noopener">{% include t.html key="nav.github" %}</a></li>
          {%- else -%}
-           {%- assign href = __lang == "pl" ? item.to : item.to_en -%}
-           <li><a href="{{ href | relative_url }}">{% include t.html key="nav." | append: item.ref %}</a></li>
+           {%- if __lang == "pl" -%}
+             {%- assign href = item.to -%}
+           {%- else -%}
+             {%- assign href = item.to_en -%}
+           {%- endif -%}
+           {%- assign nav_key = "nav." | append: item.ref -%}
+           <li><a href="{{ href | relative_url }}">{% include t.html key=nav_key %}</a></li>
          {%- endif -%}
        {%- endfor -%}
      </ul>

@@ -18,6 +18,10 @@ github_username: scripterix
 plugins:
   - jekyll-paginate
 
+exclude:
+  - vendor/
+  - artefakt_migracja_scripterix.md
+
 # Collections
 collections:
   works:
