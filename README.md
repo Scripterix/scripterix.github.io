@@ -1,4 +1,22 @@
-# Scripterix GitHub Pages
+# Scripterix · bilingual developer portfolio
+
+[Website](https://scripterix.github.io/) · [English portfolio](https://scripterix.github.io/en/portfolio/) · [GitHub profile](https://github.com/Scripterix) · [LinkedIn](https://www.linkedin.com/in/opengateweb/)
+
+A Jekyll-based developer portfolio and learning log, with Polish and English
+content, reusable layouts and GitHub Actions publishing.
+
+## For reviewers
+
+- **Content model:** separate collections for projects, articles and learning logs.
+- **Localization:** paired PL/EN documents connected through `translation_id`.
+- **Authoring:** scripts for creating posts, log entries and project pages.
+- **Publishing:** a repository-based workflow documented in [DEPLOY_AUTOMATION.md](DEPLOY_AUTOMATION.md).
+
+Start with [_layouts/](_layouts/), [_includes/](_includes/) and [scripts/](scripts/)
+to explore the structure. For a full-stack React application, see
+[Book Tracker](https://github.com/Scripterix/scalable-book-tracker).
+
+## Dokumentacja po polsku
 
 Strona budowana w Jekyllu na potrzeby dokumentowania wyzwania 10 000 godzin programowania.
 
