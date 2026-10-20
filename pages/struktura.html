@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Struktura Agentic Mode prezentacji Codex v5.5: JSON, strony, assety i testy.">
+  <title>Struktura | Codex v5.5</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/css/site.css" rel="stylesheet">
+</head>
+<body data-page="struktura">
+  <div class="site-shell" data-agent-root="codex-v55-showcase">
+    <nav class="navbar navbar-expand-lg sticky-top" data-agent-section="navigation">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../index.html" aria-label="Codex v5.5">
+          <span class="brand-mark"><i class="bi bi-stars" aria-hidden="true"></i></span>
+          <span>Codex v5.5</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Przełącz nawigację">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0" data-nav-target></ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="page-hero" data-agent-section="page-hero">
+        <div class="container">
+          <span class="eyebrow"><i class="bi bi-diagram-3 text-secondary" aria-hidden="true"></i>Agentic Mode</span>
+          <h1>Struktura do dalszych rund</h1>
+          <p class="lead-copy">
+            To mapa techniczna strony po drugiej iteracji: gdzie są dane, style, skrypty, podstrony i testy.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" data-agent-section="structure-map">
+        <div class="container">
+          <div class="row g-3">
+            <div class="col-lg-6">
+              <div class="capability-card agent-map">
+                <div><code>index.html</code> = hub prezentacji</div>
+                <div><code>data/site.json</code> = menu i karty podstron</div>
+                <div><code>assets/css/site.css</code> = wspólne style</div>
+                <div><code>assets/js/site.js</code> = render nav, grid, filtry</div>
+                <div><code>pages/*.html</code> = podstrony tematyczne</div>
+                <div><code>tests/visual.spec.js</code> = test Playwright</div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="capability-card agent-map">
+                <div><code>data-page</code> = aktywny stan strony</div>
+                <div><code>data-nav-target</code> = miejsce wstrzyknięcia menu</div>
+                <div><code>data-page-grid</code> = karty z JSON na stronie głównej</div>
+                <div><code>data-agent-section</code> = stabilne sekcje do edycji</div>
+                <div><code>data-agent-card</code> = stabilne komponenty</div>
+                <div><code>data-filter-card</code> = filtr mikrointerakcji</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+        <span>Struktura</span>
+        <span>Dane, assety, selektory i testy</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="../src/components/navigation.ts"></script>
+  <script type="module" src="../assets/js/site.js"></script>
+</body>
+</html>

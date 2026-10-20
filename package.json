@@ -1,11 +1,24 @@
 {
-  "name": "scripterix-portfolio",
-  "version": "1.0.0",
+  "name": "scripterix-studio",
+  "version": "0.2.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "stats": "node scripts/generate-stats.js",
-    "new:post": "node scripts/new-entry.js post",
-    "new:log": "node scripts/new-entry.js log",
-    "new:work": "node scripts/new-entry.js work"
+    "start": "vite --host 127.0.0.1 --port 4173",
+    "dev": "vite --host 127.0.0.1 --port 4173",
+    "watch": "vite --host 127.0.0.1 --port 4173",
+    "serve": "npm run start",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173",
+    "typecheck": "tsc --noEmit",
+    "test:visual": "playwright test",
+    "test:screens": "playwright test tests/screenshots.spec.js",
+    "review:home": "node scripts/review-home.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
   }
 }

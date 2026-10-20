@@ -1,15 +1,5 @@
-_site
-_drafts
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-
-# Bundler / Ruby
-.bundle/
-vendor/
-
-# Node / front build
 node_modules/
 dist/
-.tmp/
-.cache/
+test-results/
+playwright-report/
+artifacts/

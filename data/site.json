@@ -1,0 +1,41 @@
+{
+  "nav": [
+    {
+      "label": "Start",
+      "href": "index.html#start",
+      "page": "home",
+      "icon": "bi-house"
+    },
+    {
+      "label": "Kompetencje",
+      "href": "index.html#kompetencje",
+      "page": "capabilities",
+      "icon": "bi-code-slash"
+    },
+    {
+      "label": "Projekty",
+      "href": "index.html#projekty",
+      "page": "projects",
+      "icon": "bi-window-stack"
+    },
+    {
+      "label": "LAB",
+      "href": "index.html#lab",
+      "page": "lab",
+      "icon": "bi-lightbulb"
+    },
+    {
+      "label": "Współpraca",
+      "href": "index.html#wspolpraca",
+      "page": "collaboration",
+      "icon": "bi-arrow-repeat"
+    },
+    {
+      "label": "Kontakt",
+      "href": "index.html#kontakt",
+      "page": "contact",
+      "icon": "bi-arrow-up-right"
+    }
+  ],
+  "pages": []
+}
