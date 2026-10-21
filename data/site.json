@@ -7,32 +7,26 @@
       "icon": "bi-house"
     },
     {
-      "label": "Kompetencje",
-      "href": "index.html#kompetencje",
-      "page": "capabilities",
+      "label": "Usługi",
+      "href": "pages/uslugi.html",
+      "page": "services",
       "icon": "bi-code-slash"
     },
     {
-      "label": "Projekty",
-      "href": "index.html#projekty",
-      "page": "projects",
+      "label": "Portfolio",
+      "href": "pages/portfolio.html",
+      "page": "portfolio",
       "icon": "bi-window-stack"
     },
     {
       "label": "LAB",
-      "href": "index.html#lab",
+      "href": "pages/lab.html",
       "page": "lab",
       "icon": "bi-lightbulb"
     },
     {
-      "label": "Współpraca",
-      "href": "index.html#wspolpraca",
-      "page": "collaboration",
-      "icon": "bi-arrow-repeat"
-    },
-    {
       "label": "Kontakt",
-      "href": "index.html#kontakt",
+      "href": "pages/kontakt.html",
       "page": "contact",
       "icon": "bi-arrow-up-right"
     }

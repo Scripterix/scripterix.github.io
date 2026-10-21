@@ -4,11 +4,11 @@ import { defineConfig, type Plugin } from "vite";
 
 const projectRoot = import.meta.dirname;
 
-function copyNavigationData(): Plugin {
+function copyRuntimeData(): Plugin {
   let outputDirectory = resolve(projectRoot, "dist");
 
   return {
-    name: "copy-navigation-data",
+    name: "copy-runtime-data",
     apply: "build",
     configResolved(config) {
       outputDirectory = config.build.outDir;
@@ -17,6 +17,7 @@ function copyNavigationData(): Plugin {
       const dataDirectory = resolve(outputDirectory, "data");
       mkdirSync(dataDirectory, { recursive: true });
       copyFileSync(resolve(projectRoot, "data", "site.json"), resolve(dataDirectory, "site.json"));
+      copyFileSync(resolve(projectRoot, "data", "search-index.json"), resolve(dataDirectory, "search-index.json"));
     }
   };
 }
@@ -25,8 +26,15 @@ export default defineConfig({
   base: "/",
   build: {
     rollupOptions: {
-      input: resolve(projectRoot, "index.html")
+      input: {
+        home: resolve(projectRoot, "index.html"),
+        kontakt: resolve(projectRoot, "pages/kontakt.html"),
+        lab: resolve(projectRoot, "pages/lab.html"),
+        portfolio: resolve(projectRoot, "pages/portfolio.html"),
+        search: resolve(projectRoot, "pages/search-result.html"),
+        uslugi: resolve(projectRoot, "pages/uslugi.html"),
+      },
     }
   },
-  plugins: [copyNavigationData()]
+  plugins: [copyRuntimeData()]
 });

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Usługi Scripterix Studio: development aplikacji webowych, automatyzacje danych i narzędzia AI.">
+  <meta name="theme-color" content="#f7f5ef">
+  <title>Usługi | Scripterix Studio</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/css/site.css" rel="stylesheet">
+  <link href="../assets/css/home.css" rel="stylesheet">
+</head>
+<body data-page="services">
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+  <div class="site-shell" data-agent-root="scripterix-studio">
+    <nav class="navbar navbar-expand-lg sticky-top" aria-label="Nawigacja główna" data-agent-section="navigation">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../index.html"
+          aria-label="Scripterix Studio — strona główna"><span class="brand-mark studio-mark"
+            aria-hidden="true">s<span>.</span></span><span class="studio-wordmark">Scripterix
+            <span>Studio</span></span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Przełącz nawigację"><span
+            class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0" data-nav-target></ul>
+        </div>
+      </div>
+    </nav>
+    <main id="main">
+      <section id="uslugi" data-hero="services"></section>
+      <section class="studio-section services-section" id="kompetencje" data-agent-section="capabilities">
+        <div class="container">
+          <div class="section-heading">
+            <div><span class="section-label">01 / Kompetencje</span>
+              <h2>Trzy obszary.<br>Jeden działający rezultat.</h2>
+            </div>
+            <p>Naprawiam to, co blokuje pracę. Buduję to, czego jeszcze brakuje. Dobieram rozwiązanie do problemu i
+              sprawdzam je w praktyce.</p>
+          </div>
+          <div class="service-grid">
+            <article class="service-card" data-agent-card="development">
+              <div class="service-top"><span>01</span><i class="bi bi-code-slash" aria-hidden="true"></i></div>
+              <h3>Development<span>Aplikacje i rozwój kodu</span></h3>
+              <p>Tworzę interfejsy, formularze, panele i aplikacje webowe. Rozwijam istniejący kod, dodaję funkcje i
+                szukam przyczyn błędów.</p>
+              <ul>
+                <li>Aplikacje webowe i prototypy MVP</li>
+                <li>Debugging i refaktoryzacja</li>
+                <li>Frontend i integracja z API</li>
+              </ul>
+              <div class="tech-list"><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Vite</span>
+              </div>
+            </article>
+            <article class="service-card" data-agent-card="automation">
+              <div class="service-top"><span>02</span><i class="bi bi-arrow-left-right" aria-hidden="true"></i></div>
+              <h3>Automation<span>Dane i połączone systemy</span></h3>
+              <p>Automatyzuję powtarzalne operacje i przepływ informacji. Przygotowuję skrypty do importu, porządkowania
+                i przekształcania danych.</p>
+              <ul>
+                <li>Import, eksport i walidacja plików</li>
+                <li>Raporty i konwersje danych</li>
+                <li>Integracje przez REST API</li>
+              </ul>
+              <div class="tech-list"><span>Python</span><span>JavaScript</span><span>CSV / JSON</span><span>REST
+                  API</span></div>
+            </article>
+            <article class="service-card" data-agent-card="ai-engineering">
+              <div class="service-top"><span>03</span><i class="bi bi-stars" aria-hidden="true"></i></div>
+              <h3>AI Engineering<span>Agenci, narzędzia i testy</span></h3>
+              <p>Łączę pracę agentów AI z kontrolą kodu i testowaniem. Rozwijam prototypy narzędzi, integracje i
+                powtarzalne procesy programistyczne.</p>
+              <ul>
+                <li>Workflow agentowe i Skills</li>
+                <li>Prototypowanie własnych narzędzi</li>
+                <li>Automatyzacja testów interfejsu</li>
+              </ul>
+              <div class="tech-list"><span>AI
+                  agents</span><span>Playwright</span><span>TypeScript</span><span>Git</span></div>
+            </article>
+          </div>
+          <p class="services-bottom"><span class="mini-bracket" aria-hidden="true">↳</span> Masz aplikację do
+            rozwinięcia, proces do usprawnienia albo pomysł na nowe narzędzie? <a href="../index.html#wspolpraca">Ustalmy
+              pierwszy krok <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></p>
+        </div>
+      </section>
+      <div data-cta-target></div>
+    </main>
+    <footer class="studio-footer" data-agent-section="footer" data-footer-target></footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="../src/components/navigation.ts"></script>
+  <script type="module" src="../src/components/hero.ts"></script>
+  <script type="module" src="../src/components/cta.ts"></script>
+  <script type="module" src="../src/components/footer.ts"></script>
+</body>
+</html>

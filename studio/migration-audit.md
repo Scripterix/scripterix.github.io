@@ -1,19 +1,19 @@
 # Scripterix Studio — audyt migracji projektu #55
 
-Data audytu: 2026-10-20
+Data audytu: 2026-10-20; weryfikacja i realizacja cleanupu: 2026-10-21
 Zakres: lokalny projekt `024 OGW GH Pages` oraz repozytorium
 `Scripterix/scripterix.github.io`.
 
 ## Decyzja architektoniczna
 
 Projekt #55 jest bazą techniczną i wizualną, ale nie jest częścią publicznej
-architektury informacji Scripterix Studio. Produkcyjny build zawiera wyłącznie
-aktualny Home. Historyczne podstrony, wyszukiwarka i lokalne tagi pozostają w
-repozytorium jako kod referencyjny, bez routingu produkcyjnego.
+architektury informacji Scripterix Studio. Produkcyjny build zawiera Home,
+aktualne podstrony Studio oraz wyszukiwarkę. Historyczne tagowanie lokalne,
+siatka stron i pozostałe mechanizmy #55 nie są częścią aplikacji.
 
 Łańcuch publicznej aplikacji po migracji:
 
-`index.html` → `site.css` + `home.css` → `navigation.ts` → `data/site.json`
+`index.html` + `pages/` → CSS → komponenty TypeScript → `data/site.json` + `data/search-index.json`
 → Vite → `dist/` → GitHub Pages.
 
 Bootstrap CSS, Bootstrap Icons i Bootstrap JS są nadal pobierane z jsDelivr.
@@ -35,6 +35,7 @@ GitHub Actions uruchamia typecheck, build i Playwright przed publikacją `dist/`
 | `tsconfig.json` | `src/**/*.ts`, `vite.config.ts` | Ścisły typecheck bez emisji. |
 | `package.json`, `package-lock.json` | npm, Vite, TypeScript, Playwright | Odtwarzalne zależności i komendy weryfikacyjne. |
 | `.github/workflows/pages.yml` | npm, Playwright, `dist/` | Build i publikacja Vite przez GitHub Actions bez Jekylla. |
+| `pages/uslugi.html`, `pages/portfolio.html`, `pages/lab.html`, `pages/kontakt.html` | wspólne komponenty TypeScript i CSS | Aktualne podstrony Scripterix Studio. |
 
 ## ADAPT — zachowane i dostosowane
 
@@ -50,23 +51,15 @@ GitHub Actions uruchamia typecheck, build i Playwright przed publikacją `dist/`
 | `tests/screenshots.spec.js` | Home, desktop/mobile | Ograniczono screenshoty do aktualnej publicznej strony. |
 | `studio/home-roadmap.md` | dokumenty marki, Home | Zaktualizowano mapę nawigacji i status historycznych mechanizmów. |
 | `README.md` | komendy npm, audyt, gałąź `old` | Zastępuje dokumentację Jekylla instrukcją aktualnego Studio. |
+| `src/components/search.ts` | `data/search-index.json`, `site.css` | Wydzielona, typowana obsługa modalu i strony wyników; bez tagowania i `localStorage`. |
+| `pages/search-result.html` | `navigation.ts`, `search.ts` | Widok wyników dostosowany do aktualnego Studio. |
+| `data/search-index.json` | `search.ts` | Indeks pięciu aktualnych stron Studio. |
 
 ## DISABLE — zachowane, ale odłączone od publicznej aplikacji
 
 | Zasób | Dawne zależności | Sposób odłączenia |
 | --- | --- | --- |
-| `pages/iteracje.html` | nav, `site.js`, `site.css` | Brak w `data/site.json` i wejściach Vite. |
-| `pages/alpine-js.html` | nav, tagi, search, `alpine-js.png` | Brak w nawigacji i produkcyjnym buildzie. |
-| `pages/vite.html` | nav, tagi, `vite.png` | Brak w nawigacji i produkcyjnym buildzie. |
-| `pages/search-fuse.html` | search, `fuzze-search.png` | Brak w nawigacji i produkcyjnym buildzie. |
-| `pages/search-result.html` | `site.js`, `search-index.json` | Brak w nawigacji i produkcyjnym buildzie. |
-| `pages/wizualia.html` | `visual-system.png`, nav | Brak w nawigacji i produkcyjnym buildzie. |
-| `pages/mikrointerakcje.html` | filtry z `site.js`, nav | Brak w nawigacji i produkcyjnym buildzie. |
-| `pages/weryfikacja.html` | nav, historyczne testy | Brak w nawigacji i produkcyjnym buildzie. |
-| `pages/struktura.html` | `data/site.json`, nav | Brak w nawigacji i produkcyjnym buildzie. |
-| `assets/js/site.js` | search, tagi, filtry, siatka dawnych stron | Usunięty z `index.html`; plik pozostaje jako kod referencyjny. |
-| `data/search-index.json` | `site.js`, strona wyników | Nie jest pobierany przez Home ani kopiowany do `dist/`. |
-| `assets/img/alpine-js.png`, `assets/img/fuzze-search.png`, `assets/img/vite.png`, `assets/img/visual-system.png`, `assets/img/agentic-workspace.png` | historyczne strony | Nie są osiągalne z produkcyjnego buildu. |
+| `pages/mikrointerakcje.html` | historyczna prezentacja demonstratora Portfolio | Brak w nawigacji i produkcyjnym buildzie; zachowana bez starego skryptu. |
 | `assets/img/prntScreen/1/mobile.png`, `assets/img/prntScreen/2/`–`5/` | historyczne screenshoty #55 | Zachowane w repozytorium; nie trafiają do bundla. |
 
 ## ARCHIVE — historia i materiały decyzyjne
@@ -79,21 +72,46 @@ GitHub Actions uruchamia typecheck, build i Playwright przed publikacją `dist/`
 | `studio/think-tank/*.md`, obrazy porównawcze w `studio/think-tank/` | Materiał badawczy i historia decyzji; nie jest częścią strony publicznej. |
 | `studio/use-img/*.jpg` | Materiały źródłowe i pochodzenie wybranego obrazu; tylko zoptymalizowany `studio-code.jpg` jest używany publicznie. |
 | Gałąź Git `old` | Kompletny ostatni stan źródłowego Jekylla na commicie `ada04648a3459475f408c3e05121f0233f9a5758`. |
+| `docs/legacy/site.js` | Oryginalny skrypt #55 (`assets/js/sites.js`) zachowany poza publicznym buildem. |
 
-## DELETE CANDIDATE — bez usuwania w tej iteracji
+## REMOVED — cleanup 2026-10-21
 
-| Zasób | Uzasadnienie do późniejszej decyzji |
-| --- | --- |
-| `dist/` | Odtwarzalny wynik `npm run build`; publikowany jako artefakt Actions, nie jako źródło. |
-| `node_modules/` | Odtwarzalne przez `npm ci`. |
-| `test-results/`, `playwright-report/` | Odtwarzalne wyniki Playwright. |
-| `artifacts/home/` | Odtwarzalne screenshoty przeglądu Home; można zachować wybrane obrazy jako dowód QA. |
-| Wyłączone `pages/*.html`, `assets/js/site.js`, `data/search-index.json` i ich nieużywane obrazy | Kandydaci dopiero po wspólnej decyzji, czy demonstratory będą jeszcze potrzebne jako źródło portfolio. Obecnie pozostają zachowane. |
-| Nieaktywne selektory #55 w `assets/css/site.css` | Możliwe do wydzielenia lub usunięcia po osobnym audycie CSS; teraz plik jest współdzielony z Home. |
+- Usunięto strony #55: `alpine-js.html`, `iteracje.html`, `search-fuse.html`, `struktura.html`, `vite.html`, `weryfikacja.html` i `wizualia.html`.
+- Usunięto ich osierocone obrazy: `agentic-workspace.png`, `alpine-js.png`, `fuzze-search.png`, `vite.png` i `visual-system.png`.
+- Usunięto pusty `assets/js/site.js`; pełny historyczny `assets/js/sites.js` przeniesiono do archiwum.
+- Usunięto kod i selektory tagowania stron przez `localStorage`.
+
+## Pozostali kandydaci — decyzja 2026-10-21
+
+| Decyzja | Zasób | Uzasadnienie |
+| --- | --- | --- |
+| DELETE | `dist/` | Odtwarzalny wynik buildu, ignorowany przez Git; może być czyszczony poza sesją publikacyjną. |
+| DELETE | `node_modules/` | Odtwarzalne przez `npm ci`; usuwać tylko przy świadomym cleanupie środowiska. |
+| DELETE | `test-results/`, `playwright-report/` | Odtwarzalne wyniki testów, ignorowane przez Git. |
+| KEEP | `pages/mikrointerakcje.html` | Zachowany materiał demonstratora opisanego w aktualnym Portfolio. |
+| KEEP | `assets/img/prntScreen/` | Materiał dowodowy projektu Agentic Studio i źródło aktywnego obrazu Portfolio. |
+| KEEP | `docs/legacy/site.js` | Referencyjna, pełna implementacja #55 poza publicznym buildem. |
+| REVIEW | `artifacts/home/` | Wybrane obrazy mogą być dowodem QA; katalog jako całość jest odtwarzalny. |
+| REVIEW | `index1.html` | Nie jest wejściem Vite; wymaga potwierdzenia, czy to nadal potrzebna kopia robocza. |
+| REVIEW | `docs/architecture.md` | Pusty plik bez aktywnego zastosowania; nie usunięto bez decyzji autora. |
+| REVIEW | Nieaktywne selektory #55 w `assets/css/site.css` | Usuwać dopiero po osobnym audycie zależności CSS. |
+
+## Indeksowanie wyszukiwarki — ocena
+
+W #55 nie było automatycznego generatora indeksu. Instrukcja wymagała ręcznego
+dopisania strony do `data/search-index.json`; skrypt runtime pobierał JSON i
+filtrował go po polach `topics` lub `content`. Vite kopiował gotowy plik, ale go
+nie generował. Nie znaleziono generatora również na gałęzi `old`.
+
+Rekomendacja na osobną iterację: jeden jawny manifest metadanych stron i
+projektów oraz mały skrypt `scripts/generate-search-index.mjs` z trybem `--check`.
+Generator powinien walidować unikalne `page`, istniejące `href` i wymagane pola,
+a `prebuild` powinien wykrywać nieaktualny indeks. Nie należy generować indeksu
+przez parsowanie zbudowanego HTML, ponieważ część treści powstaje w TypeScript.
 
 ## Granice tej iteracji
 
-- Bez usuwania kandydatów.
+- Usuwanie ograniczono do uzgodnionych, zweryfikowanych pozostałości #55.
 - Bez nowych funkcji i bez rozbudowy automatyzacji poza konieczny pipeline Pages.
 - Bez zmian kompozycji, typografii, kolorów i responsywnego układu Home.
 - Bez force push, kasowania historii lub usuwania gałęzi `old`.

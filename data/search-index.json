@@ -1,158 +1,47 @@
 [
   {
-    "title": "Scripterix Studio",
     "page": "home",
+    "title": "Scripterix Studio",
     "href": "index.html",
     "slug": "/",
-    "topics": [
-      "development",
-      "automation",
-      "AI engineering",
-      "aplikacje",
-      "automatyzacje",
-      "kontakt",
-      "portfolio"
-    ],
-    "description": "Niezależny developer: naprawiam kod, automatyzuję pracę i buduję aplikacje. Projekty własne, demonstratory i Scripterix LAB.",
-    "content": "Scripterix Studio to jednoosobowe studio programistyczne. Development: aplikacje webowe i rozwój kodu. Automation: importy, walidacja danych i integracje API. AI Engineering: workflow agentowe, prototypowanie oraz testy Playwright. Projekt własny Agentic Studio, demonstratory wyszukiwarki i mikrointerakcji, pomysł LAB-001 na walidator plików dostawców. Współpraca i kontakt: Piotr.adamkowski@gmail.com."
+    "topics": ["development", "automatyzacje", "aplikacje", "współpraca"],
+    "description": "Niezależny development: aplikacje webowe, naprawa kodu, automatyzacje i narzędzia AI.",
+    "content": "Naprawiam kod, automatyzuję pracę i buduję aplikacje. Ustalam zakres, programuję, sprawdzam rezultat i przekazuję działające rozwiązanie."
   },
   {
-    "title": "Iteracje",
-    "page": "iteracje",
-    "href": "pages/iteracje.html",
-    "slug": "/pages/iteracje.html",
-    "topics": [
-      "iteracje",
-      "proces pracy",
-      "rundy",
-      "weryfikacja",
-      "agentic workflow"
-    ],
-    "description": "Proces kolejnych rund: kierunek, zakres zmian, dopracowanie szczegółów i sprawdzanie efektu.",
-    "content": "Podstrona Iteracje opisuje rytm pracy nad stroną. Każda runda zaczyna się od decyzji projektowej, dotyka konkretnych sekcji, dopracowuje typografię, spacing, kontrast, mobile i hover, a na końcu sprawdza efekt testami lub wizualną kontrolą."
+    "page": "services",
+    "title": "Usługi",
+    "href": "pages/uslugi.html",
+    "slug": "/pages/uslugi.html",
+    "topics": ["development", "automation", "AI engineering", "API", "TypeScript", "Python"],
+    "description": "Development aplikacji webowych, automatyzacje danych i narzędzia AI dobrane do konkretnego problemu.",
+    "content": "Tworzę interfejsy i aplikacje webowe, rozwijam istniejący kod, automatyzuję operacje na danych oraz łączę pracę agentów AI z kontrolą kodu i testami."
   },
   {
-    "title": "Search Fuse",
-    "page": "search-fuse",
-    "href": "pages/search-fuse.html",
-    "slug": "/pages/search-fuse.html",
-    "topics": [
-      "fuse",
-      "search",
-      "topics",
-      "context",
-      "modal",
-      "search index"
-    ],
-    "description": "Plan wyszukiwarki: modal z pierwszymi wynikami, indeks JSON, tryby topics i context oraz osobna strona wyników.",
-    "content": "Search Fuse porządkuje architekturę wyszukiwarki. Modal ma obsługiwać input, przycisk czyszczenia, tryb topics i context oraz pierwsze pięć wyników. Pełny widok wyników może działać jako search-result.html z parametrami query i mode."
+    "page": "portfolio",
+    "title": "Portfolio",
+    "href": "pages/portfolio.html",
+    "slug": "/pages/portfolio.html",
+    "topics": ["projekty", "Agentic Studio", "wyszukiwarka", "mikrointerakcje", "Vite MPA"],
+    "description": "Agentic Studio oraz demonstratory wyszukiwarki i mikrointerakcji z jednego warsztatu.",
+    "content": "Portfolio obejmuje projekt własny Agentic Studio, wyszukiwanie treści i tematów oraz demonstrator responsywnych mikrointerakcji."
   },
   {
-    "title": "Alpine.js",
-    "page": "alpine-js",
-    "href": "pages/alpine-js.html",
-    "slug": "/pages/alpine-js.html",
-    "topics": [
-      "alpine",
-      "alpine.js",
-      "interaktywnosc",
-      "x-data",
-      "x-bind",
-      "x-on",
-      "x-transition"
-    ],
-    "description": "Nowa strona w iteracjach o lekkiej interaktywnosci Alpine.js i komponentach trzymanych blisko HTML.",
-    "content": "Alpine.js jest kierunkiem dla malych interakcji: stan x-data, zdarzenia x-on, wiazania x-bind, cykl x-init i przejscia x-transition. Strona pokazuje, kiedy Alpine pasuje do prezentacji bez wprowadzania ciezkiego frameworka."
+    "page": "lab",
+    "title": "Scripterix LAB",
+    "href": "pages/lab.html",
+    "slug": "/pages/lab.html",
+    "topics": ["LAB", "eksperymenty", "dane", "agenci AI", "prototypy"],
+    "description": "Kierunki eksperymentów z danymi, agentami AI i użytecznymi narzędziami.",
+    "content": "Scripterix LAB zbiera problemy, hipotezy i kierunki eksperymentów. Pomysły są wyraźnie oddzielone od gotowych produktów."
   },
   {
-    "title": "Vite",
-    "page": "vite",
-    "href": "pages/vite.html",
-    "slug": "/pages/vite.html",
-    "topics": [
-      "vite",
-      "dev server",
-      "assets",
-      "modules",
-      "hmr",
-      "build"
-    ],
-    "description": "Podstrona o Vite jako szybkim dev workflow dla stron, assetow i modulow.",
-    "content": "Vite porzadkuje lokalny podglad, szybki start, moduly JavaScript, style, assety i pozniejszy build. W tej prezentacji odpowiada za npm run start, serwer na porcie 4173 i wygodny rytm iteracji."
-  },
-  {
-    "title": "Wyniki search",
-    "page": "search-result",
-    "href": "pages/search-result.html",
-    "slug": "/pages/search-result.html",
-    "topics": [
-      "search result",
-      "wyniki",
-      "snippety",
-      "query params",
-      "topics"
-    ],
-    "description": "Dynamiczny widok wyników oparty o search-index.json i filtrowanie po topics lub context.",
-    "content": "Podstrona wyników czyta data/search-index.json, pobiera q i mode z adresu URL, filtruje wpisy i renderuje karty wyników z topicami, slugiem oraz krótkim snippetem."
-  },
-  {
-    "title": "Wizualia",
-    "page": "wizualia",
-    "href": "pages/wizualia.html",
-    "slug": "/pages/wizualia.html",
-    "topics": [
-      "wizualia",
-      "assety",
-      "bitmapy",
-      "mockupy",
-      "warstwa graficzna"
-    ],
-    "description": "Warstwa graficzna, lokalne bitmapy, mockupy pracy agenta i bardziej namacalny charakter prezentacji.",
-    "content": "Wizualia rozwijają stronę o lokalne obrazy w assets/img, pokazują system wizualny i pomagają ocenić, czy prezentacja ma konkretny, produktowy charakter."
-  },
-  {
-    "title": "Mikrointerakcje",
-    "page": "mikrointerakcje",
-    "href": "pages/mikrointerakcje.html",
-    "slug": "/pages/mikrointerakcje.html",
-    "topics": [
-      "mikrointerakcje",
-      "animacje",
-      "hover",
-      "filtry",
-      "ui states"
-    ],
-    "description": "Animacje wejścia, aktywne filtry kart, stany hover i płynniejsze przejścia.",
-    "content": "Mikrointerakcje opisują warstwę ruchu i reakcji interfejsu. Strona zawiera filtry kart, animacje wejścia, hover states i sposób myślenia o płynniejszych przejściach."
-  },
-  {
-    "title": "Weryfikacja",
-    "page": "weryfikacja",
-    "href": "pages/weryfikacja.html",
-    "slug": "/pages/weryfikacja.html",
-    "topics": [
-      "weryfikacja",
-      "playwright",
-      "testy",
-      "mobile",
-      "desktop"
-    ],
-    "description": "Test responsywności, kontrola widoczności i miejsce na screenshoty Playwright.",
-    "content": "Weryfikacja zbiera testy Playwright, kontrolę widoczności treści, sprawdzanie assetów i podstawy testowania desktop oraz mobile."
-  },
-  {
-    "title": "Struktura",
-    "page": "struktura",
-    "href": "pages/struktura.html",
-    "slug": "/pages/struktura.html",
-    "topics": [
-      "struktura",
-      "data-agent",
-      "site json",
-      "selektory",
-      "kontrakt"
-    ],
-    "description": "Mapa plików, selektory Agentic Mode i kontrakt na następne rundy.",
-    "content": "Struktura pokazuje mapę projektu: index.html jako hub, data/site.json jako menu i karty, assets/css/site.css jako style, assets/js/site.js jako render nav i grid, pages jako podstrony i tests jako weryfikację."
+    "page": "contact",
+    "title": "Kontakt",
+    "href": "pages/kontakt.html",
+    "slug": "/pages/kontakt.html",
+    "topics": ["kontakt", "współpraca", "projekt", "wycena"],
+    "description": "Kontakt w sprawie aplikacji, automatyzacji, naprawy kodu lub nowego narzędzia.",
+    "content": "Opisz problem i oczekiwany rezultat. W pierwszej wiadomości wystarczy krótki kontekst potrzebny do ustalenia zakresu i pierwszego kroku."
   }
 ]

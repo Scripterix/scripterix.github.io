@@ -1,4 +1,5 @@
 import type { NavItem, PageItem, SiteMap } from "../core/types";
+import { initializeSearch } from "./search";
 
 import fallbackSiteMap from "../../data/site.json";
 
@@ -117,9 +118,30 @@ export function renderNavigation(siteMap: SiteMap): void {
         </a>
       </li>
     `;
-  }).join("");
+  });
 
-  target.innerHTML = navItems;
+  const searchItem = `
+    <li class="nav-item nav-search-item">
+      <button class="nav-search-button" type="button" aria-label="Otwórz wyszukiwarkę" data-search-open>
+        <i class="bi bi-search" aria-hidden="true"></i>
+      </button>
+    </li>
+  `;
+  const contactIndex = siteMap.nav.findIndex((item) => item.page === "contact");
+  navItems.splice(contactIndex < 0 ? navItems.length : contactIndex, 0, searchItem);
+  target.innerHTML = navItems.join("");
+
+  const toggle = document.querySelector<HTMLButtonElement>(".navbar-toggler");
+  if (toggle && !document.querySelector("[data-mobile-search]")) {
+    const mobileSearch = document.createElement("button");
+    mobileSearch.className = "mobile-search-button";
+    mobileSearch.type = "button";
+    mobileSearch.setAttribute("aria-label", "Otwórz wyszukiwarkę");
+    mobileSearch.dataset.searchOpen = "";
+    mobileSearch.dataset.mobileSearch = "";
+    mobileSearch.innerHTML = '<i class="bi bi-search" aria-hidden="true"></i>';
+    toggle.before(mobileSearch);
+  }
 }
 
 function bindHomeSectionNavigation(): void {
@@ -153,6 +175,7 @@ function bindHomeSectionNavigation(): void {
 export async function initializeNavigation(): Promise<SiteMap> {
   const siteMap = await loadSiteMap();
   renderNavigation(siteMap);
+  await initializeSearch();
   bindHomeSectionNavigation();
   // Close the mobile collapse before following an in-page section link.
   document.querySelector("[data-nav-target]")?.addEventListener("click", (event) => {

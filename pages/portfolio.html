@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio Scripterix Studio: Agentic Studio oraz demonstratory wyszukiwarki i mikrointerakcji.">
+  <meta name="theme-color" content="#f7f5ef">
+  <title>Portfolio | Scripterix Studio</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/css/site.css" rel="stylesheet">
+  <link href="../assets/css/home.css" rel="stylesheet">
+</head>
+<body data-page="portfolio">
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+  <div class="site-shell" data-agent-root="scripterix-studio">
+    <nav class="navbar navbar-expand-lg sticky-top" aria-label="Nawigacja główna" data-agent-section="navigation">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../index.html"
+          aria-label="Scripterix Studio — strona główna"><span class="brand-mark studio-mark"
+            aria-hidden="true">s<span>.</span></span><span class="studio-wordmark">Scripterix
+            <span>Studio</span></span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Przełącz nawigację"><span
+            class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0" data-nav-target></ul>
+        </div>
+      </div>
+    </nav>
+    <main id="main">
+      <section id="portfolio" data-hero="portfolio"></section>
+      <section class="studio-section projects-section" id="projekty" data-agent-section="projects">
+        <div class="container">
+          <div class="section-heading">
+            <div><span class="section-label">02 / Projekty i demonstratory</span>
+              <h2>Możesz zajrzeć<br>pod maskę.</h2>
+            </div>
+            <p>Projekt własny i działające przykłady z jednego warsztatu. Każdy możesz otworzyć, sprawdzić i ocenić
+              samodzielnie.</p>
+          </div>
+          <article class="featured-project" data-agent-card="project-agentic-studio">
+            <a class="project-preview" href="https://github.com/Scripterix/scripterix.github.io"
+              aria-label="Agentic Studio — zobacz strukturę projektu">
+              <div class="preview-bar"><span class="window-dots"
+                  aria-hidden="true"><b></b><b></b><b></b></span><span>Agentic Studio / widok projektu</span><i
+                  class="bi bi-arrow-up-right" aria-hidden="true"></i></div>
+              <div class="project-screenshot"><img src="../assets/img/prntScreen/1/desktop.png"
+                  alt="Rzeczywisty zrzut wcześniejszego interfejsu Agentic Studio: hero, panel roboczy i nawigacja"
+                  width="1440" height="3224" loading="lazy"></div><span class="preview-caption">Od pierwszej iteracji do
+                wielostronicowego systemu.</span>
+            </a>
+            <div class="featured-copy"><span class="project-kind"><span class="status-dot"
+                  aria-hidden="true"></span>Projekt własny</span>
+              <h3>Agentic<br> Studio</h3>
+              <p>Wielostronicowy serwis z nawigacją sterowaną danymi i wyszukiwarką treści. Rozwijany
+                iteracyjnie z agentami AI, sprawdzany testami Playwright.</p>
+              <div class="project-result"><span>W praktyce</span>
+                <p>Wspólny system wizualny, działające interakcje i architektura gotowa na kolejne funkcje.</p>
+              </div>
+              <div class="tech-list"><span>TypeScript</span><span>Vite
+                  MPA</span><span>JSON</span><span>Playwright</span></div><a class="text-link"
+                href="https://github.com/Scripterix/scripterix.github.io">Zobacz strukturę projektu <i
+                  class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <div class="demo-grid">
+            <article class="demo-card" data-agent-card="demo-search">
+              <div class="demo-art search-art" aria-hidden="true">
+                <div class="mini-search"><i class="bi bi-search"></i><span>Znajdź właściwy kontekst<span
+                      class="demo-caret">_</span></span><kbd>↵</kbd></div>
+                <div class="mini-result"><span class="result-block"></span>
+                  <div><b>Wyszukiwanie treści i tematów</b><span>JSON index → wynik → konkretna strona</span></div><i
+                    class="bi bi-arrow-up-right"></i>
+                </div>
+              </div>
+              <div class="demo-copy"><span class="project-kind">Demonstrator / część Agentic Studio</span>
+                <h3>Wyszukiwarka z kontekstem</h3>
+                <p>Indeks aktualnych stron oraz dwa tryby filtrowania wyników: według tematów i treści. Bez konta i
+                  bez backendu.</p>
+                <div class="demo-bottom"><span>TypeScript · JSON</span><a class="text-link"
+                    href="search-result.html">Uruchom wyszukiwarkę <i
+                      class="bi bi-arrow-up-right" aria-hidden="true"></i></a></div>
+              </div>
+            </article>
+            <article class="demo-card" data-agent-card="demo-interactions">
+              <div class="demo-art interaction-art" aria-hidden="true"><span class="mini-filter">Wszystkie</span><span
+                  class="mini-filter selected">Interakcje <i class="bi bi-check2"></i></span>
+                <div class="mini-tiles"><span><i class="bi bi-cursor"></i><b>hover</b></span><span><i
+                      class="bi bi-filter"></i><b>filter</b></span><span><i
+                      class="bi bi-phone"></i><b>responsive</b></span></div>
+              </div>
+              <div class="demo-copy"><span class="project-kind">Demonstrator / część Agentic Studio</span>
+                <h3>Interfejs, który reaguje</h3>
+                <p>Filtry kart, stany hover i animacje wejścia. Małe elementy, które ułatwiają poruszanie się po
+                  aplikacji na różnych ekranach.</p>
+                <div class="demo-bottom"><span>HTML · CSS · JavaScript</span><a class="text-link"
+                    href="https://github.com/Scripterix/scripterix.github.io/blob/main/pages/mikrointerakcje.html">Zobacz
+                    kod <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></div>
+              </div>
+            </article>
+          </div>
+          <div class="projects-footer"><span>Więcej kodu i moich projektów znajdziesz na GitHubie.</span><a
+              class="text-link" href="https://github.com/Scripterix">GitHub / Scripterix <i class="bi bi-arrow-up-right"
+                aria-hidden="true"></i></a></div>
+        </div>
+      </section>
+      <div data-cta-target></div>
+    </main>
+    <footer class="studio-footer" data-agent-section="footer" data-footer-target></footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="../src/components/navigation.ts"></script>
+  <script type="module" src="../src/components/hero.ts"></script>
+  <script type="module" src="../src/components/cta.ts"></script>
+  <script type="module" src="../src/components/footer.ts"></script>
+</body>
+</html>

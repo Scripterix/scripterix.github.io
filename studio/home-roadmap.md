@@ -13,7 +13,7 @@ Trzy obszary: Development, Automation, AI Engineering. Jasne papierowe tło, sia
 | Materiał | Status na Home | Dowód lokalny |
 | --- | --- | --- |
 | Agentic Studio | Projekt własny | Działające Vite MPA, kod TypeScript, `data/`, `pages/`, testy i screenshot `assets/img/prntScreen/1/desktop.png` |
-| Wyszukiwarka z kontekstem | Demonstrator, część Agentic Studio | `assets/js/site.js`, `data/search-index.json`, `pages/search-result.html` |
+| Wyszukiwarka z kontekstem | Demonstrator, część Agentic Studio | `src/components/search.ts`, `data/search-index.json`, `pages/search-result.html` |
 | Mikrointerakcje | Demonstrator, część Agentic Studio | `pages/mikrointerakcje.html`, filtry i wspólne style |
 | LAB-001: walidator danych dostawców | Hipoteza, przed prototypem | Notatki `studio/think-tank/pierwszy-trop.md`; w tym projekcie brak implementacji |
 | Book Tracker, ShelfStack, Product Inventory | Bez kart na Home | W tym projekcie znaleziono opisy w propozycjach treści, bez kodu i działających wersji tych aplikacji |
@@ -28,7 +28,7 @@ Start → Kompetencje → Projekty → LAB → Współpraca → Kontakt.
 
 Wszystkie pozycje prowadzą do istniejących sekcji Home. Dziewięć wcześniejszych podstron projektu #55 pozostaje w źródłach, ale nie jest częścią publicznej nawigacji ani produkcyjnego buildu. Wspólna nawigacja korzysta z `data/site.json`; ten sam JSON jest importowany jako fallback w TypeScript.
 
-Wyszukiwarka i tagowanie lokalne pozostają zachowane wyłącznie jako historyczny kod projektu #55. Home skupia się na ofercie, projektach i kontakcie.
+Wyszukiwarka działa w architekturze Studio jako moduł TypeScript. Lokalne tagowanie stron usunięto; Home skupia się na ofercie, projektach i kontakcie.
 
 ## Propozycje kolejnych stron — do osobnej realizacji
 
