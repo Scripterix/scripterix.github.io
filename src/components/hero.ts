@@ -127,6 +127,7 @@ const heroConfigs: Record<string, HeroConfig> = {
     coordinate: "[ PHP 8.2 · MariaDB ]",
     title: "<span>ShelfStack</span>",
     lead: "Lokalna księgarnia w PHP i MariaDB",
+    detail: "Od katalogu książek po obsługę zamówień — demonstracyjna aplikacja webowa łącząca PHP, relacyjną bazę danych i panel administratora.",
     actions: []
   },
   contact: {

@@ -7,7 +7,7 @@ test("home renders the current navigation and primary content", async ({ page })
 
   await expect(page).toHaveTitle(/Scripterix Studio/);
   await expect(page.locator("[data-nav-target] .nav-link")).toHaveText(navigationLabels);
-  await expect(page.locator("[data-nav-target] .dropdown-item")).toHaveCount(0);
+  await expect(page.locator("[data-nav-target] .dropdown-item")).toHaveText(["Portfolio", "Projekty"]);
 
   // Desktop i mobile mają osobne przyciski otwierające ten sam modal.
   const searchButtons = page.locator("[data-search-open]");
@@ -21,17 +21,32 @@ test("home renders the current navigation and primary content", async ({ page })
 });
 
 
-test("navigation points only to current Studio pages", async ({ page }) => {
+test("navigation points only to current Studio pages", async ({ page }, testInfo) => {
   await page.goto("/index.html");
 
-  const hrefs = await page.locator("[data-nav-target] .nav-link").evaluateAll((links) => links.map((link) => link.getAttribute("href")));
+  const navigation = page.locator("[data-nav-target]");
+  if (testInfo.project.name === "mobile") {
+    await page.getByRole("button", { name: "Przełącz nawigację" }).click();
+    await expect(page.locator("#mainNav")).toHaveClass(/show/);
+  }
+
+  const portfolioToggle = navigation.getByRole("button", { name: "Portfolio", exact: true });
+  await expect(portfolioToggle).toHaveAttribute("aria-expanded", "false");
+  if (testInfo.project.name === "mobile") {
+    await portfolioToggle.click();
+    await expect(portfolioToggle).toHaveAttribute("aria-expanded", "true");
+    await expect(navigation.locator("[data-nav-submenu]")).toHaveClass(/show/);
+  }
+
+  const hrefs = await navigation.locator(".nav-link[href]").evaluateAll((links) => links.map((link) => link.getAttribute("href")));
   expect(hrefs).toEqual([
     "#start",
     "pages/uslugi.html",
-    "pages/portfolio.html",
     "pages/lab.html",
     "pages/kontakt.html"
   ]);
+  await expect(navigation.locator(".dropdown-item-parent")).toHaveAttribute("href", "pages/portfolio.html");
+  await expect(navigation.locator(".dropdown-item").filter({ hasText: "Projekty" })).toHaveAttribute("href", "pages/portfolio/projekty/index.html");
 });
 
 test("home has no console errors, failed local requests or broken images", async ({ page }) => {
@@ -99,7 +114,7 @@ test("search modal filters the current Studio index", async ({ page }, testInfo)
 
   const modal = page.locator("[data-global-search-modal]");
   await expect(modal).toHaveAttribute("aria-hidden", "false");
-  await modal.locator("[data-modal-search-query]").fill("hipotezy");
+  await modal.locator("[data-modal-search-query]").fill("hipoteza");
   await expect(modal.locator("[data-modal-search-count]")).toHaveText("0 wyników");
   await modal.getByText("Treść", { exact: true }).click();
   await expect(modal.locator("[data-modal-search-count]")).toHaveText("1 wyników");

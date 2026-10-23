@@ -86,6 +86,9 @@ export function renderNavigation(siteMap: SiteMap): void {
 
     if (children.length > 0) {
       const submenuId = `nav-submenu-${item.page}`;
+      const isParentPage = item.page === currentPage;
+      const parentActiveClass = isParentPage ? " active" : "";
+      const parentAriaCurrent = isParentPage ? 'aria-current="page"' : "";
       const dropdownItems = children.map((child) => {
         const isChildActive = child.page === currentPage;
         const childActiveClass = isChildActive ? " active" : "";
@@ -94,26 +97,26 @@ export function renderNavigation(siteMap: SiteMap): void {
         return `
           <li>
             <a class="dropdown-item${childActiveClass}" href="${resolveNavigationHref(child.href)}" ${childAriaCurrent}>
-              <i class="bi ${child.icon} me-2" aria-hidden="true"></i>${child.label}
+              ${child.label}
             </a>
           </li>
         `;
       }).join("");
 
       return `
-        <li class="nav-item nav-item-split-dropdown">
-          <div class="nav-split-control">
-            <a class="nav-link${activeClass}" href="${resolveNavigationHref(item.href)}" ${ariaCurrent}>
-              <i class="bi ${item.icon} me-1" aria-hidden="true"></i>${item.label}
-            </a>
-            <button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-controls="${submenuId}"
-              aria-label="Rozwiń podmenu ${item.label}" data-nav-submenu-toggle>
-              <i class="bi bi-caret-down-fill" aria-hidden="true"></i>
-            </button>
-            <ul class="dropdown-menu" id="${submenuId}" data-nav-submenu>
-              ${dropdownItems}
-            </ul>
-          </div>
+        <li class="nav-item nav-item-dropdown">
+          <button class="nav-link nav-dropdown-toggle${activeClass}" type="button" aria-expanded="false"
+            aria-controls="${submenuId}" aria-haspopup="true" data-nav-submenu-toggle>
+            <span>${item.label}</span><span class="nav-dropdown-caret" aria-hidden="true"></span>
+          </button>
+          <ul class="dropdown-menu" id="${submenuId}" data-nav-submenu>
+            <li>
+              <a class="dropdown-item dropdown-item-parent${parentActiveClass}" href="${resolveNavigationHref(item.href)}" ${parentAriaCurrent}>
+                <span>${item.label}</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </a>
+            </li>
+            ${dropdownItems}
+          </ul>
         </li>
       `;
     }
@@ -193,7 +196,7 @@ function bindNavigationSubmenus(): void {
   });
 
   document.addEventListener("click", (event) => {
-    if (!(event.target as Element).closest(".nav-item-split-dropdown")) closeAllSubmenus();
+    if (!(event.target as Element).closest(".nav-item-dropdown")) closeAllSubmenus();
   });
 
   document.addEventListener("keydown", (event) => {
