@@ -28,8 +28,8 @@ body[data-page="lab"] button:focus-visible { outline: 3px solid var(--mint); out
 .notebook-footnote { display: block; border-top: 1px solid var(--line); padding-top: 13px; font: .54rem/1.6 ui-monospace, Consolas, monospace; color: #6c6b59; }
 
 .lab-directions { padding: 88px 0 96px; background: rgba(255,255,255,.5); border-top: 1px solid var(--line); }
-.lab-directions-heading { display: grid; grid-template-columns: 1fr 1.2fr; align-items: end; gap: 50px; margin-bottom: 38px; }
-.lab-directions-heading h2 { font-size: clamp(2rem,3.5vw,3.3rem); line-height: 1.12; letter-spacing: -.055em; font-weight: 800; margin: 0; }
+.lab-directions-heading { max-width: 820px; margin-bottom: 38px; }
+.lab-directions-heading h2 { font-size: clamp(2rem,3.5vw,3.3rem); line-height: 1.12; letter-spacing: -.055em; font-weight: 800; margin: 15px 0 0; }
 .lab-directions-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border: 1px solid var(--line); background: #fffdf8; }
 .lab-direction-card { padding: 30px; min-height: 290px; display: flex; flex-direction: column; }
 .lab-direction-card + .lab-direction-card { border-left: 1px solid var(--line); }
@@ -55,7 +55,6 @@ body[data-page="lab"] button:focus-visible { outline: 3px solid var(--mint); out
   .lab-notebook { padding: 22px; transform: rotate(1deg); }
   .notebook-header { flex-wrap: wrap; }
   .lab-intro > p { font-size: .85rem; }
-  .lab-directions-heading { grid-template-columns: 1fr; gap: 18px; }
   .lab-direction-card { padding: 24px; }
 }
 

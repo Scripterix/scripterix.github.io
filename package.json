@@ -8,12 +8,15 @@
     "dev": "vite --host 127.0.0.1 --port 4173",
     "watch": "vite --host 127.0.0.1 --port 4173",
     "serve": "npm run start",
-    "build": "vite build",
+    "build": "npm run search:index && vite build",
     "preview": "vite preview --host 127.0.0.1 --port 4173",
     "typecheck": "tsc --noEmit",
     "test:visual": "playwright test",
     "test:screens": "playwright test tests/screenshots.spec.js",
-    "review:home": "node scripts/review-home.mjs"
+    "review:home": "node scripts/review-home.mjs",
+    "search:index": "node scripts/generate-search-index.mjs",
+    "search:index:check": "node scripts/generate-search-index.mjs --check",
+    "search:index:watch": "node scripts/generate-search-index.mjs --watch"
   },
   "devDependencies": {
     "@playwright/test": "^1.52.0",

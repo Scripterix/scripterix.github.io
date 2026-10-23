@@ -40,7 +40,13 @@
             <p>Projekt własny i działające przykłady z jednego warsztatu. Każdy możesz otworzyć, sprawdzić i ocenić
               samodzielnie.</p>
           </div>
-          <article class="featured-project" data-agent-card="project-agentic-studio">
+          <div class="portfolio-filters" role="group" aria-label="Filtruj projekty">
+            <button class="portfolio-filter-button is-active" type="button" data-project-filter="all" aria-pressed="true">Wszystkie</button>
+            <button class="portfolio-filter-button" type="button" data-project-filter="ui" aria-pressed="false">UI</button>
+            <button class="portfolio-filter-button" type="button" data-project-filter="ux" aria-pressed="false">UX</button>
+            <button class="portfolio-filter-button" type="button" data-project-filter="crud" aria-pressed="false">CRUD</button>
+          </div>
+          <article class="featured-project" data-project-category="ui" data-agent-card="project-agentic-studio">
             <a class="project-preview" href="https://github.com/Scripterix/scripterix.github.io"
               aria-label="Agentic Studio — zobacz strukturę projektu">
               <div class="preview-bar"><span class="window-dots"
@@ -65,8 +71,28 @@
                   class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
             </div>
           </article>
+          <article class="featured-project mt-4" data-project-category="crud" data-agent-card="project-shelfstack">
+            <a class="project-preview" href="portfolio/projekty/shelfstack.html"
+              aria-label="ShelfStack — zobacz szczegóły projektu">
+              <div class="preview-bar"><span class="window-dots"
+                  aria-hidden="true"><b></b><b></b><b></b></span><span>ShelfStack / strona główna</span><i
+                  class="bi bi-arrow-up-right" aria-hidden="true"></i></div>
+              <div class="project-screenshot"><img src="../assets/img/projects/shelfstack/home.png"
+                  alt="Strona główna lokalnej księgarni demonstracyjnej ShelfStack" width="1889" height="919"
+                  loading="lazy"></div><span class="preview-caption">Demo lokalne.</span>
+            </a>
+            <div class="featured-copy"><span class="project-kind"><span class="status-dot"
+                  aria-hidden="true"></span>Demo lokalne</span>
+              <h3>ShelfStack</h3>
+              <p>Lokalna księgarnia demonstracyjna z katalogiem książek, koszykiem, logowaniem i panelem administratora.
+                Projekt PHP i MariaDB rozwijany na bazie edukacyjnej aplikacji PHP_Bookstore.</p>
+              <div class="tech-list"><span>PHP 8.2</span><span>MariaDB</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+              <a class="text-link" href="portfolio/projekty/shelfstack.html">Zobacz szczegóły projektu <i
+                  class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
           <div class="demo-grid">
-            <article class="demo-card" data-agent-card="demo-search">
+            <article class="demo-card" data-project-category="ux" data-agent-card="demo-search">
               <div class="demo-art search-art" aria-hidden="true">
                 <div class="mini-search"><i class="bi bi-search"></i><span>Znajdź właściwy kontekst<span
                       class="demo-caret">_</span></span><kbd>↵</kbd></div>
@@ -84,7 +110,7 @@
                       class="bi bi-arrow-up-right" aria-hidden="true"></i></a></div>
               </div>
             </article>
-            <article class="demo-card" data-agent-card="demo-interactions">
+            <article class="demo-card" data-project-category="ux" data-agent-card="demo-interactions">
               <div class="demo-art interaction-art" aria-hidden="true"><span class="mini-filter">Wszystkie</span><span
                   class="mini-filter selected">Interakcje <i class="bi bi-check2"></i></span>
                 <div class="mini-tiles"><span><i class="bi bi-cursor"></i><b>hover</b></span><span><i
@@ -101,9 +127,12 @@
               </div>
             </article>
           </div>
-          <div class="projects-footer"><span>Więcej kodu i moich projektów znajdziesz na GitHubie.</span><a
-              class="text-link" href="https://github.com/Scripterix">GitHub / Scripterix <i class="bi bi-arrow-up-right"
-                aria-hidden="true"></i></a></div>
+          <div class="projects-footer"><span>Więcej kodu i moich projektów znajdziesz na GitHubie.</span>
+            <div class="d-flex flex-wrap gap-4"><a class="text-link" href="portfolio/projekty/index.html">Większe projekty <i
+                  class="bi bi-arrow-up-right" aria-hidden="true"></i></a><a class="text-link"
+                href="https://github.com/Scripterix">GitHub / Scripterix <i class="bi bi-arrow-up-right"
+                  aria-hidden="true"></i></a></div>
+          </div>
         </div>
       </section>
       <div data-cta-target></div>
@@ -113,6 +142,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="../src/components/navigation.ts"></script>
   <script type="module" src="../src/components/hero.ts"></script>
+  <script type="module" src="../src/components/portfolio-filter.ts"></script>
   <script type="module" src="../src/components/cta.ts"></script>
   <script type="module" src="../src/components/footer.ts"></script>
 </body>

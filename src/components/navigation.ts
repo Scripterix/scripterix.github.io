@@ -85,6 +85,7 @@ export function renderNavigation(siteMap: SiteMap): void {
     const ariaCurrent = isActive ? 'aria-current="page"' : "";
 
     if (children.length > 0) {
+      const submenuId = `nav-submenu-${item.page}`;
       const dropdownItems = children.map((child) => {
         const isChildActive = child.page === currentPage;
         const childActiveClass = isChildActive ? " active" : "";
@@ -100,13 +101,19 @@ export function renderNavigation(siteMap: SiteMap): void {
       }).join("");
 
       return `
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle${activeClass}" href="${resolveNavigationHref(item.href)}" role="button" data-bs-toggle="dropdown" aria-expanded="false" ${ariaCurrent}>
-            <i class="bi ${item.icon} me-1" aria-hidden="true"></i>${item.label}
-          </a>
-          <ul class="dropdown-menu">
-            ${dropdownItems}
-          </ul>
+        <li class="nav-item nav-item-split-dropdown">
+          <div class="nav-split-control">
+            <a class="nav-link${activeClass}" href="${resolveNavigationHref(item.href)}" ${ariaCurrent}>
+              <i class="bi ${item.icon} me-1" aria-hidden="true"></i>${item.label}
+            </a>
+            <button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-controls="${submenuId}"
+              aria-label="Rozwiń podmenu ${item.label}" data-nav-submenu-toggle>
+              <i class="bi bi-caret-down-fill" aria-hidden="true"></i>
+            </button>
+            <ul class="dropdown-menu" id="${submenuId}" data-nav-submenu>
+              ${dropdownItems}
+            </ul>
+          </div>
         </li>
       `;
     }
@@ -142,6 +149,58 @@ export function renderNavigation(siteMap: SiteMap): void {
     mobileSearch.innerHTML = '<i class="bi bi-search" aria-hidden="true"></i>';
     toggle.before(mobileSearch);
   }
+
+  bindNavigationSubmenus();
+}
+
+function bindNavigationSubmenus(): void {
+  const toggles = [...document.querySelectorAll<HTMLButtonElement>("[data-nav-submenu-toggle]")];
+
+  const closeSubmenu = (toggle: HTMLButtonElement, restoreFocus = false) => {
+    const menuId = toggle.getAttribute("aria-controls");
+    const menu = menuId ? document.getElementById(menuId) : null;
+    toggle.setAttribute("aria-expanded", "false");
+    menu?.classList.remove("show");
+    if (restoreFocus) toggle.focus();
+  };
+
+  const closeAllSubmenus = (except?: HTMLButtonElement) => {
+    toggles.forEach((toggle) => {
+      if (toggle !== except) closeSubmenu(toggle);
+    });
+  };
+
+  toggles.forEach((toggle) => {
+    toggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const menuId = toggle.getAttribute("aria-controls");
+      const menu = menuId ? document.getElementById(menuId) : null;
+      if (!menu) return;
+
+      const shouldOpen = toggle.getAttribute("aria-expanded") !== "true";
+      closeAllSubmenus(toggle);
+      toggle.setAttribute("aria-expanded", String(shouldOpen));
+      menu.classList.toggle("show", shouldOpen);
+    });
+
+    toggle.addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowDown") return;
+      event.preventDefault();
+      if (toggle.getAttribute("aria-expanded") !== "true") toggle.click();
+      const menuId = toggle.getAttribute("aria-controls");
+      document.getElementById(menuId ?? "")?.querySelector<HTMLAnchorElement>("a")?.focus();
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!(event.target as Element).closest(".nav-item-split-dropdown")) closeAllSubmenus();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    const openToggle = toggles.find((toggle) => toggle.getAttribute("aria-expanded") === "true");
+    if (openToggle) closeSubmenu(openToggle, true);
+  });
 }
 
 function bindHomeSectionNavigation(): void {

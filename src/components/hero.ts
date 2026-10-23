@@ -5,7 +5,8 @@ interface HeroAction {
   primary?: boolean;
 }
 
-interface HeroVisual {
+interface HeroImageVisual {
+  kind: "image";
   ariaLabel: string;
   windowTitle: string;
   imageSrc: string;
@@ -14,12 +15,21 @@ interface HeroVisual {
   imageStrong: string;
 }
 
+interface HeroPlaceholderVisual {
+  kind: "placeholder";
+  ariaLabel: string;
+  label: string;
+}
+
+type HeroVisual = HeroImageVisual | HeroPlaceholderVisual;
+
 interface HeroConfig {
   kicker: string;
   coordinate: string;
   title: string;
-  lead: string;
+  lead?: string;
   detail?: string;
+  signature?: string;
   actions: HeroAction[];
   visual?: HeroVisual;
   footnote?: string;
@@ -28,7 +38,8 @@ interface HeroConfig {
 }
 
 const studioCodeImage = new URL("../../assets/img/studio-code.jpg", import.meta.url).href;
-const agenticDesktopImage = new URL("../../assets/img/prntScreen/1/desktop.png", import.meta.url).href;
+const portfolioCodeImage = new URL("../../assets/img/code-close.jpg", import.meta.url).href;
+const projectsCodeImage = new URL("../../assets/img/pinkcode.jpg", import.meta.url).href;
 
 const heroConfigs: Record<string, HeroConfig> = {
   home: {
@@ -42,6 +53,7 @@ const heroConfigs: Record<string, HeroConfig> = {
       { href: "pages/kontakt.html", label: "Porozmawiajmy", icon: "bi-arrow-up-right" }
     ],
     visual: {
+      kind: "image",
       ariaLabel: "Ilustracja warsztatu Scripterix: kod, przepływ danych i działająca aplikacja",
       windowTitle: "scripterix / workspace",
       imageSrc: studioCodeImage,
@@ -61,6 +73,7 @@ const heroConfigs: Record<string, HeroConfig> = {
       { href: "kontakt.html", label: "Porozmawiajmy", icon: "bi-arrow-up-right" }
     ],
     visual: {
+      kind: "image",
       ariaLabel: "Ilustracja usług Scripterix: kod, dane i rezultat",
       windowTitle: "scripterix / services",
       imageSrc: studioCodeImage,
@@ -83,13 +96,38 @@ const heroConfigs: Record<string, HeroConfig> = {
       { href: "kontakt.html", label: "Porozmawiajmy", icon: "bi-arrow-up-right" }
     ],
     visual: {
-      ariaLabel: "Zrzut interfejsu projektu Agentic Studio",
-      windowTitle: "scripterix / portfolio",
-      imageSrc: agenticDesktopImage,
+      kind: "image",
+      ariaLabel: "Zbliżenie kodu na ekranie w warsztacie Scripterix",
+      windowTitle: "scripterix / code close-up",
+      imageSrc: portfolioCodeImage,
       imageAlt: "",
-      imageLabel: "Agentic Studio",
-      imageStrong: "Od iteracji do systemu."
+      imageLabel: "Kod z bliska",
+      imageStrong: "Projekt w szerszym kontekście."
     }
+  },
+  projects: {
+    kicker: "Scripterix Studio / Portfolio",
+    coordinate: "01 / Projekty",
+    title: "<span>Projekty, które wychodzą poza kod.</span>",
+    lead: "Od pomysłu do działającej aplikacji. Frontend, backend, bazy danych i automatyzacje — praktyczne rozwiązania, w których liczy się nie tylko technologia, ale też sposób działania.",
+    signature: "WEB APPS / PHP / TYPESCRIPT / DATA",
+    actions: [],
+    visual: {
+      kind: "image",
+      ariaLabel: "Kolorowy kod aplikacji na ciemnym ekranie",
+      windowTitle: "scripterix / projects",
+      imageSrc: projectsCodeImage,
+      imageAlt: "",
+      imageLabel: "Pomysł w kodzie",
+      imageStrong: "Kod w działaniu."
+    }
+  },
+  shelfstack: {
+    kicker: "Portfolio / Projekty",
+    coordinate: "[ PHP 8.2 · MariaDB ]",
+    title: "<span>ShelfStack</span>",
+    lead: "Lokalna księgarnia w PHP i MariaDB",
+    actions: []
   },
   contact: {
     kicker: "Masz coś do zbudowania?",
@@ -113,6 +151,16 @@ function renderActions(actions: HeroAction[]): string {
 }
 
 function renderVisual(visual: HeroVisual): string {
+  if (visual.kind === "placeholder") {
+    return `
+      <div class="project-visual-placeholder" role="img" aria-label="${visual.ariaLabel}">
+        <span class="project-visual-placeholder-label">${visual.label}</span>
+        <span class="project-visual-placeholder-mark" aria-hidden="true"><i class="bi bi-image"></i></span>
+        <span class="project-visual-placeholder-note" aria-hidden="true">4:3 / asset do uzupełnienia</span>
+      </div>
+    `;
+  }
+
   return `
     <div class="workbench" data-agent-card="hero-visual-asset" role="img"
       aria-label="${visual.ariaLabel}">
@@ -145,7 +193,8 @@ if (heroTarget) {
   const config = heroConfigs[heroTarget.dataset.hero ?? ""];
 
   if (config) {
-    heroTarget.className = `studio-hero${config.visual ? "" : " studio-hero--without-visual"}`;
+    const heroVariant = heroTarget.dataset.hero === "projects" ? " studio-hero--projects" : "";
+    heroTarget.className = `studio-hero${config.visual ? "" : " studio-hero--without-visual"}${heroVariant}`;
     heroTarget.dataset.agentSection = "hero";
     heroTarget.innerHTML = `
       <div class="container">
@@ -155,9 +204,10 @@ if (heroTarget) {
         <div class="studio-hero-grid">
           <div class="studio-hero-copy">
             <h1 data-agent-slot="hero-title">${config.title}</h1>
-            <p class="studio-lead">${config.lead}</p>
+            ${config.lead ? `<p class="studio-lead">${config.lead}</p>` : ""}
             ${config.detail ? `<p class="hero-detail">${config.detail}</p>` : ""}
-            <div class="studio-actions">${renderActions(config.actions)}</div>
+            ${config.signature ? `<p class="hero-tech-signature">${config.signature}</p>` : ""}
+            ${config.actions.length > 0 ? `<div class="studio-actions">${renderActions(config.actions)}</div>` : ""}
           </div>
           ${config.visual ? renderVisual(config.visual) : ""}
         </div>

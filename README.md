@@ -20,7 +20,8 @@ index.html                         # Home
 pages/                             # Aktualne podstrony MPA
 src/components/                    # Nawigacja, search, Hero, CTA i stopka
 data/site.json                     # Nawigacja
-data/search-index.json             # Indeks wyszukiwarki
+data/search-index.json             # Generowany indeks wyszukiwarki
+scripts/generate-search-index.mjs  # Generator, kontrola aktualności i Watch
 assets/css/                        # Style współdzielone i stron
 docs/legacy/site.js                # Archiwalny skrypt #55
 studio/migration-audit.md          # Klasyfikacja migracji i cleanupu
@@ -36,7 +37,16 @@ npm.cmd run dev
 ```
 
 Podgląd developerski działa pod `http://127.0.0.1:4173/`. Nie edytuj `dist/` —
-jest odtwarzalnym wynikiem produkcyjnego buildu.
+jest odtwarzalnym wynikiem produkcyjnego buildu. `npm run dev` generuje indeks
+przy starcie i odświeża go po zmianie indeksowanych stron lub konfiguracji Hero.
+
+Indeks można też obsługiwać niezależnie:
+
+```powershell
+npm.cmd run search:index
+npm.cmd run search:index:check
+npm.cmd run search:index:watch
+```
 
 ## Weryfikacja
 
@@ -59,14 +69,14 @@ wstrzymana przez niestabilny mobilny scenariusz otwarcia search z menu.
 
 1. Dodaj stronę w `pages/` i zarejestruj ją w `vite.config.ts`.
 2. Jeśli ma występować w menu, dodaj wpis w `data/site.json`.
-3. Dodaj zweryfikowany wpis do `data/search-index.json`.
+3. Jeśli strona ma być wyszukiwana, dodaj ją do jawnej allowlisty w `scripts/generate-search-index.mjs`; nie edytuj ręcznie `data/search-index.json`.
 4. Sprawdź ścieżki względne, aktywną nawigację i link powrotny.
 5. Uruchom typecheck, build i adekwatne testy Playwright.
 
-Indeks wyszukiwarki jest obecnie utrzymywany ręcznie. Dawne #55 również nie
-miało generatora: Vite kopiował gotowy JSON, a skrypt przeglądarkowy go
-filtrował. Propozycja przyszłej automatyzacji jest opisana w
-`studio/migration-audit.md`; nie została jeszcze wdrożona.
+Generator indeksuje wyłącznie Home, Usługi, Portfolio, LAB i Kontakt. Pobiera
+tytuł, meta description, tekst z `<main>` oraz treść właściwej konfiguracji
+Hero. Strona wyników, `dist/`, dokumentacja i historyczne strony #55 są
+wyłączone. Zmiana allowlisty wymaga również sprawdzenia wejść MPA w Vite.
 
 ## Publikacja i archiwum
 

@@ -16,7 +16,15 @@
       "label": "Portfolio",
       "href": "pages/portfolio.html",
       "page": "portfolio",
-      "icon": "bi-window-stack"
+      "icon": "bi-window-stack",
+      "children": [
+        {
+          "label": "Projekty",
+          "href": "pages/portfolio/projekty/index.html",
+          "page": "projects",
+          "icon": "bi-folder2-open"
+        }
+      ]
     },
     {
       "label": "LAB",

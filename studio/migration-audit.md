@@ -1,6 +1,6 @@
 # Scripterix Studio — audyt migracji projektu #55
 
-Data audytu: 2026-10-20; weryfikacja i realizacja cleanupu: 2026-10-21
+Data audytu: 2026-10-20; cleanup: 2026-10-21; aktualizacja indeksowania: 2026-10-22
 Zakres: lokalny projekt `024 OGW GH Pages` oraz repozytorium
 `Scripterix/scripterix.github.io`.
 
@@ -45,7 +45,7 @@ GitHub Actions uruchamia typecheck, build i Playwright przed publikacją `dist/`
 | `src/components/navigation.ts` | `data/site.json`, Bootstrap collapse, `src/core/types.ts` | Zachowano renderowanie, fallback, aktywną sekcję i obsługę mobile; odłączono przyciski historycznej wyszukiwarki. |
 | `assets/css/site.css` | `index.html`, `home.css` | Nadal dostarcza tokeny, bazę strony i nawigację. Zawiera też nieużywane reguły #55; ich fizyczne czyszczenie nie należy do tej iteracji. |
 | `src/core/types.ts` | `navigation.ts` | Zachowuje kontrakt danych. `PageItem` pozostaje dla czytelności historycznego formatu, mimo pustej tablicy `pages`. |
-| `vite.config.ts` | `index.html`, `data/site.json` | Wejściem buildu jest tylko Home; do `dist/data/` kopiowany jest wyłącznie `site.json`. |
+| `vite.config.ts` | aktualne strony MPA, generator indeksu, dane runtime | Build obejmuje Home, Usługi, Portfolio, LAB, Kontakt i Wyniki wyszukiwania. W dev plugin odświeża indeks po zmianie źródeł i wysyła pełne przeładowanie przez Vite. |
 | `playwright.config.js` | `tests/*.spec.js`, serwer Vite | Pozwala uruchomić testy przeciw dev serverowi lub produkcyjnemu preview przez zmienne środowiskowe. |
 | `tests/visual.spec.js` | Home, nawigacja, obrazy, Bootstrap | Usunięto założenia dotyczące stron #55; zachowano testy treści, fallbacku, mobile, linków, obrazów, konsoli i requestów. |
 | `tests/screenshots.spec.js` | Home, desktop/mobile | Ograniczono screenshoty do aktualnej publicznej strony. |
@@ -53,7 +53,9 @@ GitHub Actions uruchamia typecheck, build i Playwright przed publikacją `dist/`
 | `README.md` | komendy npm, audyt, gałąź `old` | Zastępuje dokumentację Jekylla instrukcją aktualnego Studio. |
 | `src/components/search.ts` | `data/search-index.json`, `site.css` | Wydzielona, typowana obsługa modalu i strony wyników; bez tagowania i `localStorage`. |
 | `pages/search-result.html` | `navigation.ts`, `search.ts` | Widok wyników dostosowany do aktualnego Studio. |
-| `data/search-index.json` | `search.ts` | Indeks pięciu aktualnych stron Studio. |
+| `data/search-index.json` | `search.ts`, `generate-search-index.mjs` | Deterministycznie generowany indeks pięciu aktualnych stron Studio; nie jest już utrzymywany ręcznie. |
+| `scripts/generate-search-index.mjs` | pięć publicznych stron, `hero.ts`, Vite | Jawna allowlista, walidacja duplikatów oraz tryby generate, `--check` i `--watch`. |
+| `src/components/portfolio-filter.ts` | `pages/portfolio.html`, `home.css` | Lokalne filtrowanie kart Portfolio według kategorii Wszystkie / UI / UX, niezależne od wyszukiwarki treści. |
 
 ## DISABLE — zachowane, ale odłączone od publicznej aplikacji
 
@@ -80,6 +82,7 @@ GitHub Actions uruchamia typecheck, build i Playwright przed publikacją `dist/`
 - Usunięto ich osierocone obrazy: `agentic-workspace.png`, `alpine-js.png`, `fuzze-search.png`, `vite.png` i `visual-system.png`.
 - Usunięto pusty `assets/js/site.js`; pełny historyczny `assets/js/sites.js` przeniesiono do archiwum.
 - Usunięto kod i selektory tagowania stron przez `localStorage`.
+- Autor usunął roboczy `index1.html`; kontrola odwołań nie wykazała linków do tego pliku.
 
 ## Pozostali kandydaci — decyzja 2026-10-21
 
@@ -92,22 +95,23 @@ GitHub Actions uruchamia typecheck, build i Playwright przed publikacją `dist/`
 | KEEP | `assets/img/prntScreen/` | Materiał dowodowy projektu Agentic Studio i źródło aktywnego obrazu Portfolio. |
 | KEEP | `docs/legacy/site.js` | Referencyjna, pełna implementacja #55 poza publicznym buildem. |
 | REVIEW | `artifacts/home/` | Wybrane obrazy mogą być dowodem QA; katalog jako całość jest odtwarzalny. |
-| REVIEW | `index1.html` | Nie jest wejściem Vite; wymaga potwierdzenia, czy to nadal potrzebna kopia robocza. |
 | REVIEW | `docs/architecture.md` | Pusty plik bez aktywnego zastosowania; nie usunięto bez decyzji autora. |
 | REVIEW | Nieaktywne selektory #55 w `assets/css/site.css` | Usuwać dopiero po osobnym audycie zależności CSS. |
 
-## Indeksowanie wyszukiwarki — ocena
+## Indeksowanie wyszukiwarki — stan 2026-10-22
 
-W #55 nie było automatycznego generatora indeksu. Instrukcja wymagała ręcznego
-dopisania strony do `data/search-index.json`; skrypt runtime pobierał JSON i
-filtrował go po polach `topics` lub `content`. Vite kopiował gotowy plik, ale go
-nie generował. Nie znaleziono generatora również na gałęzi `old`.
+W #55 nie było automatycznego generatora indeksu. Obecne Studio korzysta z
+`scripts/generate-search-index.mjs`, który indeksuje jawnie wskazane pliki
+źródłowe: Home, Usługi, Portfolio, LAB i Kontakt. Zachowuje kontrakt pól
+`page`, `title`, `href`, `slug`, `topics`, `description` i `content`, pobierając
+treść ze źródłowego HTML oraz właściwej konfiguracji w `hero.ts`.
 
-Rekomendacja na osobną iterację: jeden jawny manifest metadanych stron i
-projektów oraz mały skrypt `scripts/generate-search-index.mjs` z trybem `--check`.
-Generator powinien walidować unikalne `page`, istniejące `href` i wymagane pola,
-a `prebuild` powinien wykrywać nieaktualny indeks. Nie należy generować indeksu
-przez parsowanie zbudowanego HTML, ponieważ część treści powstaje w TypeScript.
+Tryb dev jest zintegrowany z watcherem Vite i po zmianie źródła zapisuje JSON
+tylko wtedy, gdy wynik rzeczywiście się zmienił. Następnie Vite przeładowuje
+otwartą stronę, dzięki czemu wyszukiwarka ponownie pobiera indeks. Dostępne są
+również niezależne tryby `--check` i `--watch`; build uruchamia generowanie
+przed Vite. `search-result.html`, `dist/`, dokumentacja i strony historyczne
+nie należą do allowlisty.
 
 ## Granice tej iteracji
 

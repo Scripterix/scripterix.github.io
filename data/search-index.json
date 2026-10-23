@@ -4,44 +4,73 @@
     "title": "Scripterix Studio",
     "href": "index.html",
     "slug": "/",
-    "topics": ["development", "automatyzacje", "aplikacje", "współpraca"],
-    "description": "Niezależny development: aplikacje webowe, naprawa kodu, automatyzacje i narzędzia AI.",
-    "content": "Naprawiam kod, automatyzuję pracę i buduję aplikacje. Ustalam zakres, programuję, sprawdzam rezultat i przekazuję działające rozwiązanie."
+    "topics": [
+      "development",
+      "automatyzacje",
+      "aplikacje",
+      "współpraca"
+    ],
+    "description": "Scripterix Studio — niezależny developer. Tworzę aplikacje webowe, naprawiam kod, automatyzuję pracę i rozwijam narzędzia AI. Zobacz projekty i porozmawiajmy o Twoim zadaniu.",
+    "content": "Scripterix Studio — niezależny developer. Tworzę aplikacje webowe, naprawiam kod, automatyzuję pracę i rozwijam narzędzia AI. Zobacz projekty i porozmawiajmy o Twoim zadaniu. Niezależny developer / Scripterix Studio Naprawiam kod. Automatyzuję pracę. Buduję aplikacje. Od błędu w istniejącym kodzie po własną aplikację. Projektuję i programuję narzędzia webowe, łączę systemy i zamieniam powtarzalną pracę w automatyzacje. Pracuję z JavaScript, TypeScript i Pythonem. Łączę programowanie z narzędziami AI — od analizy problemu po testy działającego rozwiązania. Z konkretnego problemu powstaje dobry kod. 04 / Współpraca Od rozmowy do działającego kodu. Pracujesz bezpośrednio ze mną. Ustalam zakres, programuję, sprawdzam rezultat i przekazuję rozwiązanie z informacją, jak z niego korzystać. 01 / Problem Zaczynam od celu. Opisujesz potrzebę, aktualny stan i oczekiwany efekt. Dopytuję o to, co wpływa na rozwiązanie. 02 / Zakres Ustalam konkrety. Proponuję podejście, zakres prac, koszt i sposób sprawdzenia gotowego rozwiązania. 03 / Kod i testy Buduję i sprawdzam. Implementuję funkcje, weryfikuję scenariusze użycia i pokazuję postęp prac. 04 / Rezultat Przekazuję rozwiązanie. Otrzymujesz uzgodniony rezultat i wskazówki potrzebne do dalszego korzystania z niego."
   },
   {
     "page": "services",
     "title": "Usługi",
     "href": "pages/uslugi.html",
     "slug": "/pages/uslugi.html",
-    "topics": ["development", "automation", "AI engineering", "API", "TypeScript", "Python"],
-    "description": "Development aplikacji webowych, automatyzacje danych i narzędzia AI dobrane do konkretnego problemu.",
-    "content": "Tworzę interfejsy i aplikacje webowe, rozwijam istniejący kod, automatyzuję operacje na danych oraz łączę pracę agentów AI z kontrolą kodu i testami."
+    "topics": [
+      "development",
+      "automation",
+      "AI engineering",
+      "API",
+      "TypeScript",
+      "Python"
+    ],
+    "description": "Usługi Scripterix Studio: development aplikacji webowych, automatyzacje danych i narzędzia AI.",
+    "content": "Usługi Scripterix Studio: development aplikacji webowych, automatyzacje danych i narzędzia AI. 01 / Usługi i kompetencje Trzy obszary. Jeden działający rezultat. Naprawiam to, co blokuje pracę. Buduję to, czego jeszcze brakuje. Dobieram rozwiązanie do problemu i sprawdzam je w praktyce. Development, automatyzacje i narzędzia AI łączę w zakres dopasowany do konkretnego zadania. Development. Automatyzacje. AI. Zakres dobrany do problemu. Development / Automation / AI Engineering Poznaj mój warsztat 01 / Kompetencje Trzy obszary. Jeden działający rezultat. Naprawiam to, co blokuje pracę. Buduję to, czego jeszcze brakuje. Dobieram rozwiązanie do problemu i sprawdzam je w praktyce. 01 Development Aplikacje i rozwój kodu Tworzę interfejsy, formularze, panele i aplikacje webowe. Rozwijam istniejący kod, dodaję funkcje i szukam przyczyn błędów. Aplikacje webowe i prototypy MVP Debugging i refaktoryzacja Frontend i integracja z API JavaScript TypeScript React Vite 02 Automation Dane i połączone systemy Automatyzuję powtarzalne operacje i przepływ informacji. Przygotowuję skrypty do importu, porządkowania i przekształcania danych. Import, eksport i walidacja plików Raporty i konwersje danych Integracje przez REST API Python JavaScript CSV / JSON REST API 03 AI Engineering Agenci, narzędzia i testy Łączę pracę agentów AI z kontrolą kodu i testowaniem. Rozwijam prototypy narzędzi, integracje i powtarzalne procesy programistyczne. Workflow agentowe i Skills Prototypowanie własnych narzędzi Automatyzacja testów interfejsu AI agents Playwright TypeScript Git ↳ Masz aplikację do rozwinięcia, proces do usprawnienia albo pomysł na nowe narzędzie? Ustalmy pierwszy krok"
   },
   {
     "page": "portfolio",
     "title": "Portfolio",
     "href": "pages/portfolio.html",
     "slug": "/pages/portfolio.html",
-    "topics": ["projekty", "Agentic Studio", "wyszukiwarka", "mikrointerakcje", "Vite MPA"],
-    "description": "Agentic Studio oraz demonstratory wyszukiwarki i mikrointerakcji z jednego warsztatu.",
-    "content": "Portfolio obejmuje projekt własny Agentic Studio, wyszukiwanie treści i tematów oraz demonstrator responsywnych mikrointerakcji."
+    "topics": [
+      "projekty",
+      "Agentic Studio",
+      "wyszukiwarka",
+      "mikrointerakcje",
+      "Vite MPA"
+    ],
+    "description": "Portfolio Scripterix Studio: Agentic Studio oraz demonstratory wyszukiwarki i mikrointerakcji.",
+    "content": "Portfolio Scripterix Studio: Agentic Studio oraz demonstratory wyszukiwarki i mikrointerakcji. 02 / Portfolio Możesz zajrzeć pod maskę. Projekt własny i działające przykłady z jednego warsztatu. Każdy możesz otworzyć, sprawdzić i ocenić samodzielnie. Portfolio obejmuje Agentic Studio oraz demonstratory wyszukiwarki i mikrointerakcji. Kod z bliska Projekt w szerszym kontekście. 02 / Projekty i demonstratory Możesz zajrzeć pod maskę. Projekt własny i działające przykłady z jednego warsztatu. Każdy możesz otworzyć, sprawdzić i ocenić samodzielnie. Wszystkie UI UX CRUD Agentic Studio / widok projektu Od pierwszej iteracji do wielostronicowego systemu. Projekt własny Agentic Studio Wielostronicowy serwis z nawigacją sterowaną danymi i wyszukiwarką treści. Rozwijany iteracyjnie z agentami AI, sprawdzany testami Playwright. W praktyce Wspólny system wizualny, działające interakcje i architektura gotowa na kolejne funkcje. TypeScript Vite MPA JSON Playwright Zobacz strukturę projektu ShelfStack / strona główna Demo lokalne. Demo lokalne ShelfStack Lokalna księgarnia demonstracyjna z katalogiem książek, koszykiem, logowaniem i panelem administratora. Projekt PHP i MariaDB rozwijany na bazie edukacyjnej aplikacji PHP_Bookstore. PHP 8.2 MariaDB HTML CSS JavaScript Zobacz szczegóły projektu Znajdź właściwy kontekst _ ↵ Wyszukiwanie treści i tematów JSON index → wynik → konkretna strona Demonstrator / część Agentic Studio Wyszukiwarka z kontekstem Indeks aktualnych stron oraz dwa tryby filtrowania wyników: według tematów i treści. Bez konta i bez backendu. TypeScript · JSON Uruchom wyszukiwarkę Wszystkie Interakcje hover filter responsive Demonstrator / część Agentic Studio Interfejs, który reaguje Filtry kart, stany hover i animacje wejścia. Małe elementy, które ułatwiają poruszanie się po aplikacji na różnych ekranach. HTML · CSS · JavaScript Zobacz kod Więcej kodu i moich projektów znajdziesz na GitHubie. Większe projekty GitHub / Scripterix"
   },
   {
     "page": "lab",
-    "title": "Scripterix LAB",
+    "title": "LAB",
     "href": "pages/lab.html",
     "slug": "/pages/lab.html",
-    "topics": ["LAB", "eksperymenty", "dane", "agenci AI", "prototypy"],
-    "description": "Kierunki eksperymentów z danymi, agentami AI i użytecznymi narzędziami.",
-    "content": "Scripterix LAB zbiera problemy, hipotezy i kierunki eksperymentów. Pomysły są wyraźnie oddzielone od gotowych produktów."
+    "topics": [
+      "LAB",
+      "eksperymenty",
+      "dane",
+      "agenci AI",
+      "prototypy"
+    ],
+    "description": "Scripterix LAB — kierunki eksperymentów z danymi, agentami AI i użytecznymi narzędziami.",
+    "content": "Scripterix LAB — kierunki eksperymentów z danymi, agentami AI i użytecznymi narzędziami. 03 / Scripterix LAB A gdyby zrobić z tego narzędzie? Szukam problemów, które wracają. Sprawdzam pomysły i rozwijam własne aplikacje, wtyczki oraz Skills. Od pojedynczej potrzeby do rozwiązania, które można wykorzystać ponownie. Przestrzeń na eksperyment. LAB—001 Hipoteza / przed prototypem Dane dostawców. Jeden czytelny format. Pomysł na walidator, który porządkuje pliki produktowe, wyłapuje braki i przygotowuje dane do importu. CSV / XLSX / XML Walidacja + normalizacja Plik importu + raport błędów Następny krok: sprawdzić potrzeby użytkowników i zakres pierwszego demonstratora. Koncepcja badawcza — narzędzie nie jest jeszcze dostępne. Scripterix LAB / kierunki eksperymentów Trzy obszary do sprawdzania w praktyce. 01 / Data Engineering Dane i automatyzacje Walidatory, importy, przekształcanie formatów i automatyzacja powtarzalnych operacji. CSV · JSON · Python · API 02 / AI Engineering Agenci i inteligentne narzędzia Skills, pamięć kontekstowa, workflow agentowe i systemy wykonujące wieloetapowe zadania. AI Agents · MCP · TypeScript 03 / Product LAB Aplikacje i mikroprodukty Małe narzędzia webowe, wtyczki i prototypy MVP, które rozwiązują konkretne problemy. JavaScript · PHP · Web Apps To kierunki badawcze, a nie deklaracja trzech gotowych produktów. Wierzymy, że rozwój sztucznej inteligencji będzie przyspieszał, otwierając drogę do rozwiązań, które dziś dopiero sobie wyobrażamy. Nie chcemy jedynie obserwować tej zmiany. Eksperymentujemy, łączymy pomysły z technologią i sprawdzamy, jak przekładać możliwości AI na użyteczne narzędzia. Bo przyszłość nie powstaje z samego przewidywania. Powstaje z odwagi, by zacząć ją budować."
   },
   {
     "page": "contact",
     "title": "Kontakt",
     "href": "pages/kontakt.html",
     "slug": "/pages/kontakt.html",
-    "topics": ["kontakt", "współpraca", "projekt", "wycena"],
-    "description": "Kontakt w sprawie aplikacji, automatyzacji, naprawy kodu lub nowego narzędzia.",
-    "content": "Opisz problem i oczekiwany rezultat. W pierwszej wiadomości wystarczy krótki kontekst potrzebny do ustalenia zakresu i pierwszego kroku."
+    "topics": [
+      "kontakt",
+      "współpraca",
+      "projekt",
+      "wycena"
+    ],
+    "description": "Skontaktuj się z Scripterix Studio. Napisz o aplikacji, automatyzacji lub problemie z kodem, który chcesz rozwiązać.",
+    "content": "Skontaktuj się z Scripterix Studio. Napisz o aplikacji, automatyzacji lub problemie z kodem, który chcesz rozwiązać. Masz coś do zbudowania? Porozmawiajmy o Twoim projekcie. Aplikacja do rozwinięcia, proces do zautomatyzowania, kod do naprawienia. Napisz, jaki efekt chcesz uzyskać — od tego zaczniemy. W pierwszej wiadomości wystarczy opis problemu i oczekiwanego rezultatu."
   }
 ]
